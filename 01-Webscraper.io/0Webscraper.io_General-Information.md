@@ -1,8 +1,8 @@
-# General information about Airtable
+# General information about Webscraper.io
 <br><br>
-Airtable is a cloud-based collaboration platform that combines the functionality of a spreadsheet with a database. It allows users to create and organize information in customizable tables, making it easy to track, manage, and collaborate on various types of data and projects. In our particular case, it offers the advantage that you don't have to programme anything yourself.
+WebScraper.io is a browser-based tool designed for extracting data from websites with ease. It offers a user-friendly interface that allows for data collection without the need for coding. The platform can navigate and scrape multiple pages, making it useful for collecting large datasets from websites. After downloading, the data is merged and structured using Google Sheets. Google Sheets is a cloud-based spreadsheet application that is part of Google's suite of office tools. It allows users to create, edit, and collaborate on spreadsheets in real-time from any device with internet access. To clean the data and automate the process in Google Sheets we need to use some codes. 
 
-The following figure shows how the process looks for the daily download of data via API.
+The following figure shows how the process looks for the daily download of data via webscraping.
 
 1. The data is provided by the market data provider [Alpha Vantage](../00-Alpha_Vantage).
 2. Using the Airtable add-on application Data Fetcher, the data is extracted from Alpha Vantage and stored in Airtable. This is done automatically on a daily basis.  
