@@ -113,6 +113,7 @@ You are now asked about the request interval and page load delay.
 <br>
 It's done to mimic human browsing behavior, avoid overloading the server, and reduce the chances of getting banned or blocked due to rapid or frequent requests. For the time being, we leave the default settings at 2000 miliseconds. Therefore, just click **Start scraping**.
 <br><br>
+
 ![Alt Image Text](./Images/WS_Setup16.png "Setup16")
 
 <br><br><br><br>
