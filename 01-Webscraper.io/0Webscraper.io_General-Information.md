@@ -34,14 +34,14 @@ The final result is a list of interest rates over various terms from different f
 | Webscraper.io | (yes)         | A free version is available, but it doesn't offer all the services (cloud, parser, etc.) necessary for this setup. The "Project" subscription is sufficient for accessing around 170 websites per month. The costs are USD 50. |
 | Google Sheets | yes         | As long as no more than 15 GB of storage space is required, the free version suffices. |
 
-<br><br>
+<br><br><br><br>
 
 Here the detailed costs of Webscraper.io: [Pricing](https://webscraper.io/pricing). 
 <br>
 ![Alt Image Text](./Images/WS_Pricing.png "Premium")
 <br>
 A page/cloud credit corresponds to a single page load in the Web Scraper Cloud. If the scraper navigates through 100 pages, it will consume 100 page credits. Extracting 100 records from just one page will only deduct one page credit.
-<br><br>
+<br><br><br><br>
 Here the detailed costs of Google Sheets: [Pricing](https://www.google.com/sheets/about/#pricing).  
 <br>
 ![Alt Image Text](./Images/WS_Pricing_Google.png "Setup9")
