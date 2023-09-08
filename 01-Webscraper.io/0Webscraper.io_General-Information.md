@@ -1,24 +1,27 @@
 # General information about Webscraper.io
 <br><br>
-WebScraper.io is a browser-based tool designed for extracting data from websites with ease. It offers a user-friendly interface that allows for data collection without the need for coding. The platform can navigate and scrape multiple pages, making it useful for collecting large datasets from websites. After downloading, the data is merged and structured using Google Sheets. Google Sheets is a cloud-based spreadsheet application that is part of Google's suite of office tools. It allows users to create, edit, and collaborate on spreadsheets in real-time from any device with internet access. To clean the data and automate the process in Google Sheets we need to use some codes. 
+[WebScraper.io](https://webscraper.io/) is a browser-based tool designed for extracting data from websites with ease. It offers a user-friendly interface that allows for data collection without the need for coding. The platform can navigate and scrape multiple pages, making it useful for collecting large datasets from websites. After downloading, the data is merged and structured using [Google Sheets](https://www.google.com/sheets/about/). Google Sheets is a cloud-based spreadsheet application that is part of Google's suite of office tools. It allows users to create, edit, and collaborate on spreadsheets in real-time from any device with internet access. To clean the data and automate the process in Google Sheets we need to use some codes. 
 
-The following figure shows how the process looks for the daily download of data via webscraping.
+The figure below outlines the process for daily data download via webscraping:
 
-1. The data is provided by the market data provider [Alpha Vantage](../00-Alpha_Vantage).
-2. Using the Airtable add-on application Data Fetcher, the data is extracted from Alpha Vantage and stored in Airtable. This is done automatically on a daily basis.  
-3. The first table in Airtable always contains the most recent daily stock data. Whenever there is a change due to a new reload of data, the new data set is loaded into the second table in Airtable via the external tool Zapier.
-4. In this way, the data is collected and cumulated to provide a history of the respective shares. 
+1. Data is sourced from various Swiss financial institutions. For this use case, we extract data from two banks and one insurance company. The process can be easily scaled to include other financial entities.
+2. Data is harvested from the websites using Webscraper.io.
+3. Initially, the data is saved in Webscraper.io's cloud where preliminary data cleansing occurs.
+4. The data is then exported to Google Sheets. A default export channel between Webscraper.io and Google Sheets is pre-established.
+5. Within Google Sheets, the data undergoes further structuring, and tables from different financial institutions are consolidated into a single table.
+<br>
+Compared to extraction via an API, webscraping provides less structured data due to varying homepage layouts and content across sites. Data cleansing and structuring become more critical and constitute a significant portion of the task with webscraping.
 
-![Alt Image Text](./Images/Airtable_dataflow1.png "Dataflow")
+![Alt Image Text](./Images/WS_Dataflow.png "Dataflow")
   
 <br><br><br><br>
 
 ## Result
 <br>
-The end result is a database with daily records on the requested shares. 
+The final result is a list of interest rates over various terms from different financial institutions. These are updated daily.
 <br><br>
 
-![Alt Image Text](./Images/Airtable_Setup36.png "Setup36")
+![Alt Image Text](./Images/Airtable_Result.png "Result")
 
 <br><br><br><br>
 
@@ -26,17 +29,16 @@ The end result is a database with daily records on the requested shares.
 <br>
 
 | Application  | Free Version  | Note          |
-|-----------   |---------------|---------------|
-| Airtable     | (yes)         | Free version available - but probably not enough capacity for automation runs. A Team subscripton of USD 24 per month is required. |
-| Data Fetcher | (yes)         | Free version available - but probably not enough capacity for runs. Subscription for USD 24 per month is sufficient for collecting data of about 50 shares.        |
-| Zapier       | yes           |           |
+|-----------    |---------------|---------------|
+| Webscraper.io | (yes)         | A free version is available, but it doesn't offer all the services (cloud, parser, etc.) necessary for this setup. |
+| Google Sheets | yes         | As long as no more than 15 GB of storage space is required, the free version suffices. |
 
 <br><br>
 
-Here the detailed costs of Airtable: [Pricing](https://airtable.com/pricing). 
+Here the detailed costs of Webscraper.io: [Pricing](https://webscraper.io/pricing). 
 <br>
-![Alt Image Text](./Images/Airtable_Premium.png "Premium")
+![Alt Image Text](./Images/WS_Pricing.png "Premium")
 <br><br>
-Here the detailed costs of Data Fetcher: [Pricing](https://datafetcher.com/).  
+Here the detailed costs of Google Sheets: [Pricing](https://www.google.com/sheets/about/#pricing).  
 <br>
-![Alt Image Text](./Images/Airtable_Setup9.png "Setup9")
+![Alt Image Text](./Images/WS_Pricing_Google.png "Setup9")
