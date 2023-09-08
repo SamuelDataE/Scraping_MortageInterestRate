@@ -6,7 +6,7 @@
 <br><br>
 It is recommended to use the Google Chrome browsen. This browser has a wide user base, is regularly updated, and tends to be compatible with a variety of web technologies, which makes it a suitable choice for web scraping tools like Webscraper.io. 
 <br>
-Go no to the website of Webscraper.io [Link](https://webscraper.io/) and click on **Install**.
+Go no to the website of [Webscraper.io](https://webscraper.io/) and click on **Install**.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup1.png "Setup1")
 
