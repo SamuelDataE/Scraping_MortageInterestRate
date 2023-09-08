@@ -12,6 +12,7 @@ The figure below outlines the process for daily data download via webscraping:
 <br>
 Compared to extraction via an API, webscraping provides less structured data due to varying homepage layouts and content across sites. Data cleansing and structuring become more critical and constitute a significant portion of the task with webscraping.
 <br>
+
 ![Alt Image Text](./Images/WS_Dataflow.png "Dataflow")
   
 <br><br><br><br>
