@@ -2,19 +2,29 @@
 
 <br><br>
 
-### Airtable
+### Webscraper.io
 <br><br>
-Open an account with Airtable - you can do this under the following [link](https://airtable.com/signup). Enter your details - the login process should be self-explanatory. 
+It is recommended to use the Google Chrome browsen. This browser has a wide user base, is regularly updated, and tends to be compatible with a variety of web technologies, which makes it a suitable choice for web scraping tools like Webscraper.io. 
+<br>
+Go no to the website of Webscraper.io [Link](https://webscraper.io/) and click on **Install**.
 <br><br>
-![Alt Image Text](./Images/Airtable_Login1.png "Login")
+![Alt Image Text](./Images/WS_Setup1.png "Setup1")
 
 <br><br><br><br>
 
-When you are logged in, the app looks like the image below. Now open a new **base**.
+**Add to Chrome**.
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup.png "Setup")
+![Alt Image Text](./Images/WS_Setup2.png "Setup2")
 
 <br><br><br><br>
+
+You have now installed the tool. Now take a look at the [tutorials](https://www.webscraper.io/web-scraper-first-time-install) on how to do the setup in Google Chrome.
+<br><br>
+![Alt Image Text](./Images/WS_Setup5.png "Setup5")
+
+
+
+
 
 When a new base is opened, Airtable creates an Excel-like interface with a table. You can now give your base a name. In this example I have given the name **StockMarketData**. In the first column of the table, the symbols of the respective shares of which you want to build a history can be entered. How to determine the symbols of the respective shares is described under [Alpha-Vantage_Stock Selection](../00-Alpha_Vantage/Alpha-Vantage_Stock-Selection.md).
 <br><br>
