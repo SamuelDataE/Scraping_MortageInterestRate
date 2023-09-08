@@ -10,3 +10,8 @@ This endeavor has been achieved using two different methods:
 In terms of complexity, the first case is easier than the second one, since less coding is required. The process of setting up each of these methods is detailed in this repository.
 
 ### Enjoy trying it out!
+
+
+### ToDo
+
+- Liste mit Finanzinstituten (Zentralscheizwe Sicht) -> wo funktionierts?
