@@ -21,26 +21,26 @@ In the list below, some Swiss financial institutions are mentioned for which an 
 
 | Financial institution  | Website                | Webscraper.io         |
 |--------------------    |---------------------   |-------------------    |
-| AXA Schweiz | https://www.axa.ch/de/privatkunden/angebote/wohnen-eigentum/hypotheken.html | Webscraper.io does *not* work|
-| Bank Cler | https://www.cler.ch/de/hypotheken-und-kredite/hypotheken/hypothekarzinsen| Webscraper.io does *not* work|
-| Bank WIR| https://www.wir.ch/de/produkte-loesungen/geschaeftskunden/finanzieren/hypotheken/festhypotheken | Webscraper.io works |
-| Credit Suisse| https://www.credit-suisse.com/ch/de/privatkunden/hypothek/services/hypothekarzinsen.html | Webscraper.io works |
-| Generali Versicherung| https://www.generali.ch/privatkunden/wohnen-bauen/hypotheken | Webscraper.io works |
-| Luzerner Kantonalbank| https://www.lukb.ch/de/private/finanzieren/hypotheken/festhypothek | Webscraper.io works |
-| Luzerner Pensionskasse| https://www.lupk.ch/de/hypotheken-vorbezug | Webscraper.io works |
-| Migros Bank| https://www.migrosbank.ch/de/privatpersonen/hypotheken-kredite/hypotheken/festhypothek.html | Webscraper.io works |
-| Nidwaldern Kantonalbank| No interest rates online - only on request | Webscraper.io does *not* work |
-| Obwaldner Kantonalbank| No interest rates online - only on request | Webscraper.io does *not* work |
-| Pensionskasse Post| https://hypotheca.pkpost.ch/?lang=de | Webscraper.io works |
-| Pensionskasse SBB| https://www.pksbb.ch/de/hypotheken/zinssaetze | Webscraper.io works |
-| PostFinance| https://www.postfinance.ch/de/privat/produkte/hypotheken/zinssaetze-hypotheken.html?gad=1&gclid=CjwKCAjw3dCnBhBCEiwAVvLcu6ErynKha19h1Z-fJCizvungMx886DqeRR-rDyTyElKdvkY9LgM-MxoC-x4QAvD_BwE&gclsrc=aw.ds | Webscraper.io works |
-| Raiffeisen Luzern| https://www.raiffeisen.ch/luzern/de/privatkunden/hypotheken/hypothekenzinsen.html#bankselector-focus | Webscraper.io does *not* work |
-| Swiss Life| https://www.swisslife.ch/de/private/produkte/hypotheken/aktuelle-zinssaetze.html | Webscraper.io works |
-| UBS | No interest rates online - only on request  | Webscraper.io does *not* work |
-| Urner Kantonalbank| No interest rates online - only on request  | Webscraper.io does *not* work |
-| Zuger Kantonalbank| https://www.zugerkb.ch/private/hypotheken/hypothekarzinsen | Webscraper.io works |
-| Zürcher Kantonalbank| https://www.zkb.ch/de/private/hypotheken-immobilien/hypotheken-zinsen/aktuelle-hypothekarzinsen.html | Webscraper.io works |
-| Zurich Versicherung| https://www.zurich.ch/de/privat/wohnen-events/wohneigentum/hypothek | Webscraper.io works |
+| AXA Schweiz | https://www.axa.ch/de/privatkunden/angebote/wohnen-eigentum/hypotheken.html | Does *not* work|
+| Bank Cler | https://www.cler.ch/de/hypotheken-und-kredite/hypotheken/hypothekarzinsen| Does *not* work|
+| Bank WIR| https://www.wir.ch/de/produkte-loesungen/geschaeftskunden/finanzieren/hypotheken/festhypotheken | Works |
+| Credit Suisse| https://www.credit-suisse.com/ch/de/privatkunden/hypothek/services/hypothekarzinsen.html | Works |
+| Generali Versicherung| https://www.generali.ch/privatkunden/wohnen-bauen/hypotheken | Works |
+| Luzerner Kantonalbank| https://www.lukb.ch/de/private/finanzieren/hypotheken/festhypothek | Works |
+| Luzerner Pensionskasse| https://www.lupk.ch/de/hypotheken-vorbezug | Works |
+| Migros Bank| https://www.migrosbank.ch/de/privatpersonen/hypotheken-kredite/hypotheken/festhypothek.html | Works |
+| Nidwaldern Kantonalbank| No interest rates online - only on request | Does *not* work |
+| Obwaldner Kantonalbank| No interest rates online - only on request | Does *not* work |
+| Pensionskasse Post| https://hypotheca.pkpost.ch/?lang=de | Works |
+| Pensionskasse SBB| https://www.pksbb.ch/de/hypotheken/zinssaetze | Works |
+| PostFinance| https://www.postfinance.ch/de/privat/produkte/hypotheken/zinssaetze-hypotheken.html?gad=1&gclid=CjwKCAjw3dCnBhBCEiwAVvLcu6ErynKha19h1Z-fJCizvungMx886DqeRR-rDyTyElKdvkY9LgM-MxoC-x4QAvD_BwE&gclsrc=aw.ds | Works |
+| Raiffeisen Luzern| https://www.raiffeisen.ch/luzern/de/privatkunden/hypotheken/hypothekenzinsen.html#bankselector-focus | Does *not* work |
+| Swiss Life| https://www.swisslife.ch/de/private/produkte/hypotheken/aktuelle-zinssaetze.html | Works |
+| UBS | No interest rates online - only on request  | Does *not* work |
+| Urner Kantonalbank| No interest rates online - only on request  | Does *not* work |
+| Zuger Kantonalbank| https://www.zugerkb.ch/private/hypotheken/hypothekarzinsen | Works |
+| Zürcher Kantonalbank| https://www.zkb.ch/de/private/hypotheken-immobilien/hypotheken-zinsen/aktuelle-hypothekarzinsen.html | Works |
+| Zurich Versicherung| https://www.zurich.ch/de/privat/wohnen-events/wohneigentum/hypothek | Works |
 
 
 
