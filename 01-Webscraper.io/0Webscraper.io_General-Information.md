@@ -17,9 +17,42 @@ Compared to extraction via an API, webscraping provides less structured data due
   
 <br><br><br><br>
 
+In the list below, some Swiss financial institutions are mentioned for which an attempt was made to download the interest rates using Webscraper.io. 
+
+| Financial institution  | Website                | Webscraper.io         |
+|--------------------    |---------------------   |-------------------    |
+| AXA Schweiz | https://www.axa.ch/de/privatkunden/angebote/wohnen-eigentum/hypotheken.html | Webscraper.io does *not* work|
+| Bank Cler | https://www.cler.ch/de/hypotheken-und-kredite/hypotheken/hypothekarzinsen| Webscraper.io does *not* work|
+| Bank WIR| https://www.wir.ch/de/produkte-loesungen/geschaeftskunden/finanzieren/hypotheken/festhypotheken | Webscraper.io works |
+| Credit Suisse| https://www.credit-suisse.com/ch/de/privatkunden/hypothek/services/hypothekarzinsen.html | Webscraper.io works |
+| Generali Versicherung| https://www.generali.ch/privatkunden/wohnen-bauen/hypotheken | Webscraper.io works |
+| Luzerner Kantonalbank| https://www.lukb.ch/de/private/finanzieren/hypotheken/festhypothek | Webscraper.io works |
+| Luzerner Pensionskasse| https://www.lupk.ch/de/hypotheken-vorbezug | Webscraper.io works |
+| Migros Bank| https://www.migrosbank.ch/de/privatpersonen/hypotheken-kredite/hypotheken/festhypothek.html | Webscraper.io works |
+| Nidwaldern Kantonalbank| No interest rates online - only on request | Webscraper.io does *not* work |
+| Obwaldner Kantonalbank| No interest rates online - only on request | Webscraper.io does *not* work |
+| Pensionskasse Post| https://hypotheca.pkpost.ch/?lang=de | Webscraper.io works |
+| Pensionskasse SBB| https://www.pksbb.ch/de/hypotheken/zinssaetze | Webscraper.io works |
+| PostFinance| https://www.postfinance.ch/de/privat/produkte/hypotheken/zinssaetze-hypotheken.html?gad=1&gclid=CjwKCAjw3dCnBhBCEiwAVvLcu6ErynKha19h1Z-fJCizvungMx886DqeRR-rDyTyElKdvkY9LgM-MxoC-x4QAvD_BwE&gclsrc=aw.ds | Webscraper.io works |
+| Raiffeisen Luzern| https://www.raiffeisen.ch/luzern/de/privatkunden/hypotheken/hypothekenzinsen.html#bankselector-focus | Webscraper.io does *not* work |
+| Swiss Life| https://www.swisslife.ch/de/private/produkte/hypotheken/aktuelle-zinssaetze.html | Webscraper.io works |
+
+| Swiss Life| https://www.swisslife.ch/de/private/produkte/hypotheken/aktuelle-zinssaetze.html | Webscraper.io works |
+| Swiss Life| https://www.swisslife.ch/de/private/produkte/hypotheken/aktuelle-zinssaetze.html | Webscraper.io works |
+| Swiss Life| https://www.swisslife.ch/de/private/produkte/hypotheken/aktuelle-zinssaetze.html | Webscraper.io works |
+| Swiss Life| https://www.swisslife.ch/de/private/produkte/hypotheken/aktuelle-zinssaetze.html | Webscraper.io works |
+
+
+
+
+<br><br>
+For a few websites, this did not work as they use a webscraper blocker. It is possible that using other webscraping tools, data from these websites can still be downloaded.
+
+<br><br><br><br>
+
 ## Result
 <br>
-The final result is a list of interest rates over various terms from different financial institutions. These are updated daily.
+The final result is a list of interest rates over various terms from different financial institutions. The file is updated daily.
 <br><br>
 
 ![Alt Image Text](./Images/WS_Result.png "Result")
