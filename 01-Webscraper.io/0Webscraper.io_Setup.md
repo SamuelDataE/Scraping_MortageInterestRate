@@ -58,17 +58,18 @@ In order to use the relevant functions in the cloud application, you need a paid
 <br><br><br><br>
 
 We have now installed webscraper both locally and in the cloud. 
-<br>
+<br><br>
 Now we need to download the content from the relevant websites. In this repository, this is shown by the following websites.
-<br>
+<br><br>
 - [Luzerner Kantonalbank](1Webscraper.io_LuzernerKantonalbank.md)
 - [Credit Suisse](1Webscraper.io_CreditSuisse.md)
 - [Generali Versicherung](1Webscraper.io_Generali.md)
 <br>
 
 Click on the corresponding websites and do the setup. You can also extend your data collection to other websites. The process is always the same. Depending on how the data is prepared on the website, there are slight adjustments. 
-<br>
-
+<br><br>
+A list of financial institutions for which Webscraper.io works can be found under [Webscraper.io_Setup](0Webscraper.io_Setup.md).
+<br><br>
 When you have done the setup according to the descriptions for the configuration of the respective websites, you can continue with the process below.
 
 
