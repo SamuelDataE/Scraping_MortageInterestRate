@@ -181,7 +181,7 @@ We now add the a colum with the name of the financial institution.
 
 A new column has now been created. 
 1. Go to **Add parser**
-2.**Regex match**
+2. **Regex match**
 <br><br>
 ![Alt Image Text](./Images/WS_Setup28.png "Setupxx")
 
@@ -273,4 +273,8 @@ Now that we have structured and formatted the data, we need to set up a job to a
 
 <br><br><br><br>
 
-We have now set up the Luzerner Kantonalbank. How the data can be further processed in Google Sheets is described in the [Webscraper.io_Setup](0Webscraper.io_Setup.md).
+We have now made the settings so that the Luzerner Kantonalbank interest rates are automatically extracted on a daily basis. 
+
+### Google Sheets
+<br><br>
+Now, before we continue in Google Sheets, make sure that you have already done the general setup regarding Google Sheets. To do this, go back to [Webscraper.io_Setup](0Webscraper.io_Setup.md).
