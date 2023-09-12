@@ -270,4 +270,4 @@ Now that we have structured and formatted the data, we need to set up a job to a
 
 <br><br><br><br>
 
-We have now set up the Luzerner Kantonalbank. How the data can be further processed in Google Sheets is described in the [Webscraper.io_Setup(0Webscraper.io_Setup.md).
+We have now set up the Luzerner Kantonalbank. How the data can be further processed in Google Sheets is described in the [Webscraper.io_Setup](0Webscraper.io_Setup.md).
