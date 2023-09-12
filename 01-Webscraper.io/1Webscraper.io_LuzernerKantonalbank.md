@@ -170,3 +170,104 @@ In addition, we have to edit the data so that they look the same in all sitemaps
 
 <br><br><br><br>
 
+We now add the a colum with the name of the financial institution. 
+1. Name the column ```Financial_Institution```.
+2. Select as source column **web-scraper-start-url**.
+3. **Save**.
+<br><br>
+![Alt Image Text](./Images/WS_Setup27.png "Setupxx")
+
+<br><br><br><br>
+
+A new column has now been created. 
+1. Go to **Add parser**
+2.**Regex match**
+<br><br>
+![Alt Image Text](./Images/WS_Setup28.png "Setupxx")
+
+<br><br><br><br>
+
+Currently, the input is the URL where we download the data. We would like to get the name of the financial institution from this URL. For this we use a code in Regex. This shortens the URL accordingly.
+<br>
+1. Use the code ```www\.(.*?)\.ch```
+2. Select **Group 1**
+3. As *Output* you should now get the name **lukb**
+4. **Save** 
+<br><br>
+![Alt Image Text](./Images/WS_Setup29.png "Setupxx")
+
+<br><br><br><br>
+
+Now we add a second column. Click on **Add time scraped**. You see now the added column **time-scraped**. Click now on the field **Convert UNIX timestamp**.
+<br><br>
+![Alt Image Text](./Images/WS_Setup30.png "Setupxx")
+
+<br><br><br><br>
+
+1. Select the prevered time **Format**.
+2. Check the *Output*.
+3. **Save**
+<br><br>
+![Alt Image Text](./Images/WS_Setup31.png "Setupxx")
+
+<br><br><br><br>
+
+In the list below you will now see the updated list with the two added columns. We will now edit the two columns **Duration** and **InterestRate** so that we finally have the same data format for all files.
+<br>
+1. Now go to the **Duration** column first.
+2. Click on **Add parser**.
+3. Select **Regex match**.
+<br><br>
+![Alt Image Text](./Images/WS_Setup32.png "Setupxx")
+
+<br><br><br><br>
+
+We now use a code so that only the figure remains - words are excluded.
+1. Enter the following code at *Regex* ```(\d+)```
+2. Check *Output*
+3. **Save**
+<br><br>
+![Alt Image Text](./Images/WS_Setup33.png "Setupxx")
+
+<br><br><br><br>
+
+Now we adjust the column **InterestRate**.
+1. As before, select the **InterestRate** column - click on **Add parser**.
+2. Select **Regex match**.
+3. Enter the following code at *Regex* ```(\d+).(\d+)``` - This code includes decimal places in a number.
+4. Check *Output*
+5. **Save**
+<br><br>
+![Alt Image Text](./Images/WS_Setup34.png "Setupxx")
+
+<br><br><br><br>
+
+Your list should now look like the image below. The following columns should be included.
+<br>
+- Web-scraper-order
+- Web-scraper-start-url
+- Duration *(only number may be included)*
+- InterestRate *(only a number is allowed)*
+- Financial Instituition
+- time-scraped *(always the same format must be used)*
+<br>
+Regardless of the financial institution, all lists should be set up and formatted in exactly the same way. Otherwise there will be a mess when the data is merged. 
+<br><br>
+![Alt Image Text](./Images/WS_Setup35.png "Setupxx")
+
+<br><br><br><br>
+
+Now that we have structured and formatted the data, we need to set up a job to automatically download the data on a daily basis. To do this, go to **Schedule** in the corresponding sitemap.
+<br>
+1. Activate the scheduler
+2. Set the *Scheduler Type* to **Daily**.
+3. Under *Run a job on*, select the days on which the interest is to be updated. In this example, all weekdays are selected
+4. Specify the time when the job is to be run.
+5. The remaining settings can be left as they are.
+6. **Save**.
+<br><br>
+![Alt Image Text](./Images/WS_Setup36.png "Setupxx")
+
+<br><br><br><br>
+
+We have now set up the Luzerner Kantonalbank. How the data can be further processed in Google Sheets is described in the [Webscraper.io_Setup(0Webscraper.io_Setup.md).
