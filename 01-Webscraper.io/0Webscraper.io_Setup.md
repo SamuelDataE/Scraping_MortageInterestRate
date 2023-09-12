@@ -68,7 +68,7 @@ Now we need to download the content from the relevant websites. In this reposito
 
 Click on the corresponding websites and do the setup. You can also extend your data collection to other websites. The process is always the same. Depending on how the data is prepared on the website, there are slight adjustments. 
 <br><br>
-A list of financial institutions for which Webscraper.io works can be found under [Webscraper.io_Setup](0Webscraper.io_General-Information.md).
+A list of financial institutions for which Webscraper.io works can be found under [Webscraper.io_General-Information](0Webscraper.io_General-Information.md).
 <br><br>
 When you have done the setup according to the descriptions for the configuration of the respective websites, you can continue with the process below.
 
