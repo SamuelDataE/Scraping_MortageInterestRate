@@ -45,8 +45,10 @@ Now we need to download the content from the relevant websites. In this reposito
 - [Credit Suisse](1Webscraper.io_CreditSuisse.md)
 - [Generali Versicherung](1Webscraper.io_Generali.md)
 <br>
+
 Click on the corresponding websites and do the setup. You can also extend your data collection to other websites. The process is always the same. Depending on how the data is prepared on the website, there are slight adjustments. 
 <br>
+
 When you have done the setup according to the descriptions for the configuration of the respective websites, you can continue with the process below.
 
 
