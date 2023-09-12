@@ -250,7 +250,7 @@ Your list should now look like the image below. The following columns should be 
 - Financial Instituition
 - time-scraped *(always the same format must be used)*
 <br>
-Regardless of the financial institution, all lists should be set up and formatted in exactly the same way. Otherwise there will be a mess when the data is merged. Unless you can bring the list into this format in Webscraper.io. The data must be further formatted in Google Sheet. See the example of [Credit Suisse](1Webscraper.io_CreditSuisse.md)
+Regardless of the financial institution, all lists should be set up and formatted in exactly the same way. Otherwise there will be a mess when the data is merged. Unless you can bring the list into this format in Webscraper.io. The data must be further formatted in Google Sheet. See the example of [Credit Suisse](1Webscraper.io_CreditSuisse.md).
 <br><br>
 
 ![Alt Image Text](./Images/WS_Setup35.png "Setupxx")
