@@ -15,7 +15,7 @@ Compared to extraction via an API, webscraping provides less structured data due
 
 ![Alt Image Text](./Images/WS_Dataflow.png "Dataflow")
   
-<br><br><br><br>
+<br><br>
 
 In the list below, some Swiss financial institutions are mentioned for which an attempt was made to download the interest rates using Webscraper.io. 
 
@@ -36,11 +36,11 @@ In the list below, some Swiss financial institutions are mentioned for which an 
 | PostFinance| https://www.postfinance.ch/de/privat/produkte/hypotheken/zinssaetze-hypotheken.html?gad=1&gclid=CjwKCAjw3dCnBhBCEiwAVvLcu6ErynKha19h1Z-fJCizvungMx886DqeRR-rDyTyElKdvkY9LgM-MxoC-x4QAvD_BwE&gclsrc=aw.ds | Webscraper.io works |
 | Raiffeisen Luzern| https://www.raiffeisen.ch/luzern/de/privatkunden/hypotheken/hypothekenzinsen.html#bankselector-focus | Webscraper.io does *not* work |
 | Swiss Life| https://www.swisslife.ch/de/private/produkte/hypotheken/aktuelle-zinssaetze.html | Webscraper.io works |
-
-| Swiss Life| https://www.swisslife.ch/de/private/produkte/hypotheken/aktuelle-zinssaetze.html | Webscraper.io works |
-| Swiss Life| https://www.swisslife.ch/de/private/produkte/hypotheken/aktuelle-zinssaetze.html | Webscraper.io works |
-| Swiss Life| https://www.swisslife.ch/de/private/produkte/hypotheken/aktuelle-zinssaetze.html | Webscraper.io works |
-| Swiss Life| https://www.swisslife.ch/de/private/produkte/hypotheken/aktuelle-zinssaetze.html | Webscraper.io works |
+| UBS | No interest rates online - only on request  | Webscraper.io does *not* work |
+| Urner Kantonalbank| No interest rates online - only on request  | Webscraper.io does *not* work |
+| Zuger Kantonalbank| https://www.zugerkb.ch/private/hypotheken/hypothekarzinsen | Webscraper.io works |
+| Zürcher Kantonalbank| https://www.zkb.ch/de/private/hypotheken-immobilien/hypotheken-zinsen/aktuelle-hypothekarzinsen.html | Webscraper.io works |
+| Zurich Versicherung| https://www.zurich.ch/de/privat/wohnen-events/wohneigentum/hypothek | Webscraper.io works |
 
 
 
