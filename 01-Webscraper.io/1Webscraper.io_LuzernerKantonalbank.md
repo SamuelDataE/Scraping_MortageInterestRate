@@ -253,6 +253,7 @@ Your list should now look like the image below. The following columns should be 
 <br>
 Regardless of the financial institution, all lists should be set up and formatted in exactly the same way. Otherwise there will be a mess when the data is merged. 
 <br><br>
+
 ![Alt Image Text](./Images/WS_Setup35.png "Setupxx")
 
 <br><br><br><br>

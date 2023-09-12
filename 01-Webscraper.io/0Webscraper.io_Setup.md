@@ -38,9 +38,21 @@ Create a new web scraper account. The login process should be self-explanatory.
 
 <br><br><br><br>
 
+Webscraper.io - Cloud has several functionalities. The most important ones are described here:
+<br>
+- Import Sitemaps (create new sitemaps).
+- My Sitemaps ( shows all created sitemaps)
+- Jobs ( shows all files created by scraping)
+- Data Export (this function loads the data into Google Sheets)
+- Subscription Manager (needed to request the appropriate subscription)
+<br><br>
+![Alt Image Text](./Images/WS_Setup204.png "Setup204")
+
+<br><br><br><br>
+
 In order to use the relevant functions in the cloud application, you need a paid account. Go to **Subscription Manager** and create a **Project account**. This costs USD 50 per month. You can find out more about pricing [here](0Webscraper.io_General-Information.md).
 <br><br>
-![Alt Image Text](./Images/WS_Setup202.png "Setup202")
+![Alt Image Text](./Images/WS_Setup203.png "Setup203")
 
 
 <br><br><br><br>
