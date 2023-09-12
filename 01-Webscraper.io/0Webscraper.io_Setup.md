@@ -41,7 +41,7 @@ Create a new web scraper account. The login process should be self-explanatory.
 Webscraper.io - Cloud has several functionalities. The most important ones are described here:
 <br>
 - Import Sitemaps (create new sitemaps).
-- My Sitemaps ( shows all created sitemaps)
+- My Sitemap ( shows all created sitemaps)
 - Jobs ( shows all files created by scraping)
 - Data Export (this function loads the data into Google Sheets)
 - Subscription Manager (needed to request the appropriate subscription)
