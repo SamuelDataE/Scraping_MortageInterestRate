@@ -22,6 +22,34 @@ You have now installed the tool. Now take a look at the [tutorials](https://www.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup5.png "Setup5")
 
+Once you have done this, you have completed the local setup. 
+<br><br><br><br>
+### Webscraper.io - Cloud
+<br><br>
+In order to retrieve the data on a daily basis, the cloud version is required. To do this, go back to the [Webscraper.io](https://webscraper.io/) homepage. Click this time on **Cloud Login**.
+<br><br>
+![Alt Image Text](./Images/WS_Setup201.png "Setup201")
+
+<br><br><br><br>
+
+Create a new web scraper account. The login process should be self-explanatory.
+<br><br>
+![Alt Image Text](./Images/WS_Setup202.png "Setup202")
+
+<br><br>
+We have now installed webscraper both locally and in the cloud. 
+<br>
+Now we need to download the content from the relevant websites. In this repository, this is shown by the following websites.
+<br>
+- Luzerner Kantonalbank
+- Credit Suisse
+-  [Generali Versicherung](Airtable_Setup.md)
+<br>
+Click on the corresponding websites and do the setup. You can also extend your data collection to other websites. The process is always the same. Depending on how the data is prepared on the website, there are slight adjustments. 
+<br>
+When you have done the setup according to the descriptions for the configuration of the respective websites, you can continue with the process below.
+
+
 
 ### Luzerner Kantonalbank
 <br><br>
