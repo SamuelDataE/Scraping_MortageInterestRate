@@ -46,7 +46,7 @@ In the list below, some Swiss financial institutions are mentioned for which an 
 
 
 <br><br>
-For a few websites, this did not work as they use a webscraper blocker. It is possible that using other webscraping tools, data from these websites can still be downloaded.
+For a few websites, scraping with Webscraper.io did not work as they use a webscraper blocker. It is possible that using other webscraping tools, data from these websites can still be downloaded.
 
 <br><br><br><br>
 
