@@ -111,9 +111,33 @@ Now go back to **Sitemaps** where you will see the created function for download
 
 
 ### Webscraper.io - Cloud
-We have now made the setup in the local webscraper.io application. In order for this to run automatically on a daily basis, we need to do the installation in webscraper.io Cloud. 
+We have now made the setup in the local webscraper.io application. In order for this to run automatically on a daily basis, we need to do the installation in webscraper.io cloud. 
+<br>
+We now copy the settings from the sitemap we made. To do this, click on the sitemap **0LuzernerKantonalbank**.
 <br><br>
-![Alt Image Text](./Images/WS_Setup19.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup20.png "Setupxx")
+
+<br><br><br><br>
+
+Choose now the tab **Sitemap 0Luzerner Kantonalbank** and select **Export Sitemap**.
+<br><br>
+![Alt Image Text](./Images/WS_Setup21.png "Setupxx")
+
+<br><br><br><br>
+
+Copy now the shown code.
+<br><br>
+![Alt Image Text](./Images/WS_Setup22.png "Setupxx")
+
+<br><br><br><br>
+
+Now open your [Cloud account](https://cloud.webscraper.io) and go to **Import Sitemap**.
+1. Paste the code you copied in the previous step.
+2. Name the Sitemap in cloud - in this case ```0LuzernerKantonalbank```
+3. **Import**
+<br><br>
+![Alt Image Text](./Images/WS_Setup23.png "Setupxx")
+
 
 
 
