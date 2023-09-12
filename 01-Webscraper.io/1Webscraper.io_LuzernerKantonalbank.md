@@ -1,4 +1,4 @@
-### Luzerner Kantonalbank
+## Luzerner Kantonalbank
 <br><br>
 This documentation explains how you can retrieve the interest rates on the Luzerner Kantonalbank website. Go to this [website](https://www.lukb.ch/de/private/finanzieren/hypotheken/festhypothek). 
 1. Scroll down where the interest rates are shown.
@@ -100,3 +100,20 @@ A window now opens and closes itself again after a few seconds. After that click
 You will now see the data that has been downloaded. Make sure that they are complete and that each column contains data.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup18.png "Setup18")
+
+<br><br><br><br>
+
+Now go back to **Sitemaps** where you will see the created function for downloading the Luzerner Kantonalbank data.
+<br><br>
+![Alt Image Text](./Images/WS_Setup19.png "Setupxx")
+
+<br><br><br><br>
+
+
+### Webscraper.io - Cloud
+We have now made the setup in the local webscraper.io application. In order for this to run automatically on a daily basis, we need to do the installation in webscraper.io Cloud. 
+<br><br>
+![Alt Image Text](./Images/WS_Setup19.png "Setupxx")
+
+
+
