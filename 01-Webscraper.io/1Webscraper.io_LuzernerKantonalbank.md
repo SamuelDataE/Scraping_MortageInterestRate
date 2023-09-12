@@ -112,7 +112,7 @@ Now go back to **Sitemaps** where you will see the created function for download
 ### Webscraper.io - Cloud
 We have now made the setup in the local webscraper.io application. In order for this to run automatically on a daily basis, we need to do the installation in webscraper.io cloud. 
 <br>
-We now copy the settings from the sitemap we made. To do this, click on the sitemap **0LuzernerKantonalbank**.
+We now copy the settings from the sitemap we made. To do this, click on the sitemap **0LuzernerKantonalbank** in your Chrome browser.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup20.png "Setupxx")
 
@@ -124,7 +124,7 @@ Choose now the tab **Sitemap 0Luzerner Kantonalbank** and select **Export Sitema
 
 <br><br><br><br>
 
-Copy now the shown code.
+Copy now the displayed code.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup22.png "Setupxx")
 
@@ -151,7 +151,8 @@ You have now created the sitemap in your cloud environment.
 Now check whether all content has been loaded here. If something is missing - for example, the column with the interest rates - you have to run the setup again locally in your Chrome browser. You can then export the new code again and insert it in your sitemap under **Edit**. 
 <br><br>
 ![Alt Image Text](./Images/WS_Setup25.png "Setupxx")
-
+<br><br>
+Please be aware that only the first 10 lines are shown in the data preview.
 <br><br><br><br>
 
 Every time a scrape is executed, this file is created. In order to be able to merge the data from all financial institutions into one file, we need to add the following columns so that we can distinguish the data:
@@ -203,9 +204,9 @@ Now we add a second column. Click on **Add time scraped**. You see now the added
 
 <br><br><br><br>
 
-1. Select the prevered time **Format**.
+1. Select your preferred time **Format**.
 2. Check the *Output*.
-3. **Save**
+3. **Save**.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup31.png "Setupxx")
 
