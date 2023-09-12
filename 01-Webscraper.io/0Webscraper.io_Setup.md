@@ -41,9 +41,9 @@ We have now installed webscraper both locally and in the cloud.
 <br>
 Now we need to download the content from the relevant websites. In this repository, this is shown by the following websites.
 <br>
-- Luzerner Kantonalbank
-- Credit Suisse
--  [Generali Versicherung](Airtable_Setup.md)
+- [Luzerner Kantonalbank](1Webscraper.io_LuzernerKantonalbank.md)
+- [Credit Suisse](1Webscraper.io_CreditSuisse.md)
+- [Generali Versicherung](1Webscraper.io_Generali.md)
 <br>
 Click on the corresponding websites and do the setup. You can also extend your data collection to other websites. The process is always the same. Depending on how the data is prepared on the website, there are slight adjustments. 
 <br>
