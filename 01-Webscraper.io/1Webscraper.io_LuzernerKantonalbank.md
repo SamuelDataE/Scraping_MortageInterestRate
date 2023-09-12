@@ -27,7 +27,7 @@ This documentation explains how you can retrieve the interest rates on the Luzer
 1. **Add new selector**
 2. Name the selector - in this exampled ```InterestRate```
 3. Select as a Type **Table**
-4. Click in the line Selector on **Select**
+4. Click in the line *Selector* on **Select**
 5. Now you can mark the whole table with the interest rates.
 6. **Done selecting**
 <br><br>
@@ -83,7 +83,7 @@ You are now asked about the request interval and page load delay.
 - Request interval: Determines the amount of time the scraper waits between sending requests to web pages.
 - Page load delay: Specifies the duration the scraper waits for a page to fully load before extracting the data.
 <br>
-It's done to mimic human browsing behavior, avoid overloading the server, and reduce the chances of getting banned or blocked due to rapid or frequent requests. For the time being, we leave the default settings at 2000 miliseconds. Therefore, just click **Start scraping**.
+It's done to mimic human browsing behavior, avoid overloading the server, and reduce the chances of getting banned or blocked due to rapid or frequent requests. For the time being, we leave the default settings at 2000 miliseconds. Therefore, just click **Start scraping**. If we then see that scraping is not working, we could always increase the time here.
 <br><br>
 
 ![Alt Image Text](./Images/WS_Setup16.png "Setup16")
@@ -112,7 +112,7 @@ Now go back to **Sitemaps** where you will see the created function for download
 ### Webscraper.io - Cloud
 We have now made the setup in the local webscraper.io application. In order for this to run automatically on a daily basis, we need to do the installation in webscraper.io cloud. 
 <br>
-We now copy the settings from the sitemap we made. To do this, click on the sitemap **0LuzernerKantonalbank**.
+We now copy the settings from the sitemap we made. To do this, click on the sitemap **0LuzernerKantonalbank** in your Chrome browser.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup20.png "Setupxx")
 
@@ -124,7 +124,7 @@ Choose now the tab **Sitemap 0Luzerner Kantonalbank** and select **Export Sitema
 
 <br><br><br><br>
 
-Copy now the shown code.
+Copy now the displayed code.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup22.png "Setupxx")
 
@@ -151,7 +151,8 @@ You have now created the sitemap in your cloud environment.
 Now check whether all content has been loaded here. If something is missing - for example, the column with the interest rates - you have to run the setup again locally in your Chrome browser. You can then export the new code again and insert it in your sitemap under **Edit**. 
 <br><br>
 ![Alt Image Text](./Images/WS_Setup25.png "Setupxx")
-
+<br><br>
+Please be aware that only the first 10 lines are shown in the data preview.
 <br><br><br><br>
 
 Every time a scrape is executed, this file is created. In order to be able to merge the data from all financial institutions into one file, we need to add the following columns so that we can distinguish the data:
@@ -180,7 +181,7 @@ We now add the a colum with the name of the financial institution.
 
 A new column has now been created. 
 1. Go to **Add parser**
-2.**Regex match**
+2. **Regex match**
 <br><br>
 ![Alt Image Text](./Images/WS_Setup28.png "Setupxx")
 
@@ -203,9 +204,9 @@ Now we add a second column. Click on **Add time scraped**. You see now the added
 
 <br><br><br><br>
 
-1. Select the prevered time **Format**.
+1. Select your preferred time **Format**.
 2. Check the *Output*.
-3. **Save**
+3. **Save**.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup31.png "Setupxx")
 
@@ -250,7 +251,9 @@ Your list should now look like the image below. The following columns should be 
 - Financial Instituition
 - time-scraped *(always the same format must be used)*
 <br>
-Regardless of the financial institution, all lists should be set up and formatted in exactly the same way. Otherwise there will be a mess when the data is merged. Unless you can bring the list into this format in Webscraper.io. The data must be further formatted in Google Sheet. See the example of [Credit Suisse](1Webscraper.io_CreditSuisse.md)
+Regardless of the financial institution, all lists should be set up and formatted in exactly the same way. Otherwise there will be a mess when the data is merged. 
+
+Unless you can bring the list into this format in Webscraper.io. The data must be further formatted in Google Sheet. See the example of [Credit Suisse](1Webscraper.io_CreditSuisse.md).
 <br><br>
 
 ![Alt Image Text](./Images/WS_Setup35.png "Setupxx")
@@ -270,4 +273,8 @@ Now that we have structured and formatted the data, we need to set up a job to a
 
 <br><br><br><br>
 
-We have now set up the Luzerner Kantonalbank. How the data can be further processed in Google Sheets is described in the [Webscraper.io_Setup](0Webscraper.io_Setup.md).
+We have now made the settings so that the Luzerner Kantonalbank interest rates are automatically extracted on a daily basis. 
+
+### Google Sheets
+<br><br>
+Now, before we continue in Google Sheets, make sure that you have already done the general setup regarding Google Sheets. To do this, go back to [Webscraper.io_Setup](0Webscraper.io_Setup.md).
