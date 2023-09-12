@@ -36,7 +36,15 @@ Create a new web scraper account. The login process should be self-explanatory.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup202.png "Setup202")
 
+<br><br><br><br>
+
+In order to use the relevant functions in the cloud application, you need a paid account. Go to **Subscription Manager** and create a **Project account**. This costs USD 50 per month. You can find out more about pricing [here](0Webscraper.io_General-Information.md).
 <br><br>
+![Alt Image Text](./Images/WS_Setup202.png "Setup202")
+
+
+<br><br><br><br>
+
 We have now installed webscraper both locally and in the cloud. 
 <br>
 Now we need to download the content from the relevant websites. In this repository, this is shown by the following websites.
