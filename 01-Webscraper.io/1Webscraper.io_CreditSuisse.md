@@ -1,279 +1,279 @@
-# Setup
-
+## Credit Suisse
 <br><br>
+UBS unfortunately does not make interest rates available online. Reference is made to the fact that these should be requested. For this reason, we have requested the interest rates of Credit Suisse here. They provide these online. 
 
-### Webscraper.io
+<br><br><br><br>
+
+This documentation explains how you can retrieve the interest rates on the Credit Suisse website. Go to this [website](https://www.credit-suisse.com/ch/de/privatkunden/hypothek/services/hypothekarzinsen.html). 
+1. Scroll down where the interest rates are shown.
+2. Left click and select "inspect".
 <br><br>
-It is recommended to use the Google Chrome browsen. This browser has a wide user base, is regularly updated, and tends to be compatible with a variety of web technologies, which makes it a suitable choice for web scraping tools like Webscraper.io. 
+![Alt Image Text](./Images/WS_Setup306.png "Setup6")
+
+<br><br><br><br>
+
+1. Select the section **Web Scraper**.
+2. **Create new sitemap**
+3. **Create Sitemap**
+<br><br>
+![Alt Image Text](./Images/WS_Setup307.png "Setup7")
+
+<br><br><br><br>
+
+1. Name the Sitemap - in this example its called ```0CreditSuisse```.
+2. Enter the website ```https://www.credit-suisse.com/ch/en/private-clients/mortgages/services/mortgage-interest-rate.html```.
+3. **Create Sitemap**
+<br><br>
+![Alt Image Text](./Images/WS_Setup308.png "Setup8")
+
+<br><br><br><br>
+
+Since the data is distributed in several table columns (Duration, Interest, Duration, Interest), we cannot simply download the table here. We have to proceed as follows:
+1. **Add new selector**
+2. Name the selector - in this exampled ```InterestRate```
+3. Select as a Type **Element**
+4. Click in the line Selector on **Select**
+5. Now you can mark the whole table with the interest rates (excluding the header). Sometimes the shift key has to be pressed to select all lines.
+6. **Done selecting**
+7. **Save selector**
+<br><br>
+![Alt Image Text](./Images/WS_Setup309.png "Setup9")
+
+<br><br><br><br>
+
+1. Now you have to select the header. Click on **Select**.
+2. Since there is now header in the table - select the first line.
+3. **Done selecting**
+<br><br>
+![Alt Image Text](./Images/WS_Setup10.png "Setup10")
+
+<br><br><br><br>
+
+1. With the data rows selector you now select the data. Click on **Select**.
+2. Mark the whole table - incuding the first line (header line).
+3. **Done selecting**
+4. To review our setup click now on **Data preview**.
+<br><br>
+![Alt Image Text](./Images/WS_Setup12.png "Setup12")
+
+<br><br><br><br>
+
+The preview should now include the years and interest rates as in the figure below. Please check if the first line of the table is entered twice - once as a header and once as a data row. If this is not the case, please reselect the table, header and data again till it all data is included correctly. 
 <br>
-Go no to the website of [Webscraper.io](https://webscraper.io/) and click on **Install**.
+If everything looks okay, you can close the preview view again. 
 <br><br>
-![Alt Image Text](./Images/WS_Setup1.png "Setup1")
+![Alt Image Text](./Images/WS_Setup13.png "Setup13")
 
 <br><br><br><br>
 
-**Add to Chrome**.
+1. Tick the box **Multiple**
+2. Name the columns ```Duration``` and ```InterestRate```
+3. Tick both boxes **Include into result**
+4. Go on **Data preview** again and check, if now the header has changed according your adjustments.
+5. **Safe selector**
 <br><br>
-![Alt Image Text](./Images/WS_Setup2.png "Setup2")
+![Alt Image Text](./Images/WS_Setup14.png "Setup14")
 
 <br><br><br><br>
 
-You have now installed the tool. Now take a look at the [tutorials](https://www.webscraper.io/web-scraper-first-time-install) on how to do the setup in Google Chrome.
+Now we execute the webscraping.
+1. Click on **Sitemap** ***0LuzernerKantonalbank***
+2. Select **Scrape**
 <br><br>
-![Alt Image Text](./Images/WS_Setup5.png "Setup5")
-
-
-
-
-
-When a new base is opened, Airtable creates an Excel-like interface with a table. You can now give your base a name. In this example I have given the name **StockMarketData**. In the first column of the table, the symbols of the respective shares of which you want to build a history can be entered. How to determine the symbols of the respective shares is described under [Alpha-Vantage_Stock Selection](../00-Alpha_Vantage/Alpha-Vantage_Stock-Selection.md).
-<br><br>
-![Alt Image Text](./Images/Airtable_Setup1.png "Setup1")
+![Alt Image Text](./Images/WS_Setup15.png "Setup15")
 
 <br><br><br><br>
 
-In order to download the data from Alpha Vantage, the add-on application Data Fetcher is required in Airtable. This tool can be added via **extensions**.
+You are now asked about the request interval and page load delay. 
+
+- Request interval: Determines the amount of time the scraper waits between sending requests to web pages.
+- Page load delay: Specifies the duration the scraper waits for a page to fully load before extracting the data.
+<br>
+It's done to mimic human browsing behavior, avoid overloading the server, and reduce the chances of getting banned or blocked due to rapid or frequent requests. For the time being, we leave the default settings at 2000 miliseconds. Therefore, just click **Start scraping**.
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup2.png "Setup2")
+
+![Alt Image Text](./Images/WS_Setup16.png "Setup16")
 
 <br><br><br><br>
 
-Search for the tool **Data Fetcher** and add the application.
+A window now opens and closes itself again after a few seconds. After that click on **refresh**.
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup3.png "Setup3")
+![Alt Image Text](./Images/WS_Setup17.png "Setup17")
 
 <br><br><br><br>
 
-Register with the Data Fetcher application. There is a basic version which is free of charge. 
+You will now see the data that has been downloaded. Make sure that they are complete and that each column contains data.
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup4.png "Setup4")
+![Alt Image Text](./Images/WS_Setup18.png "Setup18")
 
 <br><br><br><br>
 
-Start your first request with Data Fetcher.
+Now go back to **Sitemaps** where you will see the created function for downloading the Luzerner Kantonalbank data.
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup5.png "Setup5")
+![Alt Image Text](./Images/WS_Setup19.png "Setupxx")
 
 <br><br><br><br>
 
-1. Name the process
-2. Select **Custom**
-3. Enter the following Link
-   ```
-   https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=EMMI&apikey=demo
-   ```
-4. Replace **demo** with your personal API key. How to get an API Key is explained [here](../00-Alpha_Vantage/Alpha-Vantage_General-Information.md).
-5. Click on the **+** sign next to IBM. 
+
+### Webscraper.io - Cloud
+We have now made the setup in the local webscraper.io application. In order for this to run automatically on a daily basis, we need to do the installation in webscraper.io cloud. 
+<br>
+We now copy the settings from the sitemap we made. To do this, click on the sitemap **0LuzernerKantonalbank**.
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup6.png "Setup6")
+![Alt Image Text](./Images/WS_Setup20.png "Setupxx")
 
 <br><br><br><br>
 
-1. Select the table where you have entered your stock symbols. If you didn't change the name manually the table is called **Table 1**.
-2. Select the column/field name where you have entered the symbols of your shares. If you didn't change the field manually its called **Name**.
-3. Confirm selections.
+Choose now the tab **Sitemap 0Luzerner Kantonalbank** and select **Export Sitemap**.
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup7.png "Setup7")
+![Alt Image Text](./Images/WS_Setup21.png "Setupxx")
 
 <br><br><br><br>
 
-Set up the scheduled request. The data should be requested every day in the morning at 0900am. In other words, the table with the data is updated each morning.    
+Copy now the shown code.
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup8.png "Setup8")
+![Alt Image Text](./Images/WS_Setup22.png "Setupxx")
 
 <br><br><br><br>
 
-Each listed stock symbol generates one **run** daily. However, only 100 runs are included in the free basic version. It is therefore very quickly necessary to upgrade. This can be done directly at Data Fetcher under [Pricing](https://datafetcher.com/). The costs for the respective versions are as shown in the figure below. 
+Now open your [Cloud account](https://cloud.webscraper.io) and go to **Import Sitemap**.
+1. Paste the code you copied in the previous step.
+2. Name the Sitemap in cloud - in this case ```0LuzernerKantonalbank```
+3. **Import**
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup9.png "Setup9")
+![Alt Image Text](./Images/WS_Setup23.png "Setupxx")
 
 <br><br><br><br>
 
-1. After setting up the schedule request - click on **run**
-2. New Windows opens - click on **continue**
+You have now created the sitemap in your cloud environment.
+1. Click now on **Scrape** to see if it works correctly.
+2. Wait a few seconds for the file to be created - reload the page after a few seconds.
+3. Click on **Preview**.
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup10.png "Setup10")
+![Alt Image Text](./Images/WS_Setup24.png "Setupxx")
 
 <br><br><br><br>
 
-1. New Windows opens - click on **Filter all**.
-2. Select all fields/columns with the information you want to have about the shares.
-   In this example the following fields have been selected:
-   * Global Quote symbol
-   * Global Quote price
-   * Global Quote volume
-   * Global Quote latest trading day 
-3. Click on **Save & run**
+Now check whether all content has been loaded here. If something is missing - for example, the column with the interest rates - you have to run the setup again locally in your Chrome browser. You can then export the new code again and insert it in your sitemap under **Edit**. 
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup11.png "Setup11")
+![Alt Image Text](./Images/WS_Setup25.png "Setupxx")
 
 <br><br><br><br>
 
-New window opens - click on **Show output table**   
+Every time a scrape is executed, this file is created. In order to be able to merge the data from all financial institutions into one file, we need to add the following columns so that we can distinguish the data:
+
+- Date of download
+- Name of the financial institution
+
+In addition, we have to edit the data so that they look the same in all sitemaps (e.g. dot everywhere instead of comma for the separation of decimal places, etc.). We do this under **Praser**.
+1. Go to **My Sitemaps**
+2. Select **0LuzernerKantonalbank** Sitemap
+3. Go to **Parser**. Here you see the existing columns.
+4. **Add column**
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup12.png "Setup12")
+![Alt Image Text](./Images/WS_Setup26.png "Setupxx")
 
 <br><br><br><br>
 
-We are now back in the original mask of our **base**. The table has now been completed with the new columns accoring to our request. 
-1. Delete the columns that we no longer need.
-2. Add a new column **Last modified time** 
+We now add the a colum with the name of the financial institution. 
+1. Name the column ```Financial_Institution```.
+2. Select as source column **web-scraper-start-url**.
+3. **Save**.
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup13.png "Setup13")
+![Alt Image Text](./Images/WS_Setup27.png "Setupxx")
 
 <br><br><br><br>
 
-Choose an name for the new column and select **All editable fields**. Then click on **Create field**.
+A new column has now been created. 
+1. Go to **Add parser**
+2.**Regex match**
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup14.png "Setup14")
+![Alt Image Text](./Images/WS_Setup28.png "Setupxx")
 
 <br><br><br><br>
 
-The table should now look like the illustration below.
+Currently, the input is the URL where we download the data. We would like to get the name of the financial institution from this URL. For this we use a code in Regex. This shortens the URL accordingly.
+<br>
+1. Use the code ```www\.(.*?)\.ch```
+2. Select **Group 1**
+3. As *Output* you should now get the name **lukb**
+4. **Save** 
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup15.png "Setup15")
+![Alt Image Text](./Images/WS_Setup29.png "Setupxx")
 
 <br><br><br><br>
 
-Now add a new table and give it a name. Save it.
+Now we add a second column. Click on **Add time scraped**. You see now the added column **time-scraped**. Click now on the field **Convert UNIX timestamp**.
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup16.png "Setup16")
+![Alt Image Text](./Images/WS_Setup30.png "Setupxx")
 
 <br><br><br><br>
 
-Adjust the column names as they appear in Table 1. Also adjust the format in the respective columns (e.g. word or number).
+1. Select the prevered time **Format**.
+2. Check the *Output*.
+3. **Save**
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup161.png "Setup161")
+![Alt Image Text](./Images/WS_Setup31.png "Setupxx")
 
 <br><br><br><br>
 
-### Zapier
+In the list below you will now see the updated list with the two added columns. We will now edit the two columns **Duration** and **InterestRate** so that we finally have the same data format for all files.
+<br>
+1. Now go to the **Duration** column first.
+2. Click on **Add parser**.
+3. Select **Regex match**.
 <br><br>
-In order to be able to add the data from table 1 to our new table, we need the application Zapier. As soon as the data in the first table is updated, this data is added to the second table. The existing data is not overwritten but added. In this way, we build up a database of the respective shares.
-
-Register yourself at [Zapier](https://zapier.com/app/login). Enter your personal details.
-<br><br>
-![Alt Image Text](./Images/Airtable_Setup17.png "Setup17")
+![Alt Image Text](./Images/WS_Setup32.png "Setupxx")
 
 <br><br><br><br>
 
-In the registration process you will be asked for which applications you use Zapier. Select **Airtable**.
+We now use a code so that only the figure remains - words are excluded.
+1. Enter the following code at *Regex* ```(\d+)```
+2. Check *Output*
+3. **Save**
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup18.png "Setup18")
+![Alt Image Text](./Images/WS_Setup33.png "Setupxx")
 
 <br><br><br><br>
 
-After the registration is completed you will be able to **create Zap**. Click on the button.
+Now we adjust the column **InterestRate**.
+1. As before, select the **InterestRate** column - click on **Add parser**.
+2. Select **Regex match**.
+3. Enter the following code at *Regex* ```(\d+).(\d+)``` - This code includes decimal places in a number.
+4. Check *Output*
+5. **Save**
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup19.png "Setup19")
+![Alt Image Text](./Images/WS_Setup34.png "Setupxx")
 
 <br><br><br><br>
 
-A new page opens with an illustration of the process flow. Click on **1. Untitled Step**.
+Your list should now look like the image below. The following columns should be included.
+<br>
+- Web-scraper-order
+- Web-scraper-start-url
+- Duration *(only number may be included)*
+- InterestRate *(only a number is allowed)*
+- Financial Instituition
+- time-scraped *(always the same format must be used)*
+<br>
+Regardless of the financial institution, all lists should be set up and formatted in exactly the same way. Otherwise there will be a mess when the data is merged. 
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup20.png "Setup20")
+
+![Alt Image Text](./Images/WS_Setup35.png "Setupxx")
 
 <br><br><br><br>
 
-In the new window that opens, select the **Airtable** option.
+Now that we have structured and formatted the data, we need to set up a job to automatically download the data on a daily basis. To do this, go to **Schedule** in the corresponding sitemap.
+<br>
+1. Activate the scheduler
+2. Set the *Scheduler Type* to **Daily**.
+3. Under *Run a job on*, select the days on which the interest is to be updated. In this example, all weekdays are selected
+4. Specify the time when the job is to be run.
+5. The remaining settings can be left as they are.
+6. **Save**.
 <br><br>
-![Alt Image Text](./Images/Airtable_Setup21.png "Setup21")
+![Alt Image Text](./Images/WS_Setup36.png "Setupxx")
 
 <br><br><br><br>
 
-A new selection bar opens on the right-hand side. Select **New or Updated Record** as the event. **Continue**.
-<br><br>
-![Alt Image Text](./Images/Airtable_Setup22.png "Setup22")
-
-<br><br><br><br>
-
-You will now be asked to link your Airtable profile to Zapier. Link the accounts and **Grant access**. 
-<br><br>
-![Alt Image Text](./Images/Airtable_Setup23.png "Setup23")
-
-<br><br><br><br>
-
-After connection your accounts click on **contine**. 
-<br><br>
-![Alt Image Text](./Images/Airtable_Setup24.png "Setup24")
-
-<br><br><br><br>
-
-Under the section **Trigger** select the respective options - see figure below. 
-In Table 1 in Airtable, the **Last modified time** column is always updated as soon as the data is reloaded. This is the trigger when Zapier is to copy the data into the second table. This process ensures that no data is loaded twice into the second table.
-<br><br>
-![Alt Image Text](./Images/Airtable_Setup25.png "Setup25")
-
-<br><br><br><br>
-
-Test the setup. If everything is set correctly, a record should appear. **Continue with selected record**.
-<br><br>
-![Alt Image Text](./Images/Airtable_Setup26.png "Setup26")
-
-<br><br><br><br>
-
-The representation of the process flow should now look like the following figure. Click on **2. Untitled Step** to setup the second step.
-<br><br>
-![Alt Image Text](./Images/Airtable_Setup27.png "Setup27")
-
-<br><br><br><br>
-
-In the new window select **Airtable** again.
-<br><br>
-![Alt Image Text](./Images/Airtable_Setup28.png "Setup28")
-
-<br><br><br><br>
-
-The selection bar on the right-hand side opens. Select **Create Record** as event and **Continue**.
-<br><br>
-![Alt Image Text](./Images/Airtable_Setup29.png "Setup29")
-
-<br><br><br><br>
-
-Since you are already linked to your Airtable account there is now second login required. **Continue**.
-<br><br>
-![Alt Image Text](./Images/Airtable_Setup30.png "Setup30")
-
-<br><br><br><br>
-
-Under the section **Action** select your base and second table where you want to have the database. Allocate the data to the respective fields. In case the naming of your second table in Airtable is incorrect or doesn't make sense - please adjust and refresh. **Continue**.
-<br><br>
-![Alt Image Text](./Images/Airtable_Setup31.png "Setup31")
-
-<br><br><br><br>
-
-Test the setup. If everything seems okay, click on **Publish**.
-<br><br>
-![Alt Image Text](./Images/Airtable_Setup32.png "Setup32")
-
-<br><br><br><br>
-
-The process flow looks now like follow and is complete. To finalise the setup you can name the procedure in Zapier.
-<br><br>
-![Alt Image Text](./Images/Airtable_Setup33.png "Setup33")
-
-<br><br><br><br>
-
-## Result - final output
-<br><br>
-Everything is done and from now on the stock exchange data will be loaded daily in your first table and the updated data will be added daily in the second table. The second table, which represents your database, will then look like this over time: 
-<br><br>
-![Alt Image Text](./Images/Airtable_Setup36.png "Setup36")
-
-<br><br><br><br><br><br>
-
-## Managing Data Fetcher
-<br><br>
-Under Data Fetchr [profile](https://datafetcher.com/profile) you are able to see the details about your runs. Click on **Manage**.  
-<br><br>
-![Alt Image Text](./Images/Airtable_Setup34.png "Setup34")
-<br><br><br>
-Here you see how many runs you have already used this month.
-![Alt Image Text](./Images/Airtable_Setup35.png "Setup35")
-
-
-
-
-
-
-
+We have now set up the Luzerner Kantonalbank. How the data can be further processed in Google Sheets is described in the [Webscraper.io_Setup](0Webscraper.io_Setup.md).
