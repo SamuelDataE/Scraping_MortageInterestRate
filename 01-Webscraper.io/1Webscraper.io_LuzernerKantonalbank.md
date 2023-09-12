@@ -27,7 +27,7 @@ This documentation explains how you can retrieve the interest rates on the Luzer
 1. **Add new selector**
 2. Name the selector - in this exampled ```InterestRate```
 3. Select as a Type **Table**
-4. Click in the line Selector on **Select**
+4. Click in the line *Selector* on **Select**
 5. Now you can mark the whole table with the interest rates.
 6. **Done selecting**
 <br><br>
@@ -83,7 +83,7 @@ You are now asked about the request interval and page load delay.
 - Request interval: Determines the amount of time the scraper waits between sending requests to web pages.
 - Page load delay: Specifies the duration the scraper waits for a page to fully load before extracting the data.
 <br>
-It's done to mimic human browsing behavior, avoid overloading the server, and reduce the chances of getting banned or blocked due to rapid or frequent requests. For the time being, we leave the default settings at 2000 miliseconds. Therefore, just click **Start scraping**.
+It's done to mimic human browsing behavior, avoid overloading the server, and reduce the chances of getting banned or blocked due to rapid or frequent requests. For the time being, we leave the default settings at 2000 miliseconds. Therefore, just click **Start scraping**. If we then see that scraping is not working, we could always increase the time here.
 <br><br>
 
 ![Alt Image Text](./Images/WS_Setup16.png "Setup16")
