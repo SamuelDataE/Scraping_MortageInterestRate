@@ -28,7 +28,7 @@ This documentation explains how you can retrieve the interest rates on the Luzer
 2. Name the selector - in this exampled ```InterestRate```
 3. Select as a Type **Table**
 4. Click in the line Selector on **Select**
-5. Now you can mark the whole table with the interest.
+5. Now you can mark the whole table with the interest rates.
 6. **Done selecting**
 <br><br>
 ![Alt Image Text](./Images/WS_Setup9.png "Setup9")
