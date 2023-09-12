@@ -138,6 +138,35 @@ Now open your [Cloud account](https://cloud.webscraper.io) and go to **Import Si
 <br><br>
 ![Alt Image Text](./Images/WS_Setup23.png "Setupxx")
 
+<br><br><br><br>
 
+You have now created the sitemap in your cloud environment.
+1. Click now on **Scrape** to see if it works correctly.
+2. Wait a few seconds for the file to be created - reload the page after a few seconds.
+3. Click on **Preview**.
+<br><br>
+![Alt Image Text](./Images/WS_Setup24.png "Setupxx")
 
+<br><br><br><br>
+
+Now check whether all content has been loaded here. If something is missing - for example, the column with the interest rates - you have to run the setup again locally in your Chrome browser. You can then export the new code again and insert it in your sitemap under **Edit**. 
+<br><br>
+![Alt Image Text](./Images/WS_Setup25.png "Setupxx")
+
+<br><br><br><br>
+
+Every time a scrape is executed, this file is created. In order to be able to merge the data from all financial institutions into one file, we need to add the following columns so that we can distinguish the data:
+
+- Date of download
+- Name of the financial institution
+
+In addition, we have to edit the data so that they look the same in all sitemaps (e.g. dot everywhere instead of comma for the separation of decimal places, etc.). We do this under **Praser**.
+1. Go to **My Sitemaps**
+2. Select **0LuzernerKantonalbank** Sitemap
+3. Go to **Parser**. Here you see the existing columns.
+4. **Add column**
+<br><br>
+![Alt Image Text](./Images/WS_Setup26.png "Setupxx")
+
+<br><br><br><br>
 
