@@ -2,7 +2,7 @@
 <br><br>
 [WebScraper.io](https://webscraper.io/) is a browser-based tool designed for extracting data from websites with ease. It offers a user-friendly interface that allows for data collection without the need for coding. The platform can navigate and scrape multiple pages, making it useful for collecting large datasets from websites. After downloading, the data is merged and structured using [Google Sheets](https://www.google.com/sheets/about/). Google Sheets is a cloud-based spreadsheet application that is part of Google's suite of office tools. It allows users to create, edit, and collaborate on spreadsheets in real-time from any device with internet access. To clean the data and automate the process in Google Sheets we need to use some codes. The export in this use case is done with Google Sheets, as there is already a configured automatic data export from Webscraper.io.  
 
-The figure below outlines the process for daily data download via webscraping:
+The figure below outlines the process for daily data download with Webscraper.io:
 
 1. Data is sourced from various Swiss financial institutions. For this use case, we extract data from two banks and one insurance company. The process can be easily scaled to include other financial entities.
 2. Data is harvested from the websites using Webscraper.io.
