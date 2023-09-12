@@ -1,10 +1,14 @@
-## Luzerner Kantonalbank
+## Credit Suisse
 <br><br>
-This documentation explains how you can retrieve the interest rates on the Luzerner Kantonalbank website. Go to this [website](https://www.lukb.ch/de/private/finanzieren/hypotheken/festhypothek). 
+UBS unfortunately does not make interest rates available online. Reference is made to the fact that these should be requested. For this reason, we have requested the interest rates of Credit Suisse here. They provide these online. 
+
+<br><br><br><br>
+
+This documentation explains how you can retrieve the interest rates on the Credit Suisse website. Go to this [website](https://www.credit-suisse.com/ch/de/privatkunden/hypothek/services/hypothekarzinsen.html). 
 1. Scroll down where the interest rates are shown.
 2. Left click and select "inspect".
 <br><br>
-![Alt Image Text](./Images/WS_Setup6.png "Setup6")
+![Alt Image Text](./Images/WS_Setup306.png "Setup6")
 
 <br><br><br><br>
 
@@ -12,27 +16,28 @@ This documentation explains how you can retrieve the interest rates on the Luzer
 2. **Create new sitemap**
 3. **Create Sitemap**
 <br><br>
-![Alt Image Text](./Images/WS_Setup7.png "Setup7")
+![Alt Image Text](./Images/WS_Setup307.png "Setup7")
 
 <br><br><br><br>
 
-1. Name the Sitemap - in this example its called ```0LuzernerKantonalbank```.
-2. Enter the website ```https://www.lukb.ch/de/private/finanzieren/hypotheken/festhypothek```.
+1. Name the Sitemap - in this example its called ```0CreditSuisse```.
+2. Enter the website ```https://www.credit-suisse.com/ch/en/private-clients/mortgages/services/mortgage-interest-rate.html```.
 3. **Create Sitemap**
 <br><br>
-![Alt Image Text](./Images/WS_Setup8.png "Setup8")
+![Alt Image Text](./Images/WS_Setup308.png "Setup8")
 
 <br><br><br><br>
 
+Since the data is distributed in several table columns (Duration, Interest, Duration, Interest), we cannot simply download the table here. We have to proceed as follows:
 1. **Add new selector**
 2. Name the selector - in this exampled ```InterestRate```
-3. Select as a Type **Table**
+3. Select as a Type **Element**
 4. Click in the line Selector on **Select**
-5. Now you can mark the whole table with the interest.
+5. Now you can mark the whole table with the interest rates (excluding the header). Sometimes the shift key has to be pressed to select all lines.
 6. **Done selecting**
-7. 
+7. **Save selector**
 <br><br>
-![Alt Image Text](./Images/WS_Setup9.png "Setup9")
+![Alt Image Text](./Images/WS_Setup309.png "Setup9")
 
 <br><br><br><br>
 
