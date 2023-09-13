@@ -25,7 +25,7 @@ In the list below, some Swiss financial institutions are mentioned for which an 
 | Bank Cler | https://www.cler.ch/de/hypotheken-und-kredite/hypotheken/hypothekarzinsen| Does *not* work|
 | Bank WIR| https://www.wir.ch/de/produkte-loesungen/geschaeftskunden/finanzieren/hypotheken/festhypotheken | Works |
 | Credit Suisse| https://www.credit-suisse.com/ch/de/privatkunden/hypothek/services/hypothekarzinsen.html | Works |
-| Generali Versicherung| https://www.generali.ch/privatkunden/wohnen-bauen/hypotheken | Works |
+| Generali Insurance| https://www.generali.ch/privatkunden/wohnen-bauen/hypotheken | Works |
 | Luzerner Kantonalbank| https://www.lukb.ch/de/private/finanzieren/hypotheken/festhypothek | Works |
 | Luzerner Pensionskasse| https://www.lupk.ch/de/hypotheken-vorbezug | Works |
 | Migros Bank| https://www.migrosbank.ch/de/privatpersonen/hypotheken-kredite/hypotheken/festhypothek.html | Works |
@@ -40,7 +40,7 @@ In the list below, some Swiss financial institutions are mentioned for which an 
 | Urner Kantonalbank| No interest rates online - only on request  | Does *not* work |
 | Zuger Kantonalbank| https://www.zugerkb.ch/private/hypotheken/hypothekarzinsen | Works |
 | Zürcher Kantonalbank| https://www.zkb.ch/de/private/hypotheken-immobilien/hypotheken-zinsen/aktuelle-hypothekarzinsen.html | Works |
-| Zurich Versicherung| https://www.zurich.ch/de/privat/wohnen-events/wohneigentum/hypothek | Works |
+| Zurich Insurance| https://www.zurich.ch/de/privat/wohnen-events/wohneigentum/hypothek | Works |
 
 
 
