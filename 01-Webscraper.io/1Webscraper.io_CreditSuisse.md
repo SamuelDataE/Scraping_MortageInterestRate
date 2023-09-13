@@ -229,6 +229,173 @@ The last step in Webscraper.io is to set up a job to automatically download the 
 We have now made the settings so that the Credit Suisse interest rates are automatically extracted on a daily basis. 
 
 <br><br><br><br>
+
+
+
+
 ### Google Sheets
 <br><br>
-Now, before we continue in Google Sheets, make sure that you have already done the general setup regarding Google Sheets. To do this, go back to [Webscraper.io_Setup](0Webscraper.io_Setup.md).
+Before we proceed with Google Sheets, ensure that you've completed the general setup for Google Sheets (account creation) and established the interface between Webscraper.io and Google Sheets. If you need to set this up, please refer to [Webscraper.io_Setup](0Webscraper.io_Setup.md).
+<br><br>
+When the file in [Google Sheets](https://docs.google.com/spreadsheets/) is in place select the file **0CreditSuisse**. Your Google spreadsheet's name matches your sitemap.
+<br><br>
+![Alt Image Text](./Images/WS_Setup671.png "Setupxx")
+
+<br><br><br><br>
+
+In the table, you will now see all the data that was loaded from the sitemap **0CreditSuisse**. If there are rows where the data is incorrect, delete the content of that data. In Webscraper.io, you can then manually execute the **Scrape** again. After a few seconds the file will be updated.
+
+If data is missing - for instance, the interest rate - also trigger the run **Scrape** in Webscraper.io. If there's no interest rate present in the *Preview Data* there either, you'll need to adjust the sitemap code. To do this, go to your local Webscraping.io and redefine the selectors. Enter the new code in Webscraper.io Cloud under **Edit** of the respective sitemap.
+<br><br>
+In our case, the data appears as we would expect it to. However, we want to modify the sheet such that the following cleaning steps are applied:
+
+- With the **0CreditSuisse** spreadsheet, we face the issue that both the duration and the interest rates are located in a single column. These pieces of information need to be split into two separate columns.
+- If there's no number in column D, the row should be deleted.
+- Duplicate rows should be removed. 
+- The header should appear only once.
+<br><br>
+![Alt Image Text](./Images/WS_Setup672.png "Setupxx")
+
+<br><br><br><br>
+
+To implement this, we need to write a code. But first we have to open a second tab in the spreadsheet. There we will insert the cleaned data. 
+1. Click on the + icon.
+2. Rename the tab ```CS_adj```
+3. Navigate to **Extensions**
+4. Select **Apps Script**
+<br><br>
+![Alt Image Text](./Images/WS_Setup663.png "Setupxx")
+
+<br><br><br><br>
+
+Delete the existing code and enter the following one in the console. 
+```
+function rearrangeData() {
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  
+  // Get data from the "CreditSuisse" sheet
+  var sourceSheet = spreadsheet.getSheetByName("0CreditSuisse");
+  var dataRange = sourceSheet.getRange(2, 1, sourceSheet.getLastRow(), sourceSheet.getLastColumn());
+  var data = dataRange.getValues();
+
+  // Clean the data and transform it into the new format
+  var newData = [];
+  var checkDuplicates = {};  // An object to check for duplicates
+  
+  for (var i = 0; i < data.length; i += 2) {
+    var row = new Array(7).fill("");  // Create an empty row with 7 columns
+
+    row[0] = data[i][0];  // web-scraper-job-id
+    row[1] = data[i][1];  // web-scraper-order
+    row[2] = data[i][2];  // web-scraper-start-url
+    row[3] = data[i][3].replace(/\D/g, "");  // Retain only the number in "Duration"
+
+    if (i + 1 < data.length) { 
+      row[4] = data[i+1][3].replace(" %", "").trim();  // Remove the percentage symbol and whitespace
+    }
+
+    row[5] = data[i][4];  // Date
+    row[6] = data[i][5];  // "credit-suisse"
+
+    // Check if the row is a duplicate
+    var duplicateKey = row[3] + "|" + row[5];  // Create a unique key based on columns D and F
+    if (!checkDuplicates[duplicateKey] && row[4] !== "") {
+      newData.push(row);
+      checkDuplicates[duplicateKey] = true;
+    }
+  }
+
+  // Insert data into the "CS_adj" sheet
+  var targetSheet = spreadsheet.getSheetByName("CS_adj");
+  targetSheet.getRange(2, 1, newData.length, 7).setValues(newData);
+
+  // Delete excess rows (optional)
+  var totalRows = targetSheet.getLastRow();
+  var extraRows = totalRows - newData.length - 1;
+  if(extraRows > 0) {
+    targetSheet.deleteRows(newData.length + 2, extraRows);
+  }
+}
+```
+<br><br>
+After pasting the code:
+1. On lines 5 and 37 of the code, references are made to specific spreadsheet tabs. Ensure that these names align with your configurations.
+2. **Save**
+3. **Run**
+<br><br>
+![Alt Image Text](./Images/WS_Setup679.png "Setupxx")
+
+<br><br><br><br>
+
+If this is the first code you're implementing in App Scripts for this spreadsheet, you'll need to grant the application the necessary permissions before executing the code. Click on **Review permissions**.
+<br><br>
+![Alt Image Text](./Images/WS_Setup90.png "Setupxx")
+
+<br><br><br><br>
+
+Select your Google account.
+<br><br>
+![Alt Image Text](./Images/WS_Setup92.png "Setupxx")
+
+<br><br><br><br>
+
+1. Click **Advanced**
+2. Click **Go to Untitled project (unsafe)**. If you have named your code in *App Script*, it can be named differently.
+<br><br>
+![Alt Image Text](./Images/WS_Setup93.png "Setupxx")
+
+<br><br><br><br>
+
+**Allow**
+<br><br>
+![Alt Image Text](./Images/WS_Setup94.png "Setupxx")
+
+<br><br><br><br>
+
+The code is now executed. 
+<br><br>
+![Alt Image Text](./Images/WS_Setup951.png "Setupxx")
+
+<br><br><br><br>
+
+Go now back to the **0CreditSuisse** spreadsheet, select the **CS_adj** tab and review the data. The script seems to work, it has no more duplicate lines and no lines without percentages. On the first line the header is missing. If this is requested, the header must be entered manually once. 
+<br><br>
+![Alt Image Text](./Images/WS_Setup675.png "Setupxx")
+
+<br><br><br><br>
+
+Now we want this code to be executed whenever data is loaded into the spreadsheet. Now go back to the *Apps Script* application.
+1. Go to **Extensions**
+2. Select **Apps Script**
+3. In the Apps Script application, click on the clock icon (*Triggers*) on the left side
+4. **Add Trigger**
+<br><br>
+![Alt Image Text](./Images/WS_Setup961.png "Setupxx")
+
+<br><br><br><br>
+
+Now we specify the trigger.
+1. Select event source: **From Spreadsheet**
+2. Select event type: **On change**
+3. Rest stays the same
+4. **Save**
+<br><br>
+![Alt Image Text](./Images/WS_Setup971.png "Setupxx")
+<br><br>
+With this setting, you receive a notification when an error occurs.
+
+<br><br><br><br>
+
+We have now finished setting up the **0CreditSuisse** spreadsheet. Whenever the data is reloaded, the content is automatically processed and checked. A history of daily interest rates of Generali is now automatically created in the table - this is expanded daily. 
+
+To check whether everything is correct, you can trigger the scraping again manually in Webscraper.io. If there are no duplicate values, no lines without percentages and the header still only appears once after the reload of the spreadsheet, then everything has worked.
+
+<br><br><br><br>
+
+Here you can see how to consolidate the data of all financial institutions into a single file - [0Webscraper.io_Setup](0Webscraper.io_Setup.md).
+
+<br><br><br><br>
+
+
+
+

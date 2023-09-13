@@ -320,13 +320,14 @@ In our case, the data appears as we would expect it to. However, we want to modi
 
 - The header should appear only once.
 - If there's no number in column E, the row should be deleted.
+- If there's no figure in column D, the row should be deleted.
 - Duplicate rows should be removed. 
 <br><br>
 ![Alt Image Text](./Images/WS_Setup662.png "Setupxx")
 
 <br><br><br><br>
 
-To implement this, we need to write a code. For this, navigate to **Extension**. Select **Apps Script**
+To implement this, we need to write a code. For this, navigate to **Extensions**. Select **Apps Script**
 <br><br>
 ![Alt Image Text](./Images/WS_Setup663.png "Setupxx")
 
@@ -407,7 +408,7 @@ The code is now executed.
 
 <br><br><br><br>
 
-Go now back to the **0Generali** spreadsheet and review the data. The script seems to work, it has no more duplicate lines, no lines without percentages and there is only one heading. 
+Go now back to the **0Generali** spreadsheet and review the data. The script seems to work, it has no more duplicate lines, no lines without percentages and there is only one header. 
 <br><br>
 ![Alt Image Text](./Images/WS_Setup665.png "Setupxx")
 
