@@ -50,8 +50,8 @@ In this repository there is a description of how this can be implemented for the
 - [Luzerner Kantonalbank](1Webscraper.io_LuzernerKantonalbank.md)
 - [Credit Suisse](1Webscraper.io_CreditSuisse.md)
 - [Generali Insurance](1Webscraper.io_Generali.md)
-<br>
-
+<br><br>
+I chose the websites of these financial institutions because each one requires a slightly different process. Downloading from other websites also works using one of these processes.
 <br><br><br><br>
 
 ## Result
