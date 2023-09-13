@@ -42,11 +42,15 @@ In the list below, some Swiss financial institutions are mentioned for which an 
 | Zürcher Kantonalbank| https://www.zkb.ch/de/private/hypotheken-immobilien/hypotheken-zinsen/aktuelle-hypothekarzinsen.html | Works |
 | Zurich Insurance| https://www.zurich.ch/de/privat/wohnen-events/wohneigentum/hypothek | Works |
 
-
-
-
 <br><br>
 For a few websites, scraping with Webscraper.io did not work as they use a webscraper blocker. It is possible that using other webscraping tools, data from these websites can still be downloaded.
+<br><br>
+In this repository there is a description of how this can be implemented for the following websites:
+<br><br>
+- [Luzerner Kantonalbank](1Webscraper.io_LuzernerKantonalbank.md)
+- [Credit Suisse](1Webscraper.io_CreditSuisse.md)
+- [Generali Insurance](1Webscraper.io_Generali.md)
+<br>
 
 <br><br><br><br>
 
