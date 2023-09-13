@@ -87,7 +87,7 @@ Therefore, just click **Start scraping**. If we then see that scraping is not wo
 
 <br><br><br><br>
 
-A window now opens and closes itself again after a few seconds. After that click on **refresh**. You will now see the data that has been downloaded. Make sure that they are complete and the duration and interest rates are in the last column. Be aware that only the first few lines of the dataset is displayed.
+A window now opens and closes itself again after a few seconds. After that click on **refresh**. You will now see the data that has been downloaded. Make sure that they are complete and the duration and interest rates are in the last column. Be aware that only the first few lines of the dataset are displayed.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup317.png "Setup17")
 
