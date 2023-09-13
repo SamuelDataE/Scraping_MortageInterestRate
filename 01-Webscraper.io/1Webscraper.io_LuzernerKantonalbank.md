@@ -383,7 +383,7 @@ Select your Google account.
 
 The code is now executed. 
 <br><br>
-![Alt Image Text](./Images/WS_Setup95.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup951.png "Setupxx")
 
 <br><br><br><br>
 
@@ -399,7 +399,7 @@ Now we want this code to be executed whenever data is loaded into the spreadshee
 3. In the Apps Script application, click on the clock icon (*Triggers*) on the left side
 4. **Add Trigger**
 <br><br>
-![Alt Image Text](./Images/WS_Setup96.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup961.png "Setupxx")
 
 <br><br><br><br>
 
@@ -409,7 +409,7 @@ Now we specify the trigger.
 3. Rest stays the same
 4. **Save**
 <br><br>
-![Alt Image Text](./Images/WS_Setup97.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup971.png "Setupxx")
 
 <br><br><br><br>
 
