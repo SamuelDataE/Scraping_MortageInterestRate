@@ -1,6 +1,6 @@
 ## Credit Suisse
 <br><br>
-UBS unfortunately does not make interest rates available online. Reference is made to the fact that these should be requested. For this reason, we have requested the interest rates of Credit Suisse here. They provide these online. 
+Unfortunately, UBS doesn't offer their interest rates online on their website. Reference is made to the fact that these should be requested. Consequently, we've sought out the interest rates from Credit Suisse, as they provide them online. 
 
 <br><br><br><br>
 
@@ -12,7 +12,7 @@ This documentation explains how you can retrieve the interest rates on the Credi
 
 <br><br><br><br>
 
-1. Select the section **Web Scraper**.
+1. Select the section **Web Scraper**
 2. **Create new sitemap**
 3. **Create Sitemap**
 <br><br>
@@ -31,9 +31,9 @@ This documentation explains how you can retrieve the interest rates on the Credi
 Since the data is distributed in several table columns (Duration, Interest, Duration, Interest), we cannot simply download the table here. We have to proceed as follows:
 1. **Add new selector**
 2. Name the selector - in this exampled ```InterestRate```
-3. Select as a Type **Element**
-4. Click in the line Selector on **Select**
-5. Now you can mark the whole table with the interest rates (excluding the header). Sometimes the shift key has to be pressed to select all lines.
+3. Select as a *Type* **Element**
+4. Click in the line *Selector* on **Select**
+5. Now you can mark the whole table with the interest rates (excluding the header). Sometimes the shift key has to be pressed to select all lines
 6. **Done selecting**
 7. **Save selector**
 <br><br>
@@ -47,19 +47,20 @@ Select your created *selector*.
 
 <br><br><br><br>
 
-1. Name the selector - in this exampled ```InterestRate1```
-2. Select as a Type **Text**
-3. Click in the line *Selector* on **Select**
-4. Now select only the first figure **2 years**
-5. **Done selecting**
-6. Tick the **Multiple** box
-7. Go to **Data Preview**
+1. **Add new selector**
+2. Name the selector - in this exampled ```InterestRate1```
+3. Select as a *Type* **Text**
+4. Click in the line *Selector* on **Select**
+5. Now select only the first figure **2 years**
+6. **Done selecting**
+7. Tick the **Multiple** box
+8. Go to **Data Preview**
 <br><br>
 ![Alt Image Text](./Images/WS_Setup3092.png "Setup12")
 
 <br><br><br><br>
 
-Only one column is now displayed in the *Data Preview*. In it, the years (term) and the interest are shown alternately. Unfortunately, the data can only be downloaded in this way. In the following steps, the data must be specially structured. Close the *Data Preview*.
+Only one column is displayed in the *Data Preview*. In this column, the years (term) and the interest are displayed alternately. Unfortunately, the data can only be downloaded in this way. In the following steps, the data must be specially structured. Close the *Data Preview*.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup3093.png "Setup13")
 
@@ -78,14 +79,15 @@ You are now asked about the request interval and page load delay.
 - Request interval: Determines the amount of time the scraper waits between sending requests to web pages.
 - Page load delay: Specifies the duration the scraper waits for a page to fully load before extracting the data.
 <br>
-It's done to mimic human browsing behavior, avoid overloading the server, and reduce the chances of getting banned or blocked due to rapid or frequent requests. For the time being, we leave the default settings at 2000 miliseconds. Therefore, just click **Start scraping**. If we then see that scraping is not working, we could always increase the time here.
+It's done to mimic human browsing behavior, avoid overloading the server, and reduce the chances of getting banned or blocked due to rapid or frequent requests. For the time being, we leave the default settings at 2000 miliseconds.
+Therefore, just click **Start scraping**. If we then see that scraping is not working, we could always increase the time here.
 <br><br>
 
 ![Alt Image Text](./Images/WS_Setup316.png "Setup16")
 
 <br><br><br><br>
 
-A window now opens and closes itself again after a few seconds. After that click on **refresh**. You will now see the data that has been downloaded. Make sure that they are complete and all years and respective interest rates are in the first column.
+A window now opens and closes itself again after a few seconds. After that click on **refresh**. You will now see the data that has been downloaded. Make sure that they are complete and the duration and interest rates are in the last column. Be aware that only the first few lines of the dataset is displayed.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup317.png "Setup17")
 
@@ -120,8 +122,8 @@ Copy now the displayed code.
 <br><br><br><br>
 
 Now open your [Cloud account](https://cloud.webscraper.io) and go to **Import Sitemap**.
-1. Paste the code you copied in the previous step.
-2. Name the Sitemap in cloud - in this case ```0CreditSuisse```
+1. Paste the code you copied in the previous step
+2. Name the *Sitemap* again - in this case ```0CreditSuisse```
 3. **Import**
 <br><br>
 ![Alt Image Text](./Images/WS_Setup23.png "Setupxx")
@@ -137,17 +139,17 @@ You have now created the sitemap in your cloud environment.
 
 <br><br><br><br>
 
-Now check whether all content has been loaded here. If Data is missing you have to run the setup again locally in your Chrome browser. You can then export the new code again and insert it in your sitemap under **Edit**. 
+Now check whether all content has been loaded here. If data is missing you have to run the setup again locally in your Chrome browser. You can then export the adjusted code again and insert it in your sitemap under **Edit**. 
 <br><br>
 ![Alt Image Text](./Images/WS_Setup325.png "Setupxx")
 <br><br>
-Please be aware that only the first 10 lines are shown in the data preview.
+Please be aware that only the first 10 lines are shown in *Data Preview*.
 <br><br><br><br>
 
 Every time a scrape is executed, this file is created. In order to be able to merge the data from all financial institutions into one file, we need to add the following columns so that we can distinguish the data:
 
-- Date of download
 - Name of the financial institution
+- Date of download
 
 In addition, we have to edit the data so that they look the same in all sitemaps (e.g. dot everywhere instead of comma for the separation of decimal places, etc.). We do this under **Praser**.
 1. Go to **My Sitemaps**
@@ -187,7 +189,7 @@ Currently, the input is the URL where we download the data. We would like to get
 
 <br><br><br><br>
 
-Now we add a second column. Click on **Add time scraped**. You see now the added column **time-scraped**. Click now on the field **Convert UNIX timestamp**.
+Now we add a second column. Click on **Add time scraped**. You see now the added column *time-scraped*. Click now on the field **Convert UNIX timestamp**.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup330.png "Setupxx")
 
@@ -201,7 +203,7 @@ Now we add a second column. Click on **Add time scraped**. You see now the added
 
 <br><br><br><br>
 
-In the list below you will now see the updated list with the two added columns. The column InterestRate and Duration are still merged in the column InterestRate1. We cannot process this further in Webscraper.io. However, Google Sheets helps us here. Therefore, we are already done editing the data in Webscraper.io.
+In the list below you will now see the updated list with the two added columns. The column InterestRate and Duration are still merged in the column *InterestRate1*. We cannot process this further in Webscraper.io. However, Google Sheets helps us here. Therefore, we are already done editing the data in Webscraper.io.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup332.png "Setupxx")
 
@@ -209,9 +211,9 @@ In the list below you will now see the updated list with the two added columns. 
 
 The last step in Webscraper.io is to set up a job to automatically download the data on a daily basis. To do this, go to **Schedule** in the corresponding sitemap.
 <br>
-1. Activate the scheduler
+1. **Enable scheduler**.
 2. Set the *Scheduler Type* to **Daily**.
-3. Under *Run a job on*, select the days on which the interest is to be updated. In this example, all weekdays are selected
+3. Under *Run a job on*, select the days on which the interest rate is to be updated. In this example, all weekdays are selected.
 4. Specify the time when the job is to be run.
 5. The remaining settings can be left as they are.
 6. **Save**.
