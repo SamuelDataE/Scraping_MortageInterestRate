@@ -63,7 +63,7 @@ Now we need to download the content from the respective websites. In this reposi
 <br><br>
 - [Luzerner Kantonalbank](1Webscraper.io_LuzernerKantonalbank.md)
 - [Credit Suisse](1Webscraper.io_CreditSuisse.md)
-- [Generali Versicherung](1Webscraper.io_Generali.md)
+- [Generali Insurance](1Webscraper.io_Generali.md)
 <br>
 
 Click on the corresponding websites and do the setup. You can also extend your data collection to other websites. The process is always the same. Depending on how the data is prepared on the website, there are slight adjustments. 
