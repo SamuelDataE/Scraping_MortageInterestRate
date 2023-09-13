@@ -10,15 +10,15 @@ In this document, we will demonstrate how to set up the respective tools. This i
 - Google Sheets
 - Consolidated file containing data from various financial institutions via Google Sheets. 
 
-<br><br><br><br>
+<br><br><br>
 
 How to perform website extraction will be illustrated using the following three web pages. Interest rates will be extracted from all of these pages:
 
 - [Luzerner Kantonalbank](1Webscraper.io_LuzernerKantonalbank.md)
 - [Credit Suisse](1Webscraper.io_CreditSuisse.md)
 - [Generali Insurance](1Webscraper.io_Generali.md)
-
-
+<br><br>
+Follow this guide to get started.
 
 <br><br><br><br>
 
