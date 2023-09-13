@@ -9,3 +9,5 @@ If in some files the images are displayed too small, please click on the images 
 
 
 
+General stuff what applies to each side --> specified in General Setup
+Webside dependet stuff --> in respective webside documentation.
