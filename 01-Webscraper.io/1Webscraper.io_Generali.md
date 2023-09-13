@@ -296,10 +296,12 @@ Now that we have structured and formatted the data, we need to set up a job to a
 
 <br><br>
 
-We have now made the settings so that the Luzerner Kantonalbank interest rates are automatically extracted on a daily basis. 
+We have now made the settings so that the Generali interest rates are automatically extracted on a daily basis. 
 
 <br><br><br><br>
 
 ### Google Sheets
 <br><br>
-Now, before we continue in Google Sheets, make sure that you have already done the general setup regarding Google Sheets. To do this, go back to [Webscraper.io_Setup](0Webscraper.io_Setup.md).
+Before proceeding further within Google Sheets, please ensure that you have completed the initial setup steps, including creating a Google Sheets account and configuring the Webscraper.io interface to work seamlessly with Google Sheets. To do this, go back to [Webscraper.io_Setup](0Webscraper.io_Setup.md).
+
+

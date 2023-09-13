@@ -2,6 +2,27 @@
 
 <br><br>
 
+In this document, we will demonstrate how to set up the respective tools. This includes the following:
+
+1. Webscraper.io
+2. Webscraper.io - Cloud
+3. Google Sheets
+4. Interface Webscraper.io with Google Sheets
+5. Consolidated file containing data from various financial institutions via Google Sheets. 
+
+<br><br><br>
+
+How to perform website extraction will be illustrated using the following three web pages. Interest rates will be extracted from all of these pages:
+
+- [Luzerner Kantonalbank](1Webscraper.io_LuzernerKantonalbank.md)
+- [Credit Suisse](1Webscraper.io_CreditSuisse.md)
+- [Generali Insurance](1Webscraper.io_Generali.md)
+
+<br><br>
+Follow this guide to get started.
+
+<br><br><br><br>
+
 ### Webscraper.io
 <br><br>
 It is recommended to use the Google Chrome browsen. This browser has a wide user base, is regularly updated, and tends to be compatible with a variety of web technologies, which makes it a suitable choice for web scraping tools like Webscraper.io. 
@@ -75,3 +96,16 @@ When you have done the setup in Webscraper.io according to the descriptions for 
 <br><br><br><br>
 
 ### Google Sheets
+<br><br>
+It is recommended to use the Google Chrome browsen. This browser has a wide user base, is regularly updated, and tends to be compatible with a variety of web technologies, which makes it a suitable choice for web scraping tools like Webscraper.io. 
+
+
+
+### Interface Webscraper.io with Google Sheets
+<br><br>
+It is recommended to use the Google Chrome browsen. This browser has a wide user base, is regularly updated, and tends to be compatible with a variety of web technologies, which makes it a suitable choice for web scraping tools like Webscraper.io. 
+<br><br>
+Go no to the website of [Webscraper.io](https://webscraper.io/) and click on **Install**.
+<br><br>
+![Alt Image Text](./Images/WS_Setup1.png "Setup1")
+

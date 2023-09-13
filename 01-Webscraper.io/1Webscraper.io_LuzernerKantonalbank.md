@@ -284,4 +284,141 @@ We have now made the settings so that the Luzerner Kantonalbank interest rates a
 
 ### Google Sheets
 <br><br>
-Now, before we continue in Google Sheets, make sure that you have already done the general setup regarding Google Sheets. To do this, go back to [Webscraper.io_Setup](0Webscraper.io_Setup.md).
+Before we proceed with Google Sheets, ensure that you've completed the general setup for Google Sheets (account creation) and established the interface between Webscraper.io and Google Sheets. If you need to set this up, please refer to [Webscraper.io_Setup](0Webscraper.io_Setup.md).
+<br><br>
+When the file in [Google Sheets](https://docs.google.com/spreadsheets/) is in place select the file **0LuzernerKantonalbank**. Your Google spreadsheet's name matches your sitemap.
+<br><br>
+![Alt Image Text](./Images/WS_Setup601.png "Setupxx")
+
+<br><br><br><br>
+
+In the table, you will now see all the data that was loaded from the sitemap **0LuzernerKantonalbank**. If there are rows where the data is incorrect, delete the content of that data. In Webscraper.io, you can then manually execute the **Scrape** again. After a few seconds the file will be updated.
+
+If data is missing - for instance, the interest rate - also trigger the run **Scrape** in Webscraper.io. If there's no interest rate present in the *Preview Data* there either, you'll need to adjust the sitemap code. To do this, go to your local Webscraping.io and redefine the selectors. Enter the new code in Webscraper.io Cloud under **Edit** of the respective sitemap.
+<br><br>
+In our case, the data appears as we would expect it to. However, we want to modify the sheet such that the following cleaning steps are applied:
+
+- The header should appear only once.
+- If there's no number in column E, the row should be deleted.
+- Duplicate rows should be removed. 
+<br><br>
+![Alt Image Text](./Images/WS_Setup602.png "Setupxx")
+
+<br><br><br><br>
+
+To implement this, we need to write a code. For this, navigate to **Extension**. Select **Apps Script**
+<br><br>
+![Alt Image Text](./Images/WS_Setup603.png "Setupxx")
+
+<br><br><br><br>
+
+Delete the existing code and enter the following one in the console. 
+```
+function checkAndDeleteRows() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var lastRow = sheet.getLastRow();
+  var lastCol = sheet.getLastColumn();
+  var range = sheet.getRange(1, 1, lastRow, lastCol);
+  var values = range.getValues();
+  var rowsToDelete = [];
+  var uniqueCombinations = {};
+
+  for (var i = values.length - 1; i > 0; i--) {  // Loop starts from the last row and ignores the first row
+    var columnD = values[i][3]; // 0-based, so 3 is for Column D
+    var columnF = values[i][5]; // 0-based, so 5 is for Column F
+
+    var combinationKey = columnD + "_" + columnF; // Create a unique key for the combination
+    
+    // Check if the combination already exists or if Column E doesn't contain a number
+    if (uniqueCombinations[combinationKey] || !isNumeric(values[i][4])) {
+      rowsToDelete.push(i);
+    } else {
+      uniqueCombinations[combinationKey] = true;
+    }
+  }
+
+  // Delete rows in reverse order to avoid shifting of rows
+  for (var j = 0; j < rowsToDelete.length; j++) {
+    sheet.deleteRow(rowsToDelete[j] + 1);
+  }
+}
+
+function isNumeric(value) {
+  return !isNaN(parseFloat(value)) && isFinite(value);
+}
+```
+<br><br>
+After pasting the code:
+1. **Save**
+2. **Run**
+<br><br>
+![Alt Image Text](./Images/WS_Setup604.png "Setupxx")
+
+<br><br><br><br>
+
+If this is the first code you're implementing in App Scripts for this spreadsheet, you'll need to grant the application the necessary permissions before executing the code. Click on **Review permissions**.
+<br><br>
+![Alt Image Text](./Images/WS_Setup90.png "Setupxx")
+
+<br><br><br><br>
+
+Select your Google account.
+<br><br>
+![Alt Image Text](./Images/WS_Setup92.png "Setupxx")
+
+<br><br><br><br>
+
+1. Click on **Advanced**
+2. Click on **Go to Untitled project (unsafe)**. If you have named your code in *App Script*, it can be named differently.
+<br><br>
+![Alt Image Text](./Images/WS_Setup93.png "Setupxx")
+
+<br><br><br><br>
+
+**Allow**
+<br><br>
+![Alt Image Text](./Images/WS_Setup94.png "Setupxx")
+
+<br><br><br><br>
+
+The code is now executed. 
+<br><br>
+![Alt Image Text](./Images/WS_Setup95.png "Setupxx")
+
+<br><br><br><br>
+
+Go now back to the **0LuzernerKantonalbank** spreadsheet and review the data. The script seems to work, the line that had no percentage was deleted. 
+<br><br>
+![Alt Image Text](./Images/WS_Setup605.png "Setupxx")
+
+<br><br><br><br>
+
+Now we want this code to be executed whenever data is loaded into the spreadsheet. Now go back to the *Apps script* application.
+1. Go to **Extensions**
+2. Select **Apps Script**
+3. In the Apps Script application, click on the clock icon (*Triggers*) on the left side
+4. **Add Trigger**
+<br><br>
+![Alt Image Text](./Images/WS_Setup96.png "Setupxx")
+
+<br><br><br><br>
+
+Now we specify the trigger.
+1. Select event source: **From Spreadsheet**
+2. Select event type: **On change**
+3. Rest stays the same
+4. **Save**
+<br><br>
+![Alt Image Text](./Images/WS_Setup97.png "Setupxx")
+
+<br><br><br><br>
+
+We have now finished setting up the **0LuzernerKantonalbank** spreadsheet. Whenever the data is reloaded, the content is automatically processed and checked. A history of daily interest rates is now automatically created in the table - this is expanded daily. 
+
+To check whether everything is correct, you can trigger the scraping again manually in Webscraper.io. If there are no duplicate values, no lines without percentages and the header still only appears once after the reload of the spreadsheet, then everything has worked.
+
+
+
+
+
+

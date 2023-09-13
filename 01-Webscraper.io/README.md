@@ -9,3 +9,8 @@ If in some files the images are displayed too small, please click on the images 
 
 
 
+General stuff what applies to each side --> specified in General Setup
+Webside dependet stuff --> in respective webside documentation.
+
+
+Es kann sein, dass es Änderungen gibt auf der Webseite -> Settings müssen angepasst werden.
