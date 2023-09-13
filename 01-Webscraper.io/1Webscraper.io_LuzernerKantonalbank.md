@@ -1,14 +1,15 @@
 ## Luzerner Kantonalbank
 <br><br>
-This documentation explains how you can retrieve the interest rates on the Luzerner Kantonalbank website. Go to this [website](https://www.lukb.ch/de/private/finanzieren/hypotheken/festhypothek). 
+This guide details how to access the interest rates on the Luzerner Kantonalbank website. Go to this [website](https://www.lukb.ch/de/private/finanzieren/hypotheken/festhypothek). 
+
 1. Scroll down where the interest rates are shown.
-2. Left click and select "inspect".
+2. Left click and select **Inspect**.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup6.png "Setup6")
 
 <br><br><br><br>
 
-1. Select the section **Web Scraper**.
+1. Select the section **Web Scraper**
 2. **Create new sitemap**
 3. **Create Sitemap**
 <br><br>
@@ -18,7 +19,7 @@ This documentation explains how you can retrieve the interest rates on the Luzer
 
 1. Name the Sitemap - in this example its called ```0LuzernerKantonalbank```.
 2. Enter the website ```https://www.lukb.ch/de/private/finanzieren/hypotheken/festhypothek```.
-3. **Create Sitemap**
+3. **Create Sitemap**.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup8.png "Setup8")
 
@@ -26,9 +27,9 @@ This documentation explains how you can retrieve the interest rates on the Luzer
 
 1. **Add new selector**
 2. Name the selector - in this exampled ```InterestRate```
-3. Select as a Type **Table**
+3. Select as a *Type* **Table**
 4. Click in the line *Selector* on **Select**
-5. Now you can mark the whole table with the interest rates.
+5. Now you can mark the whole table with the interest rates
 6. **Done selecting**
 <br><br>
 ![Alt Image Text](./Images/WS_Setup9.png "Setup9")
@@ -44,7 +45,7 @@ This documentation explains how you can retrieve the interest rates on the Luzer
 <br><br><br><br>
 
 1. With the data rows selector you now select the data. Click on **Select**.
-2. Mark the whole table - incuding the first line (header line).
+2. Mark the whole table - incuding the first line (header line). Sometimes the shift key has to be pressed to select all lines.
 3. **Done selecting**
 4. To review our setup click now on **Data preview**.
 <br><br>
@@ -53,8 +54,8 @@ This documentation explains how you can retrieve the interest rates on the Luzer
 <br><br><br><br>
 
 The preview should now include the years and interest rates as in the figure below. Please check if the first line of the table is entered twice - once as a header and once as a data row. If this is not the case, please reselect the table, header and data again till it all data is included correctly. 
-<br>
-If everything looks okay, you can close the preview view again. 
+<br><br>
+If everything looks okay, you can close the *Data Preview* view again. 
 <br><br>
 ![Alt Image Text](./Images/WS_Setup13.png "Setup13")
 
@@ -83,7 +84,8 @@ You are now asked about the request interval and page load delay.
 - Request interval: Determines the amount of time the scraper waits between sending requests to web pages.
 - Page load delay: Specifies the duration the scraper waits for a page to fully load before extracting the data.
 <br>
-It's done to mimic human browsing behavior, avoid overloading the server, and reduce the chances of getting banned or blocked due to rapid or frequent requests. For the time being, we leave the default settings at 2000 miliseconds. Therefore, just click **Start scraping**. If we then see that scraping is not working, we could always increase the time here.
+It's done to mimic human browsing behavior, avoid overloading the server, and reduce the chances of getting banned or blocked due to rapid or frequent requests. For the time being, we leave the default settings at 2000 miliseconds.
+Therefore, just click **Start scraping**. If we then see that scraping is not working, we could always increase the time here.
 <br><br>
 
 ![Alt Image Text](./Images/WS_Setup16.png "Setup16")
@@ -96,7 +98,7 @@ A window now opens and closes itself again after a few seconds. After that click
 
 <br><br><br><br>
 
-You will now see the data that has been downloaded. Make sure that they are complete and that each column contains data.
+You will now see the data that has been downloaded. Make sure that they are complete and that each column contains data. Be aware that only the first few lines of the dataset are displayed.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup18.png "Setup18")
 
@@ -111,7 +113,7 @@ Now go back to **Sitemaps** where you will see the created function for download
 
 ### Webscraper.io - Cloud
 We have now made the setup in the local webscraper.io application. In order for this to run automatically on a daily basis, we need to do the installation in webscraper.io cloud. 
-<br>
+<br><br>
 We now copy the settings from the sitemap we made. To do this, click on the sitemap **0LuzernerKantonalbank** in your Chrome browser.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup20.png "Setupxx")
@@ -131,8 +133,8 @@ Copy now the displayed code.
 <br><br><br><br>
 
 Now open your [Cloud account](https://cloud.webscraper.io) and go to **Import Sitemap**.
-1. Paste the code you copied in the previous step.
-2. Name the Sitemap in cloud - in this case ```0LuzernerKantonalbank```
+1. Paste the code you copied in the previous step
+2. Name the Sitemap again - in this case ```0LuzernerKantonalbank```
 3. **Import**
 <br><br>
 ![Alt Image Text](./Images/WS_Setup23.png "Setupxx")
@@ -148,22 +150,22 @@ You have now created the sitemap in your cloud environment.
 
 <br><br><br><br>
 
-Now check whether all content has been loaded here. If something is missing - for example, the column with the interest rates - you have to run the setup again locally in your Chrome browser. You can then export the new code again and insert it in your sitemap under **Edit**. 
+Now check whether all content has been loaded here. If something is missing - for example, the column with the interest rates - you have to run the setup again locally in your Chrome browser. You can then export the adjusted code again and insert it in your sitemap under **Edit**. 
 <br><br>
 ![Alt Image Text](./Images/WS_Setup25.png "Setupxx")
 <br><br>
-Please be aware that only the first 10 lines are shown in the data preview.
+Please be aware that only the first 10 lines are shown in the *Data Preview*.
 <br><br><br><br>
 
 Every time a scrape is executed, this file is created. In order to be able to merge the data from all financial institutions into one file, we need to add the following columns so that we can distinguish the data:
 
-- Date of download
 - Name of the financial institution
+- Date of download
 
 In addition, we have to edit the data so that they look the same in all sitemaps (e.g. dot everywhere instead of comma for the separation of decimal places, etc.). We do this under **Praser**.
 1. Go to **My Sitemaps**
 2. Select **0LuzernerKantonalbank** Sitemap
-3. Go to **Parser**. Here you see the existing columns.
+3. Go to **Parser**. Here you see the existing columns
 4. **Add column**
 <br><br>
 ![Alt Image Text](./Images/WS_Setup26.png "Setupxx")
@@ -171,9 +173,9 @@ In addition, we have to edit the data so that they look the same in all sitemaps
 <br><br><br><br>
 
 We now add the a colum with the name of the financial institution. 
-1. Name the column ```Financial_Institution```.
-2. Select as source column **web-scraper-start-url**.
-3. **Save**.
+1. Name the column ```Financial_Institution```
+2. Select as source column **web-scraper-start-url**
+3. **Save**
 <br><br>
 ![Alt Image Text](./Images/WS_Setup27.png "Setupxx")
 
@@ -198,7 +200,7 @@ Currently, the input is the URL where we download the data. We would like to get
 
 <br><br><br><br>
 
-Now we add a second column. Click on **Add time scraped**. You see now the added column **time-scraped**. Click now on the field **Convert UNIX timestamp**.
+Now we add a second column. Click on **Add time scraped**. You see now the added column *time-scraped*. Click now on the field **Convert UNIX timestamp**.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup30.png "Setupxx")
 
@@ -235,8 +237,8 @@ Now we adjust the column **InterestRate**.
 1. As before, select the **InterestRate** column - click on **Add parser**.
 2. Select **Regex match**.
 3. Enter the following code at *Regex* ```(\d+).(\d+)``` - This code includes decimal places in a number.
-4. Check *Output*
-5. **Save**
+4. Check *Output*.
+5. **Save**.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup34.png "Setupxx")
 
@@ -252,8 +254,8 @@ Your list should now look like the image below. The following columns should be 
 - time-scraped *(always the same format must be used)*
 <br>
 Regardless of the financial institution, all lists should be set up and formatted in exactly the same way. Otherwise there will be a mess when the data is merged. 
-
-Unless you can bring the list into this format in Webscraper.io. The data must be further formatted in Google Sheet. See the example of [Credit Suisse](1Webscraper.io_CreditSuisse.md).
+<br><br>
+Unless you can't get the list in Webscraper.io into this format. The data must be further formatted in Google Sheet. See the example of [Credit Suisse](1Webscraper.io_CreditSuisse.md).
 <br><br>
 
 ![Alt Image Text](./Images/WS_Setup35.png "Setupxx")
@@ -262,18 +264,20 @@ Unless you can bring the list into this format in Webscraper.io. The data must b
 
 Now that we have structured and formatted the data, we need to set up a job to automatically download the data on a daily basis. To do this, go to **Schedule** in the corresponding sitemap.
 <br>
-1. Activate the scheduler
+1. **Enable scheduler**.
 2. Set the *Scheduler Type* to **Daily**.
-3. Under *Run a job on*, select the days on which the interest is to be updated. In this example, all weekdays are selected
+3. Under *Run a job on*, select the days on which the interest rate is to be updated. In this example, all weekdays are selected.
 4. Specify the time when the job is to be run.
 5. The remaining settings can be left as they are.
 6. **Save**.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup36.png "Setupxx")
 
-<br><br><br><br>
+<br><br>
 
 We have now made the settings so that the Luzerner Kantonalbank interest rates are automatically extracted on a daily basis. 
+
+<br><br><br><br>
 
 ### Google Sheets
 <br><br>
