@@ -4,11 +4,11 @@
 
 In this document, we will demonstrate how to set up the respective tools. This includes the following:
 
-- Webscraper.io
-- Webscraper.io - Cloud
-- Google Sheets
-- Interface Webscraper.io with Google Sheets
-- Consolidated file containing data from various financial institutions via Google Sheets. 
+1. Webscraper.io
+2. Webscraper.io - Cloud
+3. Google Sheets
+4. Interface Webscraper.io with Google Sheets
+5. Consolidated file containing data from various financial institutions via Google Sheets. 
 
 <br><br><br>
 
