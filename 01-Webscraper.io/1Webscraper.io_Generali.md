@@ -320,6 +320,7 @@ In our case, the data appears as we would expect it to. However, we want to modi
 
 - The header should appear only once.
 - If there's no number in column E, the row should be deleted.
+- If there's no figure in column D, the row should be deleted.
 - Duplicate rows should be removed. 
 <br><br>
 ![Alt Image Text](./Images/WS_Setup662.png "Setupxx")
