@@ -413,11 +413,11 @@ Now we specify the trigger.
 
 <br><br><br><br>
 
-We have now finished setting up the **0LuzernerKantonalbank** spreadsheet. Whenever the data is reloaded, the content is automatically processed and checked. A history of daily interest rates is now automatically created in the table - this is expanded daily. 
+We have now finished setting up the **0LuzernerKantonalbank** spreadsheet. Whenever the data is reloaded, the content is automatically processed and checked. A history of daily interest rates of the Luzerner Kantonalbank is now automatically created in the table - this is expanded daily. 
 
 To check whether everything is correct, you can trigger the scraping again manually in Webscraper.io. If there are no duplicate values, no lines without percentages and the header still only appears once after the reload of the spreadsheet, then everything has worked.
 
-
+<br><br><br><br>
 
 
 
