@@ -327,7 +327,7 @@ In our case, the data appears as we would expect it to. However, we want to modi
 
 <br><br><br><br>
 
-To implement this, we need to write a code. For this, navigate to **Extension**. Select **Apps Script**
+To implement this, we need to write a code. For this, navigate to **Extensions**. Select **Apps Script**
 <br><br>
 ![Alt Image Text](./Images/WS_Setup663.png "Setupxx")
 
