@@ -4,7 +4,10 @@ Unfortunately, UBS doesn't offer their interest rates online on their website. R
 
 <br><br><br><br>
 
-This documentation explains how you can retrieve the interest rates on the Credit Suisse website. Go to this [website](https://www.credit-suisse.com/ch/de/privatkunden/hypothek/services/hypothekarzinsen.html). 
+This documentation explains how you can retrieve the interest rates on the Credit Suisse website. In case you you don't have Webscraper.io installed yet - click [here](0Webscraper.io_Setup.md). 
+<br>
+If you have Websracper.io installed: Go to this [website](https://www.credit-suisse.com/ch/de/privatkunden/hypothek/services/hypothekarzinsen.html). 
+
 1. Scroll down where the interest rates are shown.
 2. Left click and select "inspect".
 <br><br>
@@ -101,7 +104,8 @@ Now go back to **Sitemaps** where you will see the created function for download
 
 
 ### Webscraper.io - Cloud
-We have now made the setup in the local webscraper.io application. In order for this to run automatically on a daily basis, we need to do the installation in webscraper.io cloud. 
+<br><br>
+We have now made the setup in the local webscraper.io application. In order for this to run automatically on a daily basis, we need to do the installation in webscraper.io cloud. How to get an cloud account you see [here](0Webscraper.io_Setup.md).
 <br>
 We now copy the settings from the sitemap we made. To do this, click on the sitemap **0CreditSuisse** in your Chrome browser.
 <br><br>
