@@ -5,7 +5,7 @@
 ### Webscraper.io
 <br><br>
 It is recommended to use the Google Chrome browsen. This browser has a wide user base, is regularly updated, and tends to be compatible with a variety of web technologies, which makes it a suitable choice for web scraping tools like Webscraper.io. 
-<br>
+<br><br>
 Go no to the website of [Webscraper.io](https://webscraper.io/) and click on **Install**.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup1.png "Setup1")
@@ -40,7 +40,7 @@ Create a new web scraper account. The login process should be self-explanatory.
 
 Webscraper.io - Cloud has several functionalities. The most important ones are described here:
 <br>
-- Import Sitemaps (create new sitemaps).
+- Import Sitemaps (create new sitemaps)
 - My Sitemap ( shows all created sitemaps)
 - Jobs ( shows all files created by scraping)
 - Data Export (this function loads the data into Google Sheets)
@@ -59,22 +59,19 @@ In order to use the relevant functions in the cloud application, you need a paid
 
 We have now installed webscraper both locally and in the cloud. 
 <br><br>
-Now we need to download the content from the relevant websites. In this repository, this is shown by the following websites.
+Now we need to download the content from the respective websites. In this repository there is a description of how this can be implemented for the following websites:
 <br><br>
 - [Luzerner Kantonalbank](1Webscraper.io_LuzernerKantonalbank.md)
 - [Credit Suisse](1Webscraper.io_CreditSuisse.md)
-- [Generali Versicherung](1Webscraper.io_Generali.md)
+- [Generali Insurance](1Webscraper.io_Generali.md)
 <br>
 
 Click on the corresponding websites and do the setup. You can also extend your data collection to other websites. The process is always the same. Depending on how the data is prepared on the website, there are slight adjustments. 
 <br><br>
 A list of financial institutions for which Webscraper.io works can be found under [Webscraper.io_General-Information](0Webscraper.io_General-Information.md).
 <br><br>
-When you have done the setup according to the descriptions for the configuration of the respective websites, you can continue with the process below.
+When you have done the setup in Webscraper.io according to the descriptions for the configuration of the respective websites, you can continue with the process below.
 
+<br><br><br><br>
 
-
-
-
-
-
+### Google Sheets
