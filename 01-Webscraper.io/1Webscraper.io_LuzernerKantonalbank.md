@@ -282,6 +282,9 @@ We have now made the settings so that the Luzerner Kantonalbank interest rates a
 
 <br><br><br><br>
 
+
+
+
 ### Google Sheets
 <br><br>
 Before we proceed with Google Sheets, ensure that you've completed the general setup for Google Sheets (account creation) and established the interface between Webscraper.io and Google Sheets. If you need to set this up, please refer to [Webscraper.io_Setup](0Webscraper.io_Setup.md).
@@ -383,7 +386,7 @@ Select your Google account.
 
 The code is now executed. 
 <br><br>
-![Alt Image Text](./Images/WS_Setup95.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup951.png "Setupxx")
 
 <br><br><br><br>
 
@@ -399,7 +402,7 @@ Now we want this code to be executed whenever data is loaded into the spreadshee
 3. In the Apps Script application, click on the clock icon (*Triggers*) on the left side
 4. **Add Trigger**
 <br><br>
-![Alt Image Text](./Images/WS_Setup96.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup961.png "Setupxx")
 
 <br><br><br><br>
 
@@ -409,16 +412,18 @@ Now we specify the trigger.
 3. Rest stays the same
 4. **Save**
 <br><br>
-![Alt Image Text](./Images/WS_Setup97.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup971.png "Setupxx")
 
 <br><br><br><br>
 
-We have now finished setting up the **0LuzernerKantonalbank** spreadsheet. Whenever the data is reloaded, the content is automatically processed and checked. A history of daily interest rates is now automatically created in the table - this is expanded daily. 
+We have now finished setting up the **0LuzernerKantonalbank** spreadsheet. Whenever the data is reloaded, the content is automatically processed and checked. A history of daily interest rates of the Luzerner Kantonalbank is now automatically created in the table - this is expanded daily. 
 
 To check whether everything is correct, you can trigger the scraping again manually in Webscraper.io. If there are no duplicate values, no lines without percentages and the header still only appears once after the reload of the spreadsheet, then everything has worked.
 
+<br><br><br><br>
 
+Here you can see how to consolidate the data of all financial institutions into a single file - [0Webscraper.io_Setup](0Webscraper.io_Setup.md).
 
-
+<br><br><br><br>
 
 
