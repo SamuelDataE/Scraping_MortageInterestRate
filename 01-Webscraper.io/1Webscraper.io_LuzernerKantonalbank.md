@@ -289,7 +289,7 @@ We have now made the settings so that the Luzerner Kantonalbank interest rates a
 <br><br>
 Before we proceed with Google Sheets, ensure that you've completed the general setup for Google Sheets (account creation) and established the interface between Webscraper.io and Google Sheets. If you need to set this up, please refer to [Webscraper.io_Setup](0Webscraper.io_Setup.md).
 <br><br>
-When the file in [Google Sheets](https://docs.google.com/spreadsheets/) is in place select the file **0LuzernerKantonalbank**. Your Google spreadsheet's name matches your sitemap.
+When the file in [Google Sheets](https://docs.google.com/spreadsheets/) is in place select the file **0LuzernerKantonalbank**. Your Google spreadsheet's name matches your sitemap in Webscraper.io.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup601.png "Setupxx")
 
@@ -359,7 +359,7 @@ After pasting the code:
 
 <br><br><br><br>
 
-If this is the first code you're implementing in App Scripts for this spreadsheet, you'll need to grant the application the necessary permissions before executing the code. Click on **Review permissions**.
+If this is the first code you're implementing in *Apps Scripts* for this spreadsheet, you'll need to grant the application the necessary permissions before executing the code. Click on **Review permissions**.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup90.png "Setupxx")
 
