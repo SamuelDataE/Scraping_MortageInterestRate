@@ -408,7 +408,7 @@ The code is now executed.
 
 <br><br><br><br>
 
-Go now back to the **0Generali** spreadsheet and review the data. The script seems to work, it has no more duplicate lines, no lines without percentages and there is only one heading. 
+Go now back to the **0Generali** spreadsheet and review the data. The script seems to work, it has no more duplicate lines, no lines without percentages and there is only one header. 
 <br><br>
 ![Alt Image Text](./Images/WS_Setup665.png "Setupxx")
 
