@@ -237,7 +237,7 @@ We have now made the settings so that the Credit Suisse interest rates are autom
 <br><br>
 Before we proceed with Google Sheets, ensure that you've completed the general setup for Google Sheets (account creation) and established the interface between Webscraper.io and Google Sheets. If you need to set this up, please refer to [Webscraper.io_Setup](0Webscraper.io_Setup.md).
 <br><br>
-When the file in [Google Sheets](https://docs.google.com/spreadsheets/) is in place select the file **0CreditSuisse**. Your Google spreadsheet's name matches your sitemap.
+When the file in [Google Sheets](https://docs.google.com/spreadsheets/) is in place select the file **0CreditSuisse**. Your Google spreadsheet's name matches your sitemap in Webscraper.io.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup671.png "Setupxx")
 
@@ -250,7 +250,7 @@ If data is missing - for instance, the interest rate - also trigger the run **Sc
 In our case, the data appears as we would expect it to. However, we want to modify the sheet such that the following cleaning steps are applied:
 
 - With the **0CreditSuisse** spreadsheet, we face the issue that both the duration and the interest rates are located in a single column. These pieces of information need to be split into two separate columns.
-- If there's no number in column D, the row should be deleted.
+- If there's no value in column D, the row should be deleted.
 - Duplicate rows should be removed. 
 - The header should appear only once.
 <br><br>
@@ -259,16 +259,16 @@ In our case, the data appears as we would expect it to. However, we want to modi
 <br><br><br><br>
 
 To implement this, we need to write a code. But first we have to open a second tab in the spreadsheet. There we will insert the cleaned data. 
-1. Click on the + icon.
+1. Click on the + icon
 2. Rename the tab ```CS_adj```
 3. Navigate to **Extensions**
 4. Select **Apps Script**
 <br><br>
-![Alt Image Text](./Images/WS_Setup663.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup6631.png "Setupxx")
 
 <br><br><br><br>
 
-Delete the existing code and enter the following one in the console. 
+Delete the existing code and enter the following one in the *Apps Script* console. 
 ```
 function rearrangeData() {
   var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
@@ -327,7 +327,7 @@ After pasting the code:
 
 <br><br><br><br>
 
-If this is the first code you're implementing in App Scripts for this spreadsheet, you'll need to grant the application the necessary permissions before executing the code. Click on **Review permissions**.
+If this is the first code you're implementing in *Apps Scripts* for this spreadsheet, you'll need to grant the application the necessary permissions before executing the code. Click on **Review permissions**.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup90.png "Setupxx")
 
