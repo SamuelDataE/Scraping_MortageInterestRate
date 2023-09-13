@@ -1,6 +1,8 @@
 ## Generali Insurance
 <br><br>
-This guide details how to access the interest rates on the Gernerali website. Go to this [website](https://www.generali.ch/privatkunden/wohnen-bauen/hypotheken). 
+This guide details how to access the interest rates on the Gernerali website. In case you you don't have Webscraper.io installed yet - click [here](0Webscraper.io_Setup.md). 
+<br><br>
+If you have Websracper.io installed: Go to this [website](https://www.generali.ch/privatkunden/wohnen-bauen/hypotheken). 
 
 1. Scroll down where the section is with *Useful information about mortgages at a glance*.
 2. Click on the symbol to oben the interest rates.
@@ -77,7 +79,7 @@ You have now created the first *Selector*. Click now on your sector **Link**.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup4122.png "Setup9")
 
-<br><br><br><br
+<br><br><br><br>
 
 1. Click in the line *Data rows selector* on **Select**.
 2. Now mark all the interset rates. Since it is not possible to exclude the variable interest rates, you must also select them. 
@@ -85,7 +87,7 @@ You have now created the first *Selector*. Click now on your sector **Link**.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup4123.png "Setup9")
 
-<br><br><br><br
+<br><br><br><br>
 
 1. Now we do the rest of the settings. Tick the box **Multiple**.
 2. Name the columns ```Duration``` and ```InterestRate```.
@@ -94,7 +96,7 @@ You have now created the first *Selector*. Click now on your sector **Link**.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup4124.png "Setup9")
 
-<br><br><br><br
+<br><br><br><br>
 
 The preview should now include the years and interest rates as in the figure below. If this is not the case, please reselect the table, header and data again till it all data is included correctly. 
 <br><br>
@@ -118,6 +120,7 @@ You are now asked about the request interval and page load delay.
 - Page load delay: Specifies the duration the scraper waits for a page to fully load before extracting the data.
 <br>
 It's done to mimic human browsing behavior, avoid overloading the server, and reduce the chances of getting banned or blocked due to rapid or frequent requests. For the time being, we leave the default settings at 2000 miliseconds.
+<br>
 Therefore, just click **Start scraping**. If we then see that scraping is not working, we could always increase the time here.
 <br><br>
 
@@ -142,30 +145,30 @@ Now go back to **Sitemaps** where you will see the created function for download
 <br><br>
 We have now made the setup in the local webscraper.io application. In order for this to run automatically on a daily basis, we need to do the installation in webscraper.io cloud. How to get an cloud account you see [here](0Webscraper.io_Setup.md).
 <br><br>
-We now copy the settings from the sitemap we made. To do this, click on the sitemap **0LuzernerKantonalbank** in your Chrome browser.
+We now copy the settings from the sitemap we made. To do this, click on the sitemap **0Generali** in your Chrome browser.
 <br><br>
-![Alt Image Text](./Images/WS_Setup20.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup419.png "Setupxx")
 
 <br><br><br><br>
 
-Choose now the tab **Sitemap 0Luzerner Kantonalbank** and select **Export Sitemap**.
+Choose now the tab **Sitemap 0Generali** and select **Export Sitemap**.
 <br><br>
-![Alt Image Text](./Images/WS_Setup21.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup421.png "Setupxx")
 
 <br><br><br><br>
 
 Copy now the displayed code.
 <br><br>
-![Alt Image Text](./Images/WS_Setup22.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup422.png "Setupxx")
 
 <br><br><br><br>
 
 Now open your [Cloud account](https://cloud.webscraper.io) and go to **Import Sitemap**.
 1. Paste the code you copied in the previous step
-2. Name the Sitemap again - in this case ```0LuzernerKantonalbank```
+2. Name the Sitemap again - in this case ```0Generali```
 3. **Import**
 <br><br>
-![Alt Image Text](./Images/WS_Setup23.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup423.png "Setupxx")
 
 <br><br><br><br>
 
@@ -174,15 +177,16 @@ You have now created the sitemap in your cloud environment.
 2. Wait a few seconds for the file to be created - reload the page after a few seconds.
 3. Click on **Preview**.
 <br><br>
-![Alt Image Text](./Images/WS_Setup24.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup424.png "Setupxx")
 
 <br><br><br><br>
 
 Now check whether all content has been loaded here. If something is missing - for example, the column with the interest rates - you have to run the setup again locally in your Chrome browser. You can then export the adjusted code again and insert it in your sitemap under **Edit**. 
 <br><br>
-![Alt Image Text](./Images/WS_Setup25.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup425.png "Setupxx")
 <br><br>
 Please be aware that only the first 10 lines are shown in the *Data Preview*.
+
 <br><br><br><br>
 
 Every time a scrape is executed, this file is created. In order to be able to merge the data from all financial institutions into one file, we need to add the following columns so that we can distinguish the data:
@@ -190,13 +194,13 @@ Every time a scrape is executed, this file is created. In order to be able to me
 - Name of the financial institution
 - Date of download
 
-In addition, we have to edit the data so that they look the same in all sitemaps (e.g. dot everywhere instead of comma for the separation of decimal places, etc.). We do this under **Praser**.
+In addition, we have to edit the data so that they look the same in all sitemaps (e.g. dot everywhere instead of comma for the separation of decimal places, etc.). We do this under **Parser**.
 1. Go to **My Sitemaps**
-2. Select **0LuzernerKantonalbank** Sitemap
+2. Select **0Generali** Sitemap
 3. Go to **Parser**. Here you see the existing columns
 4. **Add column**
 <br><br>
-![Alt Image Text](./Images/WS_Setup26.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup426.png "Setupxx")
 
 <br><br><br><br>
 
@@ -205,7 +209,7 @@ We now add the a colum with the name of the financial institution.
 2. Select as source column **web-scraper-start-url**
 3. **Save**
 <br><br>
-![Alt Image Text](./Images/WS_Setup27.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup427.png "Setupxx")
 
 <br><br><br><br>
 
@@ -213,7 +217,7 @@ A new column has now been created.
 1. Go to **Add parser**
 2. **Regex match**
 <br><br>
-![Alt Image Text](./Images/WS_Setup28.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup428.png "Setupxx")
 
 <br><br><br><br>
 
@@ -221,16 +225,16 @@ Currently, the input is the URL where we download the data. We would like to get
 <br>
 1. Use the code ```www\.(.*?)\.ch```
 2. Select **Group 1**
-3. As *Output* you should now get the name **lukb**
+3. As *Output* you should now get the name **generali**
 4. **Save** 
 <br><br>
-![Alt Image Text](./Images/WS_Setup29.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup429.png "Setupxx")
 
 <br><br><br><br>
 
 Now we add a second column. Click on **Add time scraped**. You see now the added column *time-scraped*. Click now on the field **Convert UNIX timestamp**.
 <br><br>
-![Alt Image Text](./Images/WS_Setup30.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup430.png "Setupxx")
 
 <br><br><br><br>
 
@@ -238,17 +242,17 @@ Now we add a second column. Click on **Add time scraped**. You see now the added
 2. Check the *Output*.
 3. **Save**.
 <br><br>
-![Alt Image Text](./Images/WS_Setup31.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup431.png "Setupxx")
 
 <br><br><br><br>
 
-In the list below you will now see the updated list with the two added columns. We will now edit the two columns **Duration** and **InterestRate** so that we finally have the same data format for all files.
+In the list below you will now see the updated list with the two added columns. We will now edit the column **Duration** so that we finally have the same data format for all files. Since **InterestRate** has already the correct format we dont have to change this one.
 <br>
-1. Now go to the **Duration** column first.
+1. Now go to the **Duration** column.
 2. Click on **Add parser**.
 3. Select **Regex match**.
 <br><br>
-![Alt Image Text](./Images/WS_Setup32.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup432.png "Setupxx")
 
 <br><br><br><br>
 
@@ -257,18 +261,7 @@ We now use a code so that only the figure remains - words are excluded.
 2. Check *Output*
 3. **Save**
 <br><br>
-![Alt Image Text](./Images/WS_Setup33.png "Setupxx")
-
-<br><br><br><br>
-
-Now we adjust the column **InterestRate**.
-1. As before, select the **InterestRate** column - click on **Add parser**.
-2. Select **Regex match**.
-3. Enter the following code at *Regex* ```(\d+).(\d+)``` - This code includes decimal places in a number.
-4. Check *Output*.
-5. **Save**.
-<br><br>
-![Alt Image Text](./Images/WS_Setup34.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup433.png "Setupxx")
 
 <br><br><br><br>
 
@@ -286,7 +279,7 @@ Regardless of the financial institution, all lists should be set up and formatte
 Unless you can't get the list in Webscraper.io into this format. The data must be further formatted in Google Sheet. See the example of [Credit Suisse](1Webscraper.io_CreditSuisse.md).
 <br><br>
 
-![Alt Image Text](./Images/WS_Setup35.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup435.png "Setupxx")
 
 <br><br><br><br>
 
@@ -299,7 +292,7 @@ Now that we have structured and formatted the data, we need to set up a job to a
 5. The remaining settings can be left as they are.
 6. **Save**.
 <br><br>
-![Alt Image Text](./Images/WS_Setup36.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup436.png "Setupxx")
 
 <br><br>
 
