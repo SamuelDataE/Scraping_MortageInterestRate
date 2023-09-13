@@ -1,11 +1,12 @@
 ## Generali Insurance
 <br><br>
-This guide details how to access the interest rates on the Gernerali website. Go to this [website](https://www.lukb.ch/de/private/finanzieren/hypotheken/festhypothek). 
+This guide details how to access the interest rates on the Gernerali website. Go to this [website](https://www.generali.ch/privatkunden/wohnen-bauen/hypotheken). 
 
-1. Scroll down where the interest rates are shown.
-2. Left click and select **Inspect**.
+1. Scroll down where the section is with *Useful information about mortgages at a glance*.
+2. Click on the symbol to oben the interest rates.
+3. Left click and select **Inspect**.
 <br><br>
-![Alt Image Text](./Images/WS_Setup6.png "Setup6")
+![Alt Image Text](./Images/WS_Setup406.png "Setup6")
 
 <br><br><br><br>
 
@@ -13,69 +14,101 @@ This guide details how to access the interest rates on the Gernerali website. Go
 2. **Create new sitemap**
 3. **Create Sitemap**
 <br><br>
-![Alt Image Text](./Images/WS_Setup7.png "Setup7")
+![Alt Image Text](./Images/WS_Setup407.png "Setup7")
 
 <br><br><br><br>
 
-1. Name the Sitemap - in this example its called ```0LuzernerKantonalbank```.
-2. Enter the website ```https://www.lukb.ch/de/private/finanzieren/hypotheken/festhypothek```.
+1. Name the Sitemap - in this example its called ```0Generali```.
+2. Enter the website ```https://www.generali.ch/en/privatkunden/wohnen-bauen/hypotheken```.
 3. **Create Sitemap**.
 <br><br>
-![Alt Image Text](./Images/WS_Setup8.png "Setup8")
+![Alt Image Text](./Images/WS_Setup408.png "Setup8")
 
 <br><br><br><br>
 
 1. **Add new selector**
-2. Name the selector - in this exampled ```InterestRate```
-3. Select as a *Type* **Table**
-4. Click in the line *Selector* on **Select**
-5. Now you can mark the whole table with the interest rates
-6. **Done selecting**
+2. When the Generali page is accessed, the interest rates are not yet directly visible. The table must first be opened. Open the table **Interest rates** on the page.
+3. Name the selector - in this exampled ```Link```.
+4. Select **Element click** as a *Type* .
+5. Click in the line *Selector* on **Select**.
+6. Now mark the whole selection which opened when you clicked on **Interest rates** in step 2#. 
+7. **Done selecting**.
 <br><br>
-![Alt Image Text](./Images/WS_Setup9.png "Setup9")
+![Alt Image Text](./Images/WS_Setup409.png "Setup9")
 
 <br><br><br><br>
 
-1. Now you have to select the header. Click on **Select**.
-2. Since there is now header in the table - select the first line.
+1. Now you have to select the *Click selector*. Click on **Select**
+2. Select on the page **Interest rates**
 3. **Done selecting**
+4. Select as *Click type*: **Click once (pagination, tabs)**
+5. Select as *Click element uniqueness*: **Unique Text**
+6. Untick the box **Multiple**
+7. Select *Discard*: **Never Discard**
+8. **Save selector**
 <br><br>
-![Alt Image Text](./Images/WS_Setup10.png "Setup10")
+![Alt Image Text](./Images/WS_Setup410.png "Setup10")
+<br><br>
+In the *Selector* we have now indicated from which area we want to download the data. With the *Click Selector* we indicate what has to be clicked first by Webscraper.io to see the area above.
 
 <br><br><br><br>
 
-1. With the data rows selector you now select the data. Click on **Select**.
-2. Mark the whole table - incuding the first line (header line). Sometimes the shift key has to be pressed to select all lines.
-3. **Done selecting**
-4. To review our setup click now on **Data preview**.
+You have now created the first *Selector*. Click now on your sector **Link**.
 <br><br>
-![Alt Image Text](./Images/WS_Setup12.png "Setup12")
+![Alt Image Text](./Images/WS_Setup412.png "Setup12")
 
 <br><br><br><br>
 
-The preview should now include the years and interest rates as in the figure below. Please check if the first line of the table is entered twice - once as a header and once as a data row. If this is not the case, please reselect the table, header and data again till it all data is included correctly. 
+1. **Add new selector**
+2. In the selector before, we entered what Webscraper.io has to click on the website. In this selector, we now specify which data should be scraped.
+3. Name the selector - in this exampled ```InterestRates```.
+4. Select **Table** as a *Type* .
+5. Click in the line *Selector* on **Select**.
+6. Now mark within the section you marked in the selector before only the table with the interest rates. It is important that all interest rates for a fixed mortgages are marked. 
+7. **Done selecting**.
 <br><br>
-If everything looks okay, you can close the *Data Preview* view again. 
-<br><br>
-![Alt Image Text](./Images/WS_Setup13.png "Setup13")
+![Alt Image Text](./Images/WS_Setup4121.png "Setup9")
 
 <br><br><br><br>
 
-1. Tick the box **Multiple**
-2. Name the columns ```Duration``` and ```InterestRate```
-3. Tick both boxes **Include into result**
-4. Go on **Data preview** again and check, if now the header has changed according your adjustments.
-5. **Safe selector**
+1. Click in the line *Header row selector* on **Select**.
+2. Now mark the respective header. 
+7. **Done selecting**.
 <br><br>
-![Alt Image Text](./Images/WS_Setup14.png "Setup14")
+![Alt Image Text](./Images/WS_Setup4122.png "Setup9")
+
+<br><br><br><br
+
+1. Click in the line *Data rows selector* on **Select**.
+2. Now mark all the interset rates. Since it is not possible to exclude the variable interest rates, you must also select them. 
+7. **Done selecting**.
+<br><br>
+![Alt Image Text](./Images/WS_Setup4123.png "Setup9")
+
+<br><br><br><br
+
+1. Now we do the rest of the settings. Tick the box **Multiple**.
+2. Name the columns ```Duration``` and ```InterestRate```.
+3. Tick the boxes **Include into result** only for *Duration* and *InterestRate*. We don't want to know the interest rates for 2nd mortgages.
+4. Go to **Preview Data**
+<br><br>
+![Alt Image Text](./Images/WS_Setup4124.png "Setup9")
+
+<br><br><br><br
+
+The preview should now include the years and interest rates as in the figure below. If this is not the case, please reselect the table, header and data again till it all data is included correctly. 
+<br><br>
+If everything looks okay, you can close the *Data Preview* and finish the setup with **Save selector**.
+<br><br>
+![Alt Image Text](./Images/WS_Setup4125.png "Setup13")
 
 <br><br><br><br>
 
 Now we execute the webscraping.
-1. Click on **Sitemap** ***0LuzernerKantonalbank***
+1. Click on **Sitemap** ***0Generali***
 2. Select **Scrape**
 <br><br>
-![Alt Image Text](./Images/WS_Setup15.png "Setup15")
+![Alt Image Text](./Images/WS_Setup415.png "Setup15")
 
 <br><br><br><br>
 
@@ -88,31 +121,26 @@ It's done to mimic human browsing behavior, avoid overloading the server, and re
 Therefore, just click **Start scraping**. If we then see that scraping is not working, we could always increase the time here.
 <br><br>
 
-![Alt Image Text](./Images/WS_Setup16.png "Setup16")
+![Alt Image Text](./Images/WS_Setup416.png "Setup16")
 
 <br><br><br><br>
 
-A window now opens and closes itself again after a few seconds. After that click on **refresh**.
+A window now opens and closes itself again after a few seconds. After that click on **refresh**. You will now see the data that has been downloaded. Make sure that they are complete and that each column contains data. Be aware that only the first few lines of the dataset are displayed.
 <br><br>
-![Alt Image Text](./Images/WS_Setup17.png "Setup17")
+![Alt Image Text](./Images/WS_Setup417.png "Setup17")
 
 <br><br><br><br>
 
-You will now see the data that has been downloaded. Make sure that they are complete and that each column contains data. Be aware that only the first few lines of the dataset are displayed.
+Now go back to **Sitemaps** where you will see the created function for downloading the data from the Generali webpage.
 <br><br>
-![Alt Image Text](./Images/WS_Setup18.png "Setup18")
-
-<br><br><br><br>
-
-Now go back to **Sitemaps** where you will see the created function for downloading the Luzerner Kantonalbank data.
-<br><br>
-![Alt Image Text](./Images/WS_Setup19.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup419.png "Setupxx")
 
 <br><br><br><br>
 
 
 ### Webscraper.io - Cloud
-We have now made the setup in the local webscraper.io application. In order for this to run automatically on a daily basis, we need to do the installation in webscraper.io cloud. 
+<br><br>
+We have now made the setup in the local webscraper.io application. In order for this to run automatically on a daily basis, we need to do the installation in webscraper.io cloud. How to get an cloud account you see [here](0Webscraper.io_Setup.md).
 <br><br>
 We now copy the settings from the sitemap we made. To do this, click on the sitemap **0LuzernerKantonalbank** in your Chrome browser.
 <br><br>
