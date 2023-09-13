@@ -282,6 +282,9 @@ We have now made the settings so that the Luzerner Kantonalbank interest rates a
 
 <br><br><br><br>
 
+
+
+
 ### Google Sheets
 <br><br>
 Before we proceed with Google Sheets, ensure that you've completed the general setup for Google Sheets (account creation) and established the interface between Webscraper.io and Google Sheets. If you need to set this up, please refer to [Webscraper.io_Setup](0Webscraper.io_Setup.md).
