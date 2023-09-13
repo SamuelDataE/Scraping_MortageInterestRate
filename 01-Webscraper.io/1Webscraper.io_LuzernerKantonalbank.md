@@ -55,7 +55,7 @@ This guide details how to access the interest rates on the Luzerner Kantonalbank
 
 The preview should now include the years and interest rates as in the figure below. Please check if the first line of the table is entered twice - once as a header and once as a data row. If this is not the case, please reselect the table, header and data again till it all data is included correctly. 
 <br><br>
-If everything looks okay, you can close the *Data Preview* view again. 
+If everything looks okay, you can close the *Data Preview*. 
 <br><br>
 ![Alt Image Text](./Images/WS_Setup13.png "Setup13")
 
