@@ -419,6 +419,8 @@ To check whether everything is correct, you can trigger the scraping again manua
 
 <br><br><br><br>
 
+Here you can see how to consolidate the data of all financial institutions into a single file - [0Webscraper.io_Setup](0Webscraper.io_Setup.md).
 
+<br><br><br><br>
 
 
