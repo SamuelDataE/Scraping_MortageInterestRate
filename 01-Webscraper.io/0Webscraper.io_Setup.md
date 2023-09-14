@@ -268,11 +268,11 @@ The code is now executed.
 
 <br><br><br><br>
 
-Go now back to the **0InterestRates_all** spreadsheet and review the data. The script seems to work, all data is consolidated. 
+Go now back to the **0InterestRates_all** spreadsheet and review the data. The script seems to work, all data is consolidated.  
 <br><br>
-On the first line the header is missing. If this is requested, the header must be entered manually once. 
+![Alt Image Text](./Images/WS_Setup5101.png "Setupxx")
 <br><br>
-![Alt Image Text](./Images/WS_Setup510.png "Setupxx")
+We have no all the data from the different financial institutions in one file.
 
 <br><br><br><br>
 
@@ -299,8 +299,7 @@ With this setting, you receive a notification when an error occurs.
 
 <br><br><br><br>
 
-With that, we've reached the end of the process. As a result, you have a master file in which you have the interest rates from all desired financial institutions on a daily basis. This file is updated once a day.
-
+With that, we've reached the end of the process. As a result, you have a master file in which you have the interest rates from all desired financial institutions on a daily basis. This file is updated once a day and can be used for further analysis.
 
 <br><br><br><br>
 
