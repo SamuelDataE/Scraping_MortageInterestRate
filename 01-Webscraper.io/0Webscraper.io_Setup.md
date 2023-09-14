@@ -217,7 +217,7 @@ Now, retrieve this code for all the spreadsheets you wish to consolidate in the 
 
 Now switch back to the tab and navigate to the *Apps Script* of your master file **0InterestRates_all**.
 <br><br>
-Replace in your code all the *sheetIds*. In addition, you'll need to specify the name of the worksheet in *sheetName*. Often, the worksheet name is the same as the name of the spreadsheet. However, in the case of the file 0CreditSuisse, for example, it isn't.
+Replace in your code all the *sheetIds*. In addition, you'll need to specify the name of the worksheet in *sheetName*. Often, the worksheet name is the same as the name of the spreadsheet. However, in the case of the file **0CreditSuisse**, for example, it isn't.
 <br><br>
 In this example we consolidate three different spreadsheets. In case you have more sheets you can extend the code with the applied logic.
 <br><br>
