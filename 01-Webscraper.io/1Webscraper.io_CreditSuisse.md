@@ -259,7 +259,7 @@ In our case, the data appears as we would expect it to. However, we want to modi
 <br><br><br><br>
 
 To implement this, we need to write a code. But first we have to open a second tab in the spreadsheet. There we will insert the cleaned data. 
-1. Click on the + icon
+1. Click on the + icon at the bottom of the page
 2. Rename the tab ```CS_adj```
 3. Navigate to **Extensions**
 4. Select **Apps Script**
@@ -270,51 +270,57 @@ To implement this, we need to write a code. But first we have to open a second t
 
 Delete the existing code and enter the following one in the *Apps Script* console. 
 ```
-function rearrangeData() {
-  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+function adjustCreditSuisseData() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sourceSheet = ss.getSheetByName("0CreditSuisse");
+  var targetSheet = ss.getSheetByName("CS_adj");
   
-  // Get data from the "CreditSuisse" sheet
-  var sourceSheet = spreadsheet.getSheetByName("0CreditSuisse");
-  var dataRange = sourceSheet.getRange(2, 1, sourceSheet.getLastRow(), sourceSheet.getLastColumn());
-  var data = dataRange.getValues();
-
-  // Clean the data and transform it into the new format
+  // Copy data from source sheet
+  var data = sourceSheet.getDataRange().getValues();
+  
+  // Remove rows with empty values in column D
+  data = data.filter(function(row) {
+    return row[3] !== "";
+  });
+  
+  // Reorganize data
   var newData = [];
-  var checkDuplicates = {};  // An object to check for duplicates
+  newData.push(["web-scraper-job-id", "web-scraper-order", "web-scraper-start-url", "Duration", "InterestRate", "Financial_Institution", "time-scraped"]); // Header
   
-  for (var i = 0; i < data.length; i += 2) {
-    var row = new Array(7).fill("");  // Create an empty row with 7 columns
-
-    row[0] = data[i][0];  // web-scraper-job-id
-    row[1] = data[i][1];  // web-scraper-order
-    row[2] = data[i][2];  // web-scraper-start-url
-    row[3] = data[i][3].replace(/\D/g, "");  // Retain only the number in "Duration"
-
-    if (i + 1 < data.length) { 
-      row[4] = data[i+1][3].replace(" %", "").trim();  // Remove the percentage symbol and whitespace
-    }
-
-    row[5] = data[i][4];  // Date
-    row[6] = data[i][5];  // "credit-suisse"
-
-    // Check if the row is a duplicate
-    var duplicateKey = row[3] + "|" + row[5];  // Create a unique key based on columns D and F
-    if (!checkDuplicates[duplicateKey] && row[4] !== "") {
-      newData.push(row);
-      checkDuplicates[duplicateKey] = true;
+  for (var i = 1; i < data.length; i += 2) {
+    var currentRow = data[i];
+    var nextRow = data[i + 1];
+    
+    var duration = currentRow[3].replace(" years", "");  // Keep only the number for "Duration"
+    var interestRate = nextRow[3].replace(" %", "");    // Keep only the number for "InterestRate"
+    
+    var reorderedRow = [
+      currentRow[0],  // web-scraper-job-id
+      currentRow[1],  // web-scraper-order
+      currentRow[2],  // web-scraper-start-url
+      duration,       // Duration
+      interestRate,   // InterestRate
+      currentRow[4],  // Financial_Institution
+      currentRow[5]   // time-scraped
+    ];
+    
+    newData.push(reorderedRow);
+  }
+  
+  // Remove duplicates
+  var uniqueData = [];
+  var seen = {};
+  for (var j = 0; j < newData.length; j++) {
+    var key = newData[j][3] + "-" + newData[j][6];  // Combination of "Duration" and "time-scraped"
+    if (!seen[key]) {
+      uniqueData.push(newData[j]);
+      seen[key] = true;
     }
   }
-
-  // Insert data into the "CS_adj" sheet
-  var targetSheet = spreadsheet.getSheetByName("CS_adj");
-  targetSheet.getRange(2, 1, newData.length, 7).setValues(newData);
-
-  // Delete excess rows (optional)
-  var totalRows = targetSheet.getLastRow();
-  var extraRows = totalRows - newData.length - 1;
-  if(extraRows > 0) {
-    targetSheet.deleteRows(newData.length + 2, extraRows);
-  }
+  
+  // Clear old data in target sheet and insert new data
+  targetSheet.clear();
+  targetSheet.getRange(1, 1, uniqueData.length, uniqueData[0].length).setValues(uniqueData);
 }
 ```
 <br><br>
@@ -358,9 +364,9 @@ The code is now executed.
 
 <br><br><br><br>
 
-Go now back to the **0CreditSuisse** spreadsheet, select the **CS_adj** tab and review the data. The script seems to work, it has no more duplicate lines and no lines without percentages. On the first line the header is missing. If this is requested, the header must be entered manually once. 
+Go now back to the **0CreditSuisse** spreadsheet, select the **CS_adj** tab and review the data. The script seems to work, a column has been added and the data is structured as we would expect.  
 <br><br>
-![Alt Image Text](./Images/WS_Setup675.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup6751.png "Setupxx")
 
 <br><br><br><br>
 

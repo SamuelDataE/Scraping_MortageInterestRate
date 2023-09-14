@@ -333,7 +333,7 @@ To implement this, we need to write a code. For this, navigate to **Extensions**
 
 <br><br><br><br>
 
-Delete the existing code and enter the following one in the console. 
+Delete the existing code and enter the following one in the *Apps Script* console. 
 ```
 function checkAndDeleteRows() {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
