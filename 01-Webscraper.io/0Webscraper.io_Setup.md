@@ -151,7 +151,7 @@ When all files have been customised and have the same structure, all files can b
 Open your [Spreadsheets](https://docs.google.com/spreadsheets/) in your Google Sheets account - on the bottom right of the page there is a + symbol. Click on it **Create new spreadsheet**.  
 1. Name your spreadsheet. In this example ```0InterestRates_all```
 2. Go to **Extensions**
-3. **Add Script**
+3. **Apps Script**
 <br><br>
 ![Alt Image Text](./Images/WS_Setup506.png "Setupxx")
 
@@ -159,7 +159,7 @@ Open your [Spreadsheets](https://docs.google.com/spreadsheets/) in your Google S
 
 We will now enter a code that copies the contents of each of the files we have from our financial institutions into our worksheet.
 <br><br>
-Copy therefore the following code: 
+Delete the existing code and enter the following one in the *Apps Script* console. 
 <br><br>
 ```
 function copyDataFromOtherSheets() {
@@ -198,7 +198,101 @@ function copyDataFromOtherSheets() {
 }
 ```
 <br><br>
+Click on **Save** but **don't** *Run* the script yet. First we have to adjust the references to your spreadsheets. See line 3,4,6,7,9 and 10. 
 <br><br>
-![Alt Image Text](./Images/WS_Setup504.png "Setupxx")
+![Alt Image Text](./Images/WS_Setup507.png "Setupxx")
+
+<br><br><br><br>
+
+To retrieve the *sheet1Id* of the respective spreadsheets, open a new window tab and access a spreadsheet from which you want to consolidate data. In this example, I've taken the spreadsheet from **0LuzernerKantonalbank**.
+<br><br>
+Copy the link: *https://docs.google.com/spreadsheets/d/1wSnOpdCijkT6bMYbg3m9dUgrHOOlw9bBttN5dMYYoz0/edit#gid=0* --> The ID is the lengthy code situated between the two slashes (**/**). 
+In this example: 1wSnOpdCijkT6bMYbg3m9dUgrHOOlw9bBttN5dMYYoz0
+<br><br>
+Now, retrieve this code for all the spreadsheets you wish to consolidate in the master file **0InterestRates_all**.
+<br><br>
+![Alt Image Text](./Images/WS_Setup508.png "Setupxx")
+
+<br><br><br><br>
+
+Now switch back to the tab and navigate to the *Apps Script* of your master file **0InterestRates_all**.
+<br><br>
+Replace in your code all the *sheetIds*. In addition, you'll need to specify the name of the worksheet in *sheetName*. Often, the worksheet name is the same as the name of the spreadsheet. However, in the case of the file 0CreditSuisse, for example, it isn't.
+<br><br>
+In this example we consolidate three different spreadsheets. In case you have more sheets you can extend the code with the applied logic.
+<br><br>
+Whe you have finalised the code - click **Run**.
+<br><br>
+![Alt Image Text](./Images/WS_Setup509.png "Setupxx")
+
+<br><br><br><br>
+
+If this is the first code you're implementing in *Apps Scripts* for this spreadsheet, you'll need to grant the application the necessary permissions before executing the code. Click on **Review permissions**.
+<br><br>
+![Alt Image Text](./Images/WS_Setup90.png "Setupxx")
+
+<br><br><br><br>
+
+Select your Google account.
+<br><br>
+![Alt Image Text](./Images/WS_Setup92.png "Setupxx")
+
+<br><br><br><br>
+
+1. Click **Advanced**
+2. Click **Go to Untitled project (unsafe)**. If you have named your code in *App Script*, it can be named differently.
+<br><br>
+![Alt Image Text](./Images/WS_Setup93.png "Setupxx")
+
+<br><br><br><br>
+
+**Allow**
+<br><br>
+![Alt Image Text](./Images/WS_Setup94.png "Setupxx")
+
+<br><br><br><br>
+
+The code is now executed. 
+<br><br>
+![Alt Image Text](./Images/WS_Setup951.png "Setupxx")
+
+<br><br><br><br>
+
+Go now back to the **0InterestRates_all** spreadsheet and review the data. The script seems to work, all data is consolidated. 
+<br><br>
+On the first line the header is missing. If this is requested, the header must be entered manually once. 
+<br><br>
+![Alt Image Text](./Images/WS_Setup510.png "Setupxx")
+
+<br><br><br><br>
+
+Now we want this code to be executed whenever data is loaded into the spreadsheet. Now go back to the *Apps Script* application.
+1. Go to **Extensions**
+2. Select **Apps Script**
+3. In the Apps Script application, click on the clock icon (*Triggers*) on the left side
+4. **Add Trigger**
+<br><br>
+![Alt Image Text](./Images/WS_Setup961.png "Setupxx")
+
+<br><br><br><br>
+
+Now we specify the trigger.
+1. Select event source: **Time-driven**
+2. Select type of time based trigger: **Day timer**
+3. Select time of the day: **6am to 7am** (make sure that this time is a few minutes after the scraping in Webscraper.io is executed)
+4. Rest stays the same
+5. **Save**
+<br><br>
+![Alt Image Text](./Images/WS_Setup511.png "Setupxx")
+<br><br>
+With this setting, you receive a notification when an error occurs.
+
+<br><br><br><br>
+
+ With that, we've reached the end of the process. As a result, you have a master file in which you have the interest rates from all desired financial institutions on a daily basis. This file is updated once a day.
+
+
+<br><br><br><br>
+
 
 
