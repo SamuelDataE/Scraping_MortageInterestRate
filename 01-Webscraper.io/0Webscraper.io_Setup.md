@@ -221,7 +221,7 @@ Replace in your code all the *sheetIds*. In addition, you'll need to specify the
 <br><br>
 In this example we consolidate three different spreadsheets. In case you have more sheets you can extend the code with the applied logic.
 <br><br>
-Whe you have finalised the code - click **Run**.
+Whe you have finalised the code - **save** it and click **Run**.
 <br><br>
 ![Alt Image Text](./Images/WS_Setup509.png "Setupxx")
 
@@ -266,7 +266,7 @@ On the first line the header is missing. If this is requested, the header must b
 
 <br><br><br><br>
 
-Now we want this code to be executed whenever data is loaded into the spreadsheet. Now go back to the *Apps Script* application.
+Now we want this code to be executed on a daily basis. Go back to the *Apps Script* application.
 1. Go to **Extensions**
 2. Select **Apps Script**
 3. In the Apps Script application, click on the clock icon (*Triggers*) on the left side
@@ -289,7 +289,7 @@ With this setting, you receive a notification when an error occurs.
 
 <br><br><br><br>
 
- With that, we've reached the end of the process. As a result, you have a master file in which you have the interest rates from all desired financial institutions on a daily basis. This file is updated once a day.
+With that, we've reached the end of the process. As a result, you have a master file in which you have the interest rates from all desired financial institutions on a daily basis. This file is updated once a day.
 
 
 <br><br><br><br>
