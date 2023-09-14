@@ -14,7 +14,9 @@ Compared to extraction via an API, webscraping provides less structured data due
 <br>
 
 ![Alt Image Text](./Images/WS_Dataflow.png "Dataflow")
-  
+<br><br>
+From my personal experience, I've noticed that the websites have changed over time. Therefore, it should be expected that the web scraping settings will need to be adjusted multiple times. Maintaining the application is thus very important.
+
 <br><br>
 
 In the list below, some Swiss financial institutions are mentioned for which an attempt was made to download the interest rates using Webscraper.io. 
