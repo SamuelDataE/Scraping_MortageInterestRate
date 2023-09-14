@@ -6,6 +6,7 @@ Relevant files in this folder:
 1. [General-Information](0Webscraper.io_General-Information.md)
 2. [Setup](0Webscraper.io_Setup.md)
 
+
 Financial institutions
 - [Credit Suisse](1Webscraper.io_CreditSuisse.md)
 - [Generali](1Webscraper.io_Generali.md)
