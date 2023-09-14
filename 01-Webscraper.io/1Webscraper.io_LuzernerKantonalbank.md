@@ -328,12 +328,13 @@ function checkAndDeleteRows() {
 
   for (var i = values.length - 1; i > 0; i--) {  // Loop starts from the last row and ignores the first row
     var columnD = values[i][3]; // 0-based, so 3 is for Column D
-    var columnF = values[i][5]; // 0-based, so 5 is for Column F
+    var columnE = values[i][4]; // 0-based, so 4 is for Column E
+    var columnG = values[i][6]; // 0-based, so 6 is for Column G
 
-    var combinationKey = columnD + "_" + columnF; // Create a unique key for the combination
-    
-    // Check if the combination already exists or if Column E doesn't contain a number
-    if (uniqueCombinations[combinationKey] || !isNumeric(values[i][4])) {
+    var combinationKey = columnD + "_" + columnG; // Create a unique key for the combination
+
+    // Check if the combination already exists or if Column E is empty
+    if (uniqueCombinations[combinationKey] || columnE === "") {
       rowsToDelete.push(i);
     } else {
       uniqueCombinations[combinationKey] = true;
@@ -344,10 +345,6 @@ function checkAndDeleteRows() {
   for (var j = 0; j < rowsToDelete.length; j++) {
     sheet.deleteRow(rowsToDelete[j] + 1);
   }
-}
-
-function isNumeric(value) {
-  return !isNaN(parseFloat(value)) && isFinite(value);
 }
 ```
 <br><br>

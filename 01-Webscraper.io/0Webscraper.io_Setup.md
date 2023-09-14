@@ -171,7 +171,7 @@ function copyDataFromOtherSheets() {
   var sheet2Name = "0Generali"; // Adjust according to your settings
 
   var sheet3Id = "129iS287XRyx0rS9TtdVQia-uk0KOHPgPE8uviReNv-Q"; // Adjust according to your settings
-  var sheet3Name = "CS_adj"; // Adjust according to your settings                                    
+  var sheet3Name = "CS_adj"; // Adjust according to your settings
 
   // Open the tables and fetch the data
   var sheet1Data = SpreadsheetApp.openById(sheet1Id).getSheetByName(sheet1Name).getDataRange().getValues();
@@ -181,10 +181,9 @@ function copyDataFromOtherSheets() {
   // Get the current worksheet
   var currentSheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
 
-  // Check if the header has already been written. If not, leave the first row free.
+  // Check if the header has already been written. If not, write the header.
   if (currentSheet.getRange(1, 1).getValue() === '') {
-    var totalRows = sheet1Data.length + sheet2Data.length + sheet3Data.length - 3; // -3 because the headers of the other sheets are ignored
-    currentSheet.insertRows(2, totalRows);
+    currentSheet.getRange(1, 1, 1, 7).setValues([['web-scraper-job-id', 'web-scraper-order', 'web-scraper-start-url', 'Duration', 'InterestRate', 'Financial_Institution', 'time-scraped']]);
   }
 
   // Add data from the first table (excluding the header)
@@ -195,6 +194,17 @@ function copyDataFromOtherSheets() {
 
   // Add data from the third table (excluding the header)
   currentSheet.getRange(sheet1Data.length + sheet2Data.length + 1, 1, sheet3Data.length - 1, sheet3Data[0].length).setValues(sheet3Data.slice(1));
+
+  // Remove empty rows
+  var lastRow = currentSheet.getLastRow();
+  for (var i = lastRow; i >= 1; i--) {
+    if (currentSheet.getRange(i, 1).getValue() === '' && currentSheet.getRange(i, 2).getValue() === '') {
+      currentSheet.deleteRow(i);
+    }
+  }
+
+  // Sort the rows based on Financial institution, time-scraped, and Duration
+  currentSheet.getRange(2, 1, lastRow - 1, 7).sort([{column: 6, ascending: true}, {column: 7, ascending: true}, {column: 4, ascending: true}]);
 }
 ```
 <br><br>
@@ -258,11 +268,11 @@ The code is now executed.
 
 <br><br><br><br>
 
-Go now back to the **0InterestRates_all** spreadsheet and review the data. The script seems to work, all data is consolidated. 
+Go now back to the **0InterestRates_all** spreadsheet and review the data. The script seems to work, all data is consolidated.  
 <br><br>
-On the first line the header is missing. If this is requested, the header must be entered manually once. 
+![Alt Image Text](./Images/WS_Setup5101.png "Setupxx")
 <br><br>
-![Alt Image Text](./Images/WS_Setup510.png "Setupxx")
+We have no all the data from the different financial institutions in one file.
 
 <br><br><br><br>
 
@@ -289,8 +299,7 @@ With this setting, you receive a notification when an error occurs.
 
 <br><br><br><br>
 
-With that, we've reached the end of the process. As a result, you have a master file in which you have the interest rates from all desired financial institutions on a daily basis. This file is updated once a day.
-
+With that, we've reached the end of the process. As a result, you have a master file in which you have the interest rates from all desired financial institutions on a daily basis. This file is updated once a day and can be used for further analysis.
 
 <br><br><br><br>
 
