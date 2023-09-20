@@ -16,8 +16,8 @@ The following figure shows how the process looks for the daily download of data 
 Compared to extraction via an API, webscraping provides less structured data due to varying homepage layouts and content across sites. Data cleansing and structuring become more critical and constitute a significant portion of the task with webscraping.
 
 <br><br>
-
 For a few websites, scraping with python (beautfiulsoup) did not work as they use a webscraper blocker. Additionally, no data can be downloaded if the website, or at least a part of it, is set up using JavaScript. In the list below, some Swiss financial institutions are mentioned for which an attempt was made to download the interest rates using python (beautfiulsoup). 
+
 
 | Financial institution  | Website                | Webscraper.io         |
 |--------------------    |---------------------   |-------------------    |
