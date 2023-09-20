@@ -17,7 +17,7 @@ Compared to extraction via an API, webscraping provides less structured data due
 
 <br><br>
 For a few websites, scraping with python (beautfiulsoup) did not work as they use a webscraper blocker. Additionally, no data can be downloaded if the website, or at least a part of it, is set up using JavaScript. In the list below, some Swiss financial institutions are mentioned for which an attempt was made to download the interest rates using python (beautfiulsoup). 
-
+<br><br>
 
 | Financial institution  | Website                | Webscraper.io         |
 |--------------------    |---------------------   |-------------------    |
@@ -41,6 +41,14 @@ For a few websites, scraping with python (beautfiulsoup) did not work as they us
 | Zuger Kantonalbank| https://www.zugerkb.ch/private/hypotheken/hypothekarzinsen | Works |
 | Zürcher Kantonalbank| https://www.zkb.ch/de/private/hypotheken-immobilien/hypotheken-zinsen/aktuelle-hypothekarzinsen.html | Works |
 | Zurich Insurance| https://www.zurich.ch/de/privat/wohnen-events/wohneigentum/hypothek | Works |
+
+<br><br>
+In this repository there is a description of how this can be implemented for the following websites:
+<br><br>
+- [Luzerner Kantonalbank](1Webscraper.io_LuzernerKantonalbank.md)
+- [Credit Suisse](1Webscraper.io_CreditSuisse.md)
+- [Generali Insurance](1Webscraper.io_Generali.md)
+
 
 <br><br><br><br>
 
