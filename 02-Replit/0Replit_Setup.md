@@ -80,25 +80,28 @@ response = requests.get(url)
 
 soup = BeautifulSoup(response.content, 'html.parser')
 
-# Extrahieren der Laufzeiten
-laufzeiten = [th.text.strip() for th in soup.find_all('th')]
+# Extracting the terms
+terms = [th.text.strip() for th in soup.find_all('th')]
 
-# Extrahieren der Zinssätze
-zinsen = [td.find('p').text.strip() if td.find('p') else td.text.strip() for td in soup.find_all('td')]
+# Extracting the interest rates
+interest_rates = [td.find('p').text.strip() if td.find('p') else td.text.strip() for td in soup.find_all('td')]
 
-# Kombinieren der beiden Listen in ein Dictionary
-data = dict(zip(laufzeiten, zinsen))
+# Combining both lists into a dictionary
+data = dict(zip(terms, interest_rates))
 
-# Ausgabe der Daten
-for laufzeit, zins in data.items():
-    print(f"Laufzeit: {laufzeit}, Zins: {zins}")
+# Displaying the data
+for term, interest_rate in data.items():
+    print(f"Term: {term}, Interest Rate: {interest_rate}")
 ```
-
+<br><br>
+If there is a **#** at the beginning of a line, then it is a comment. A comment is never executed and serves only for your information what the code stands for.
+<br><br>
 Enter this in the script. We want to test whether we can download the data from the Luzerner Kantonalbank. 
 1. Copy the text into the script
 2. Execute the script
 3. You should now see the data in the console
-
+4. *Now delete the code in **main.py** again - we have done this step for testing purposes
+<br><br>
 ![Alt Image Text](./Images/RP_Setup5.png "SetupXXX")
 <br><br>
 If this does not work, check again if you have installed all relevant packages. If it still doesn't work, something has probably changed on the Luzerner Kantonalbank homepage. In this case, continue with the next steps nevertheless.
@@ -109,7 +112,7 @@ In order to be able to download the interest rates of several financial institut
 
 On the left side next to **Files** there is a **+** sign. Click on this sign and create a new file with the name ```financialinstitutions.json```. It is important that you use exactly this name, because our code will look for this file afterwards.
 
-Enter in the file the following code:
+Now enter the following code in this file:
 
 ```
 [
@@ -146,17 +149,140 @@ Enter in the file the following code:
   ]
 ```
 <br><br>
+![Alt Image Text](./Images/RP_Setup6.png "SetupXXX")
+<br><br>
 We again use the Luzerner Kantonalbank and MigrosBank as examples. 
 
 ***How you can set up these banks or extend the code to other banks is shown in the other documents in this repository.*** 
-<br><br>
-![Alt Image Text](./Images/RP_Setup6.png "SetupXXX")
 
 <br><br><br><br>
 
+We now enter a code in **main.py** to extract the data. Now copy the following code and paste it into Replit.
+
+```
+# Testing - Extracting the data manually 
+
+import requests
+from bs4 import BeautifulSoup
+import json
+
+# Read the configuration file
+with open('financialinstitutions.json', 'r') as f:
+    banks = json.load(f)
+
+all_data = {}
+
+for bank in banks:
+    response = requests.get(bank['url'])
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    bank_data = {}
+    for duration, selector in bank['selectors'].items():
+        rate_element = soup.select_one(selector)
+        if rate_element:
+            bank_data[duration] = rate_element.text.strip()
+
+    all_data[bank['name']] = bank_data
+
+# Display or save data
+print(all_data)
+```
+<br><br>
+When you have inserted the code, execute it with **Run**.
+<br><br>
+![Alt Image Text](./Images/RP_Setup7.png "SetupXXX")
+<br><br>
+You should now see a data record for LUKB and MigrosBank in the console. 
+
+<br><br><br><br>
+
+The manual download of the data is the first part of the code, which we have in our script. However, we will now add other tasks to the script. In order to execute only one task at a time, however, we need to inactivate the rest of the code. This can be done by excluding the code with the characters ```'''```. As soon as the characters appear orange, these lines are no longer executed. Set the code inactive by placing ```'''``` before and after the code. 
+<br><br>
+![Alt Image Text](./Images/RP_Setup8.png "SetupXXX")
+
+<br><br><br><br>
+
+We have now downloaded the data with the previous code - but now we have done it manually. However, in order to be able to download the data automatically on a daily basis, we need to extend the code. 
+<br><br>
+Now copy this code and add it to the main.py file at the top (dont delete the inactive code):
+<br><br>
+```
+import requests
+from bs4 import BeautifulSoup
+import json
+from datetime import datetime
+from replit import db
+from flask import Flask
+
+app = Flask(__name__)
+
+# Read the configuration file
+with open('financialinstitutions.json', 'r') as f:
+    banks = json.load(f)
+
+@app.route('/')
+def home():
+    return "Welcome to the Mortgage Interest Rates Scraper! Use /trigger_scrape to initiate the scraping process."
+
+@app.route('/trigger_scrape')
+def trigger_scrape():
+    all_data = []
+    current_date = datetime.now().strftime('%d.%m.%Y')
+
+    for bank in banks:
+        response = requests.get(bank['url'])
+        soup = BeautifulSoup(response.text, 'html.parser')
+
+        for duration, selector in bank['selectors'].items():
+            rate_element = soup.select_one(selector)
+            if rate_element:
+                rate = rate_element.text.strip()
+
+                # Restructure data into the desired format for the database
+                record = {
+                    "Name": bank['name'],
+                    "Duration": duration,
+                    "InterestRate": rate,
+                    "time-of-scraping": current_date
+                }
+                all_data.append(record)
+
+    # Store data in the Replit database
+    for record in all_data:
+        # Use a combination of Name, Duration, and time-of-scraping as the key
+        key = f"{record['Name']}_{record['Duration']}_{record['time-of-scraping']}"
+        db[key] = record
+
+    return "Data has been saved in the Replit database!"
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=3000)
+```
+<br><br>
+This code includes the following items:
+
+1. Import all functions and packages which are required. With the Flask package we will be able to trigger the code via web.
+2. Downloads the data from the websited we have defined in the **financialinstitutions.json** file.
+3. Restructure data into the desired format for the database - including the date of the extraction.
+4. Safes the data in the database.
+
+When you have entered the code in **main.py** execute the script and click **Run** (before you execute the code make sure that only this code is activated).
+<br><br>
+![Alt Image Text](./Images/RP_Setup9.png "SetupXXX")
+<br><br>
 
 
 
+
+
+
+
+
+
+
+Always On
+
+Database - inhalt.
 
 
 
