@@ -43,7 +43,7 @@ For a few websites, scraping with python (beautfiulsoup) did not work as they us
 | Zurich Insurance| https://www.zurich.ch/de/privat/wohnen-events/wohneigentum/hypothek | Works |
 
 <br><br>
-In this repository there is a description of how this can be implemented for the following websites:
+This repository describes how to download the interest from the following websites:
 <br><br>
 - [Luzerner Kantonalbank](1Webscraper.io_LuzernerKantonalbank.md)
 - [Credit Suisse](1Webscraper.io_CreditSuisse.md)
@@ -53,7 +53,7 @@ In this repository there is a description of how this can be implemented for the
 <br><br><br><br>
 
 ## Result
-The end result is a database with daily records on the requested shares. 
+The end result is a database with daily records of requested interest rates. 
 <br><br>
 ![Alt Image Text](./Images/RP_Result.png "Result")
 <br><br>
