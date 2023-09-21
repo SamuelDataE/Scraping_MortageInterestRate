@@ -55,7 +55,7 @@ In this repository there is a description of how this can be implemented for the
 ## Result
 The end result is a database with daily records on the requested shares. 
 <br><br>
-![Alt Image Text](./Images/RP_Database.png "Result")
+![Alt Image Text](./Images/RP_Result.png "Result")
 <br><br>
 This data can be downloaded in a csv file.
 
