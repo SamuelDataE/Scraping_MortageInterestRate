@@ -10,12 +10,11 @@ The figure below outlines the process for daily data download with Webscraper.io
 4. The data is then exported to Google Sheets. A default export channel between Webscraper.io and Google Sheets is pre-established.
 5. Within Google Sheets, the data undergoes further structuring, and tables from different financial institutions are consolidated into a single table.
 <br>
-Compared to extraction via an API, webscraping provides less structured data due to varying homepage layouts and content across sites. Data cleansing and structuring become more critical and constitute a significant portion of the task with webscraping.
-<br>
 
 ![Alt Image Text](./Images/WS_Dataflow.png "Dataflow")
 <br><br>
-From my personal experience, I've noticed that the websites have changed over time. Therefore, it should be expected that the web scraping settings will need to be adjusted multiple times. Maintaining the application is thus very important.
+
+Compared to extraction via an API, webscraping provides less structured data due to varying homepage layouts and content across sites. Data cleansing and structuring become more critical and constitute a significant portion of the task with webscraping. It must be assumed that the websites have changed over time. Therefore, it should be expected that the web scraping settings will need to be adjusted multiple times. Maintaining the application is thus very important.
 
 <br><br>
 
