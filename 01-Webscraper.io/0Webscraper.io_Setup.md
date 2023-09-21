@@ -23,7 +23,7 @@ Follow this guide to get started.
 
 <br><br><br><br>
 
-### 1 Webscraper.io
+### 1. Webscraper.io
 <br><br>
 It is recommended to use the Google Chrome browsen. This browser has a wide user base, is regularly updated, and tends to be compatible with a variety of web technologies, which makes it a suitable choice for web scraping tools like Webscraper.io. 
 <br><br>
