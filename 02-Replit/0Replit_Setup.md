@@ -207,6 +207,9 @@ We have now downloaded the data with the previous code - but now we have done it
 Now copy this code and add it to the main.py file at the top (do not delete the inactive code):
 <br><br>
 ```
+# automatic execution via CRONJOB.DE 
+# manual start via Web; https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/trigger_scrape
+
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -336,7 +339,7 @@ Now stop the code and make the code inactive by placing the characters ```'''```
 To retrieve the data from the database, you can add the following code to our **main.py** file. Enter the code at the end. 
 <br><br>
 ```
-# Retrieve the database
+# Retrieve data from database
 
 from replit import db
 from datetime import datetime
@@ -394,7 +397,7 @@ Now set this code to inactive as well by using the ```'''``` characters.
 The next code is for loading the data from the database into a csv file. This can then simply be downloaded. Copy the following code.
 <br><br> 
 ```
-# Create csv
+# Create csv file
 
 import requests
 from bs4 import BeautifulSoup
@@ -446,7 +449,7 @@ Enter the code at the end of your existing script **main.py** and press **Run**.
 <br><br>
 ![Alt Image Text](./Images/RP_Setup15.png "SetupXXX")
 <br><br>
-Now make the code inactive again by placing the characters ``'''``'' around the code.
+Now make the code inactive again by placing the characters ```'''``` around the code.
 
 <br><br><br><br>
 
@@ -458,13 +461,182 @@ When the data is loaded into a csv, the current data in the database is always d
 
 <br><br><br><br>
 
-On the left side under **Files** the file **output.csv** has now been created. If you click on it, you will see the data contained in this csv. You can now download this csv for your further use.
+To delete the data in the database itself, one must enter the following code.
+
+Copy this code and paste it at the end of our script.
+<br><br>
+```
+# Clear database
+
+from replit import db
+
+# Retrieve all keys from the database
+all_keys = list(db.keys())
+
+# Delete each key from the database
+for key in all_keys:
+    del db[key]
+
+print("All entries have been deleted from the Replit database!")
+```
+<br><br>
+Before you run the code, make sure that all other codes are disabled. If this is the case, click **Run**.
 <br><br>
 ![Alt Image Text](./Images/RP_Setup16.png "SetupXXX")
+<br><br>
+When you have executed the code:
+1. Click under **Tools** on **Database**.
+2. In the top right window you will now see the **Database** tab. This tab should now show that there are no more datasets. 
 
+<br><br><br><br>
 
+Again, set this code to inactive by using the ''' characters.
+<br><br>
+![Alt Image Text](./Images/RP_Setup17.png "SetupXXX")
 
+<br><br><br><br>
 
+We now have the codes for the following tasks in our **main.py** script:
+<br><br>
+- Code for the automatic triggering of the job via web
+- Manual download of the data
+- Retrieve data from database
+- Create csv file
+- Clear database
+<br><br>
+In order for the code *Code for the automatic triggering of the job via web* to be executed automatically every day and thus download the data daily and save it in the database, we have to set up a cron job.
+<br><br>
+A cron job is a scheduled task in Unix-like operating systems that runs at fixed times, dates, or intervals. It is typically used for automating system maintenance or administration tasks.
+
+<br><br><br><br>
+
+### CRONJOB.DE
+<br><br>
+To ensure that the script now runs daily, we now call up the URL-link (https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/trigger_scrape - *your URL is different*) daily with the help of CRONJOB.DE. To do this, we have to register on CRONJOB.DE. The page is in German. You can also use another cronjob provider if you want to have a page in English. There are many providers in this area.
+<br><br>
+Register yourself on [CRONJOB.DE](https://www.cronjob.de/anmeldung). The registration process should be self-explanatory.
+<br><br>
+![Alt Image Text](./Images/RP_Setup26.png "Setup26")
+
+<br><br><br><br>
+
+In the **Home** menu, click on **Cronjobs**.
+<br><br>
+![Alt Image Text](./Images/RP_Setup261.png "Setup261")
+
+<br><br><br><br>
+
+Click on the button **Neuen CRONJOB anlegen**.
+<br><br>
+![Alt Image Text](./Images/RP_Setup27.png "Setup27")
+
+<br><br><br><br>
+
+1. Name your CRONJOB - in this examble ```WebScraping_Replit```
+2. Enter your URL address - make sure that the URL starts with **https://** and ends with **/trigger_scrape**. See example in the figure below.
+3. Define the scheudle - in this examble every weekday
+4. Safe CRONJOB. **CRONJOB speichern**
+<br><br>
+![Alt Image Text](./Images/RP_Setup28.png "Setup28")
+
+<br><br><br><br>
+
+After setting up the cronjob, you will be prompted to run a verification. This is asked to ensure that you are authorised to create this cronjob for the relevant server (Replit). 
+<br>
+In this example, we must now create an html file in Replit with the name **cronjob_78641.html**. This file should contain the content **cronjob.de**. Before you click on the **Prüfung jetzt durchführen** button, you can check manually with the shown link (**https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/cronjob_78641.html**) whether the verification works. We do this at a later step when the Html file is created.  
+<br><br>
+![Alt Image Text](./Images/RP_Setup281.png "Setup281")
+
+<br><br><br><br>
+
+Go back to your Repl and open a html file. In this example it is called **cronjob_78641.html** - you will have a different number. Then open the file and put ```cronjob.de``` in it. 
+<br><br>
+![Alt Image Text](./Images/RP_Setup29.png "Setup29")
+
+<br><br><br><br>
+
+Now go back to the script (**main.py**) and go to the top where you see the **Code for the automatic triggering of the job via web**. Wihtin this code at the end you see a line with **@app.route('/cronjob_78641.html')**. Now change the number to match the title of your html file. 
+<br><br>
+![Alt Image Text](./Images/RP_Setup30.png "Setup30")
+
+<br><br><br><br>
+
+Now make sure that only the code *Code for automatically triggering the job via the web* is activated. The rest should be set to inactive with the characters ```'''```.
+
+Press on the **Run** button.
+<br><br>
+![Alt Image Text](./Images/RP_Setup31.png "Setup31")
+
+<br><br><br><br>
+
+Now enter your verification link (in this case:**https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/cronjob_78641.html**) in the web browser. If the result is **cronjob.de**, everything works. Otherwise, check the previous steps again.
+<br><br>
+![Alt Image Text](./Images/RP_Setup32.png "Setup32")
+
+<br><br><br><br>
+
+If it worked, you can now run the check in CRONJOB.DE. **Prüfung jetzt durchführen**
+<br><br>
+![Alt Image Text](./Images/RP_Setup33.png "Setup33")
+<br>
+Afterwards, a message appears if it has worked.
+
+<br><br><br><br>
+
+***The setup is now complete and everything should work.***
+
+<br><br><br><br>
+
+Make sure that only the code needed for the automatic download of the data via cronjob is activated. Also make sure that the **script is running**. If the script is not running, nothing can be triggered via the web. 
+<br><br><br><br>
+
+## Here a quick summary about the setup
+
+<br><br><br>
+### Web links
+
+<br>
+
+Code: **https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/**    (acc. Replit webview)
+  * Checks if the script runs.
+  * *Can be triggered when script is executed in Replit (**Run**) or the link is entered on the web.*
+  * Gives as response *Welcome to the Mortgage Interest Rates Scraper! Use /trigger_scrape to initiate the scraping process.*
+
+<br>
+
+Code: **https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/trigger_scrape**
+  * Is executing script and downloads data.
+  * *Can only be executed via the web.*
+  * Gives as response *Data has been saved in the Replit database!*
+
+<br>
+
+Code: **https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/cronjob_78641.html**
+  * Is required for the verification in CRONJOB.DE.
+  * Must be performed once.
+  * *Can only be executed via the web.*
+  * Gives as response "cronjob.de"
+<br><br>
+*Please have in mind, that your URL link looks different since the code is depending on your project and user name (and verification number from CRONJOB.DE).*
+
+<br><br><br>
+### Python script - different codes
+
+<br>
+
+In our script we have the following codes:
+<br>
+1. Automatic download of data via cronjob
+2. Manual download of the data
+3. Viewing the database
+4. Creation of a csv file
+5. Deleting the database
+
+<br><br>
+
+Make sure of the following:
+ * That the script is **always** running. If the script is not running, nothing can be triggered via the web.
+ * That only the first code (**Automatic download of data via cronjob**) is set to active.
 
 
 
