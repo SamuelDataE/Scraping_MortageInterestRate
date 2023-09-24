@@ -6,7 +6,7 @@ Before you start setting up MigrosBank, you must have created the Repl in Replit
 <br><br>
 The setup includes the following two steps:
 1. Anlayse website
-2. creation the code in Replit
+2. Creation the code in Replit
 
 This process can also be extended to other websites of financial institutions, which are not shown here in this repository. The process is the same. 
 
@@ -17,7 +17,7 @@ This process can also be extended to other websites of financial institutions, w
 In this documentation it is shown how to download the interest rates from MigrosBank.
 1. Go to their [website](https://www.migrosbank.ch/de/privatpersonen/hypotheken/festhypothek)
 2. Scroll down to the interest rate table - analyse it
-3. Click to on the three dots on the right top corner and go to **Settigs**
+3. Click on the three dots in the upper right corner and go to **Settigs**
 <br><br>
 ![Alt Image Text](./Images/RP_Setup43.png "SetupXXX")
 
@@ -41,11 +41,11 @@ There are websites that are set up with JavaScipt, these are dynamic. We cannot 
 
 Go now back to your MigrosBank webpage and **relaod** the page. Now you see that the interest rates are still shown. Thats a good sign since we now know, that we will be able to pull out the data with our approach.
 <br><br>
+**Since we now know that the interest rates are also displayed without JavaScript, you can now enable JavaScript again under settings.** 
+<br><br>
 To further analyse the page make a right click on the table and select **inspect**.
 <br><br>
 ![Alt Image Text](./Images/RP_Setup40.png "SetupXXX")
-<br><br>
-**Since we now know that the interest rates are also displayed without JavaScript, you can now enable JavaScript again under settings.**
 <br><br><br><br>
 
 You are now in the *Developer Tools* environment. In the *Elements* section you can now see how the website is structured, there you can also see, for example, which part of the code displays which interest rate figure. In our our case we will now focus on the 2 year term with the interest rate of **2.890%**.
@@ -60,12 +60,12 @@ You are now in the *Developer Tools* environment. In the *Elements* section you 
 
 <br><br><br><br>
 
-We now analyse the code in this Word file. Scroll down the Word file to the part where the code shows the interest rates. We will analyse the 2 year term. In the end, it doesn't matter because the table is the same for all terms. 
+We now analyse the code in this Word file. Scroll down the Word file to the part where the code shows the interest rates. We will analyse the 2 year term (it doesn't matter which term is analysed - the structure is the same for all terms). 
 <br><br>
 The code is as follows for the 2 year interest rates:
-*<tr class="Table--row">
-              <td class="Table--bodyCell">2 Jahre</td>
-                <**td** class="Table--bodyCell">2,590%</td>
+*<tr class="Table--row"><br>
+              <td class="Table--bodyCell">2 Jahre</td><br>
+                <**td** class="Table--bodyCell">2,590%</td><br>
                 <**td** class="Table--bodyCell">2,890%</td>*
 <br><br>
 We now see that the line in which the interest rates are stored starts with **td**. Since the first rate is a extra premium rate (2.590%), we are only interested in the second rate (2.890%). 
