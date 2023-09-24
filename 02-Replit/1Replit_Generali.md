@@ -100,7 +100,7 @@ The structure of the code is as follows:
 ```
 <br><br>
 In the line of code where the interest rates are queried, we have to check the following: *"2 Jahre": "**td**:-soup-contains('**2 years**') + xxxx"*<br><br>
-- The **td** has to match the letters which are in front of the year (*<**td**>2 years</td>*)
+- The **td** has to match the letters which are in front of the year ```(<td>2 years</td>)```
 - The term listed in the parenthesis - for example ```('2 Jahre')``` has to match the wording in the table ```<td>2 Jahre</td>```. 
 <br><br>
 We now need to replace the *xxxx* accordingly. After that the code should now look like this:
