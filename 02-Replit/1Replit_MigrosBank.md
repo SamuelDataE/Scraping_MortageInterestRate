@@ -1,407 +1,155 @@
 ## MigrosBank
 <br><br>
-This documentation explains how you can retrieve the interest rates on the MigrosBank website. Before you start setting up MigrosBank, you must have created the Repl in Replit and a cronjob according to the [setup](0Replit_Setup.md) document. 
+This repository uses three websites to show how to download the interest rates. This documentation explains how you can download the interest rates from the MigrosBank website. 
 <br><br>
-When you have done this, open the json file *financialinstitutions.json* in your Repl.
-
-
-
-
-If you have Websracper.io installed: Go to this [website](https://www.credit-suisse.com/ch/de/privatkunden/hypothek/services/hypothekarzinsen.html). 
-
-1. Scroll down where the interest rates are shown.
-2. Left click and select "inspect".
+Before you start setting up MigrosBank, you must have created the repl in replit and a cronjob according to the setup document.
 <br><br>
-![Alt Image Text](./Images/WS_Setup306.png "Setup6")
+The setup includes the following two steps:
+1. Anlayse website
+2. creation the code in Replit
 
 <br><br><br><br>
 
-1. Select the section **Web Scraper**
-2. **Create new sitemap**
-3. **Create Sitemap**
+### Analyse website
 <br><br>
-![Alt Image Text](./Images/WS_Setup307.png "Setup7")
+In this documentation it is shown how to download the interest rates from MigrosBank.
+1. Go to their [website](https://www.migrosbank.ch/de/privatpersonen/hypotheken/festhypothek)
+2. Scroll down to the interest rate table - analyse it
+3. Click to on the three dots on the right top corner and go to **Settigs**
+<br><br>
+![Alt Image Text](./Images/RP_Setup43.png "SetupXXX")
 
 <br><br><br><br>
 
-1. Name the Sitemap - in this example its called ```0CreditSuisse```.
-2. Enter the website ```https://www.credit-suisse.com/ch/en/private-clients/mortgages/services/mortgage-interest-rate.html```.
-3. **Create Sitemap**
+A new browser tab has now opened. Go to **Privacy and security** and select **Site settings**.
 <br><br>
-![Alt Image Text](./Images/WS_Setup308.png "Setup8")
+![Alt Image Text](./Images/RP_Setup44.png "SetupXXX")
 
 <br><br><br><br>
 
-Since the data is distributed in several table columns (Duration, Interest, Duration, Interest), we cannot simply download the table here. We have to proceed as follows:
-1. **Add new selector**
-2. Name the selector - in this exampled ```InterestRate```
-3. Select as a *Type* **Element**
-4. Click in the line *Selector* on **Select**
-5. Now you can mark the whole table with the interest rates (excluding the header). Sometimes the shift key has to be pressed to select all lines
-6. **Done selecting**
-7. **Save selector**
-<br><br>
-![Alt Image Text](./Images/WS_Setup309.png "Setup9")
-
 <br><br><br><br>
 
-Select your created *selector*.
+Now click on **JavaScript** and choose to disable JavaScript. 
 <br><br>
-![Alt Image Text](./Images/WS_Setup3091.png "Setup10")
-
-<br><br><br><br>
-
-1. **Add new selector**
-2. Name the selector - in this exampled ```InterestRate1```
-3. Select as a *Type* **Text**
-4. Click in the line *Selector* on **Select**
-5. Now select only the first figure **2 years**
-6. **Done selecting**
-7. Tick the **Multiple** box
-8. Go to **Data Preview**
+![Alt Image Text](./Images/RP_Setup45.png "SetupXXX")
 <br><br>
-![Alt Image Text](./Images/WS_Setup3092.png "Setup12")
-
-<br><br><br><br>
-
-Only one column is displayed in the *Data Preview*. In this column, the years (term) and the interest are displayed alternately. Unfortunately, the data can only be downloaded in this way. In the following steps, the data must be specially structured. Close the *Data Preview*.
-<br><br>
-![Alt Image Text](./Images/WS_Setup3093.png "Setup13")
-
-<br><br><br><br>
-
-Now we execute the webscraping.
-1. Click on **Sitemap** ***0CreditSuisse***
-2. Select **Scrape**
-<br><br>
-![Alt Image Text](./Images/WS_Setup315.png "Setup15")
-
-<br><br><br><br>
-
-You are now asked about the request interval and page load delay. 
-
-- Request interval: Determines the amount of time the scraper waits between sending requests to web pages.
-- Page load delay: Specifies the duration the scraper waits for a page to fully load before extracting the data.
-<br>
-It's done to mimic human browsing behavior, avoid overloading the server, and reduce the chances of getting banned or blocked due to rapid or frequent requests. For the time being, we leave the default settings at 2000 miliseconds.
-Therefore, just click **Start scraping**. If we then see that scraping is not working, we could always increase the time here.
-<br><br>
-
-![Alt Image Text](./Images/WS_Setup316.png "Setup16")
-
-<br><br><br><br>
-
-A window now opens and closes itself again after a few seconds. After that click on **refresh**. You will now see the data that has been downloaded. Make sure that they are complete and the duration and interest rates are in the last column. Be aware that only the first few lines of the dataset are displayed.
-<br><br>
-![Alt Image Text](./Images/WS_Setup317.png "Setup17")
-
-<br><br><br><br>
-
-Now go back to **Sitemaps** where you will see the created function for downloading the data from Credit Suisse.
-<br><br>
-![Alt Image Text](./Images/WS_Setup319.png "Setupxx")
-
+There are websites that are set up with JavaScipt, these are dynamic. We cannot download with our approach (Replit & python) the data from such pages. Therefore, by deactivating JavaScript, we now check whether the website was set up in this way.
 <br><br><br><br>
 
 
-### Webscraper.io - Cloud
+Go now back to your MigrosBank webpage and **relaod** the page. Now you see that the interest rates are still shown. Thats a good sign since we now know, that we will be able to pull out the data with our approach.
 <br><br>
-We have now made the setup in the local webscraper.io application. In order for this to run automatically on a daily basis, we need to do the installation in webscraper.io cloud. How to get an cloud account you see [here](0Webscraper.io_Setup.md).
-<br>
-We now copy the settings from the sitemap we made. To do this, click on the sitemap **0CreditSuisse** in your Chrome browser.
+To further analyse the page make a right click on the table and select **inspect**.
 <br><br>
-![Alt Image Text](./Images/WS_Setup320.png "Setupxx")
+![Alt Image Text](./Images/RP_Setup40.png "SetupXXX")
+<br><br>
+**Since we now know that the interest rates are also displayed without JavaScript, you can now enable JavaScript again under settings.**
+<br><br><br><br>
+
+You are now in the *Developer Tools* environment. In the *Elements* section you can now see how the website is structured, there you can also see, for example, which part of the code displays which interest rate figure. In our our case we will now focus on the 2 year term with the interest rate of **2.890%**.
+
+1. Select the line which marks the whole table.
+2. Right-click on it.
+3. Select **Copy** and **Copy outerHtml**.
+4. Open a new Word document.
+6. Enter the copied code.
+<br><br>
+![Alt Image Text](./Images/RP_Setup41.png "SetupXXX")
 
 <br><br><br><br>
 
-Choose now the tab **Sitemap 0CreditSuisse** and select **Export Sitemap**.
+We now analyse the code in this Word file. Scroll down the Word file to the part where the code shows the interest rates. We will analyse the 2 year term. In the end, it doesn't matter because the table is the same for all terms. 
 <br><br>
-![Alt Image Text](./Images/WS_Setup321.png "Setupxx")
+The code is as follows for the 2 year interest rates:
+*<tr class="Table--row">
+              <td class="Table--bodyCell">2 Jahre</td>
+                <**td** class="Table--bodyCell">2,590%</td>
+                <**td** class="Table--bodyCell">2,890%</td>*
+<br><br>
+We now see that the line in which the interest rates are stored starts with **td**. Since the first rate is a extra premium rate (2.590%), we are only interested in the second rate (2.890%). 
+<br><br>
+![Alt Image Text](./Images/RP_Setup42.png "SetupXXX")
 
 <br><br><br><br>
 
-Copy now the displayed code.
+With this information we can now write our code. We write the code in the *financialinstitution.json* file that we have created in our Repl. 
 <br><br>
-![Alt Image Text](./Images/WS_Setup322.png "Setupxx")
-
-<br><br><br><br>
-
-Now open your [Cloud account](https://cloud.webscraper.io) and go to **Import Sitemap**.
-1. Paste the code you copied in the previous step
-2. Name the *Sitemap* again - in this case ```0CreditSuisse```
-3. **Import**
-<br><br>
-![Alt Image Text](./Images/WS_Setup23.png "Setupxx")
-
-<br><br><br><br>
-
-You have now created the sitemap in your cloud environment.
-1. Click now on **Scrape** to see if it works correctly.
-2. Wait a few seconds for the file to be created - reload the page after a few seconds.
-3. Click on **Preview**.
-<br><br>
-![Alt Image Text](./Images/WS_Setup324.png "Setupxx")
-
-<br><br><br><br>
-
-Now check whether all content has been loaded here. If data is missing you have to run the setup again locally in your Chrome browser. You can then export the adjusted code again and insert it in your sitemap under **Edit**. 
-<br><br>
-![Alt Image Text](./Images/WS_Setup325.png "Setupxx")
-<br><br>
-Please be aware that only the first 10 lines are shown in *Data Preview*.
-<br><br><br><br>
-
-Every time a scrape is executed, this file is created. In order to be able to merge the data from all financial institutions into one file, we need to add the following columns so that we can distinguish the data:
-
-- Name of the financial institution
-- Date of download
-
-In addition, we have to edit the data so that they look the same in all sitemaps (e.g. dot everywhere instead of comma for the separation of decimal places, etc.). We do this under **Praser**.
-1. Go to **My Sitemaps**
-2. Select **0CreditSuisse** Sitemap
-3. Go to **Parser**. Here you see the existing columns.
-4. **Add column**
-<br><br>
-![Alt Image Text](./Images/WS_Setup326.png "Setupxx")
-
-<br><br><br><br>
-
-We now add the a colum with the name of the financial institution. 
-1. Name the column ```Financial_Institution```.
-2. Select as source column **web-scraper-start-url**.
-3. **Save**.
-<br><br>
-![Alt Image Text](./Images/WS_Setup327.png "Setupxx")
-
-<br><br><br><br>
-
-A new column has now been created. 
-1. Go to **Add parser**
-2. **Regex match**
-<br><br>
-![Alt Image Text](./Images/WS_Setup328.png "Setupxx")
-
-<br><br><br><br>
-
-Currently, the input is the URL where we download the data. We would like to get the name of the financial institution from this URL. For this we use a code in Regex. This shortens the URL accordingly.
-<br>
-1. Use the code ```www\.(.*?)\.com```
-2. Select **Group 1**
-3. As *Output* you should now get the name **credit-suisse**
-4. **Save** 
-<br><br>
-![Alt Image Text](./Images/WS_Setup329.png "Setupxx")
-
-<br><br><br><br>
-
-Now we add a second column. Click on **Add time scraped**. You see now the added column *time-scraped*. Click now on the field **Convert UNIX timestamp**.
-<br><br>
-![Alt Image Text](./Images/WS_Setup330.png "Setupxx")
-
-<br><br><br><br>
-
-1. Select your preferred time **Format**.
-2. Check the *Output*.
-3. **Save**.
-<br><br>
-![Alt Image Text](./Images/WS_Setup31.png "Setupxx")
-
-<br><br><br><br>
-
-In the list below you will now see the updated list with the two added columns. The column InterestRate and Duration are still merged in the column *InterestRate1*. We cannot process this further in Webscraper.io. However, Google Sheets helps us here. Therefore, we are already done editing the data in Webscraper.io.
-<br><br>
-![Alt Image Text](./Images/WS_Setup332.png "Setupxx")
-
-<br><br><br><br>
-
-The last step in Webscraper.io is to set up a job to automatically download the data on a daily basis. To do this, go to **Schedule** in the corresponding sitemap.
-<br>
-1. **Enable scheduler**.
-2. Set the *Scheduler Type* to **Daily**.
-3. Under *Run a job on*, select the days on which the interest rate is to be updated. In this example, all weekdays are selected.
-4. Specify the time when the job is to be run.
-5. The remaining settings can be left as they are.
-6. **Save**.
-<br><br>
-![Alt Image Text](./Images/WS_Setup336.png "Setupxx")
-
-<br><br><br><br>
-
-We have now made the settings so that the Credit Suisse interest rates are automatically extracted on a daily basis. 
-
-<br><br><br><br>
-
-
-
-
-### Google Sheets
-<br><br>
-Before we proceed with Google Sheets, ensure that you've completed the general setup for Google Sheets (account creation) and established the interface between Webscraper.io and Google Sheets. If you need to set this up, please refer to [Webscraper.io_Setup](0Webscraper.io_Setup.md).
-<br><br>
-When the file in [Google Sheets](https://docs.google.com/spreadsheets/) is in place select the file **0CreditSuisse**. Your Google spreadsheet's name matches your sitemap in Webscraper.io.
-<br><br>
-![Alt Image Text](./Images/WS_Setup671.png "Setupxx")
-
-<br><br><br><br>
-
-In the table, you will now see all the data that was loaded from the sitemap **0CreditSuisse**. If there are rows where the data is incorrect, delete the content of that data. In Webscraper.io, you can then manually execute the **Scrape** again. After a few seconds the file will be updated.
-
-If data is missing - for instance, the interest rate - also trigger the run **Scrape** in Webscraper.io. If there's no interest rate present in the *Preview Data* there either, you'll need to adjust the sitemap code. To do this, go to your local Webscraping.io and redefine the selectors. Enter the new code in Webscraper.io Cloud under **Edit** of the respective sitemap.
-<br><br>
-In our case, the data appears as we would expect it to. However, we want to modify the sheet such that the following cleaning steps are applied:
-
-- With the **0CreditSuisse** spreadsheet, we face the issue that both the duration and the interest rates are located in a single column. These pieces of information need to be split into two separate columns.
-- If there's no value in column D, the row should be deleted.
-- Duplicate rows should be removed. 
-- The header should appear only once.
-<br><br>
-![Alt Image Text](./Images/WS_Setup672.png "Setupxx")
-
-<br><br><br><br>
-
-To implement this, we need to write a code. But first we have to open a second tab in the spreadsheet. There we will insert the cleaned data. 
-1. Click on the + icon at the bottom of the page
-2. Rename the tab ```CS_adj```
-3. Navigate to **Extensions**
-4. Select **Apps Script**
-<br><br>
-![Alt Image Text](./Images/WS_Setup6631.png "Setupxx")
-
-<br><br><br><br>
-
-Delete the existing code and enter the following one in the *Apps Script* console. 
+The structure of the code is as follows:
 ```
-function adjustCreditSuisseData() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sourceSheet = ss.getSheetByName("0CreditSuisse");
-  var targetSheet = ss.getSheetByName("CS_adj");
-  
-  // Copy data from source sheet
-  var data = sourceSheet.getDataRange().getValues();
-  
-  // Remove rows with empty values in column D
-  data = data.filter(function(row) {
-    return row[3] !== "";
-  });
-  
-  // Reorganize data
-  var newData = [];
-  newData.push(["web-scraper-job-id", "web-scraper-order", "web-scraper-start-url", "Duration", "InterestRate", "Financial_Institution", "time-scraped"]); // Header
-  
-  for (var i = 1; i < data.length; i += 2) {
-    var currentRow = data[i];
-    var nextRow = data[i + 1];
-    
-    var duration = currentRow[3].replace(" years", "");  // Keep only the number for "Duration"
-    var interestRate = nextRow[3].replace(" %", "");    // Keep only the number for "InterestRate"
-    
-    var reorderedRow = [
-      currentRow[0],  // web-scraper-job-id
-      currentRow[1],  // web-scraper-order
-      currentRow[2],  // web-scraper-start-url
-      duration,       // Duration
-      interestRate,   // InterestRate
-      currentRow[4],  // Financial_Institution
-      currentRow[5]   // time-scraped
-    ];
-    
-    newData.push(reorderedRow);
-  }
-  
-  // Remove duplicates
-  var uniqueData = [];
-  var seen = {};
-  for (var j = 0; j < newData.length; j++) {
-    var key = newData[j][3] + "-" + newData[j][6];  // Combination of "Duration" and "time-scraped"
-    if (!seen[key]) {
-      uniqueData.push(newData[j]);
-      seen[key] = true;
+[
+    {
+        "name": "xxxx",
+        "url": "xxxx",
+        "selectors": {
+            "2 Jahre": "th:-soup-contains('2 Jahre') + xxxx",
+            "3 Jahre": "th:-soup-contains('3 Jahre') + xxxx",
+            "4 Jahre": "th:-soup-contains('4 Jahre') + xxxx",
+            "5 Jahre": "th:-soup-contains('5 Jahre') + xxxx",
+            "6 Jahre": "th:-soup-contains('6 Jahre') + xxxx",
+            "7 Jahre": "th:-soup-contains('7 Jahre') + xxxx",
+            "8 Jahre": "th:-soup-contains('8 Jahre') + xxxx",
+            "9 Jahre": "th:-soup-contains('9 Jahre') + xxxx",
+            "10 Jahre": "th:-soup-contains('10 Jahre') + xxxx"
+        }
     }
-  }
-  
-  // Clear old data in target sheet and insert new data
-  targetSheet.clear();
-  targetSheet.getRange(1, 1, uniqueData.length, uniqueData[0].length).setValues(uniqueData);
-}
+]
 ```
 <br><br>
-After pasting the code:
-1. On lines 5 and 37 of the code, references are made to specific spreadsheet tabs. Ensure that these names align with your configurations.
-2. **Save**
-3. **Run**
+We now need to replace the *xxxx* accordingly. The code should now look like this:
+```
+[
+  {
+        "name": "MigrosBank",
+        "url": "https://www.migrosbank.ch/de/privatpersonen/hypotheken/festhypothek",
+        "selectors": {
+            "2 Jahre": "td:-soup-contains('2 Jahre') + td + td",
+            "3 Jahre": "td:-soup-contains('3 Jahre') + td + td",
+            "4 Jahre": "td:-soup-contains('4 Jahre') + td + td",
+            "5 Jahre": "td:-soup-contains('5 Jahre') + td + td",
+            "6 Jahre": "td:-soup-contains('6 Jahre') + td + td",
+            "7 Jahre": "td:-soup-contains('7 Jahre') + td + td",
+            "8 Jahre": "td:-soup-contains('8 Jahre') + td + td",
+            "9 Jahre": "td:-soup-contains('9 Jahre') + td + td",
+            "10 Jahre": "td:-soup-contains('10 Jahre') + td + td"
+        }
+    }
+  ]
+```
 <br><br>
-![Alt Image Text](./Images/WS_Setup679.png "Setupxx")
-
-<br><br><br><br>
-
-If this is the first code you're implementing in *Apps Scripts* for this spreadsheet, you'll need to grant the application the necessary permissions before executing the code. Click on **Review permissions**.
+In the line for interest we have now inserted **td**, if we now want to download the premium interest rate we would have to insert **+ td** in the code. Then we would get the 2.590% for the term for 2 years. However, since we want to download the standard interest rate, we need to download the second interest rate and we do this with the code **+ td + td**. 
 <br><br>
-![Alt Image Text](./Images/WS_Setup90.png "Setupxx")
-
-<br><br><br><br>
-
-Select your Google account.
+Open now the financialinstituins.json file in your Repl and enter the code.
 <br><br>
-![Alt Image Text](./Images/WS_Setup92.png "Setupxx")
+![Alt Image Text](./Images/RP_Setup46.png "SetupXXX")
 
 <br><br><br><br>
 
-1. Click **Advanced**
-2. Click **Go to Untitled project (unsafe)**. If you have named your code in *App Script*, it can be named differently.
+Now when we have done that, we go into our **main.py** file. In this script we have the codes for the following tasks:
 <br><br>
-![Alt Image Text](./Images/WS_Setup93.png "Setupxx")
+1. Automatic download of data via cronjob
+2. **Manual download of the data**
+3. Viewing the database
+4. Creation of a csv file
+5. Deleting the database
 
-<br><br><br><br>
-
-**Allow**
+To check if our code in the json file is correct, we now download the data manually (without saving it in the database). For this we use the code **Manual download of the data** code. Sets all other codes inactive with the characters ```'''```. Execute the job by clicking **Run**.
 <br><br>
-![Alt Image Text](./Images/WS_Setup94.png "Setupxx")
-
-<br><br><br><br>
-
-The code is now executed. 
+![Alt Image Text](./Images/RP_Setup47.png "SetupXXX")
 <br><br>
-![Alt Image Text](./Images/WS_Setup951.png "Setupxx")
+The result is now displayed in the console. These interest rates should now match the data on the website. In this case, it has now worked. So our entries in the *financialinstitution.json* file are correct.
 
 <br><br><br><br>
 
-Go now back to the **0CreditSuisse** spreadsheet, select the **CS_adj** tab and review the data. The script seems to work, a column has been added and the data is structured as we would expect.  
+In our *financialinstitutions.json* file we now have only one bank listed. However, this list can now be extended further, the separation of the financial institutions is simply done with a comma. 
 <br><br>
-![Alt Image Text](./Images/WS_Setup6751.png "Setupxx")
+![Alt Image Text](./Images/RP_Setup48.png "SetupXXX")
 
 <br><br><br><br>
 
-Now we want this code to be executed whenever data is loaded into the spreadsheet. Now go back to the *Apps Script* application.
-1. Go to **Extensions**
-2. Select **Apps Script**
-3. In the Apps Script application, click on the clock icon (*Triggers*) on the left side
-4. **Add Trigger**
-<br><br>
-![Alt Image Text](./Images/WS_Setup961.png "Setupxx")
+Now that the code is running properly and the data is being retrieved automatically on a daily basis - make sure of the following:
+ * That the script is **always** running. If the script is not running, nothing can be triggered via the web.
+ * That only the first code (**Automatic download of data via cronjob**) is set to active.
 
-<br><br><br><br>
-
-Now we specify the trigger.
-1. Select event source: **From Spreadsheet**
-2. Select event type: **On change**
-3. Rest stays the same
-4. **Save**
-<br><br>
-![Alt Image Text](./Images/WS_Setup971.png "Setupxx")
-<br><br>
-With this setting, you receive a notification when an error occurs.
-
-<br><br><br><br>
-
-We have now finished setting up the **0CreditSuisse** spreadsheet. Whenever the data is reloaded, the content is automatically processed and checked. A history of daily interest rates of Generali is now automatically created in the table - this is expanded daily. 
-
-To check whether everything is correct, you can trigger the scraping again manually in Webscraper.io. If there are no duplicate values, no lines without percentages and the header still only appears once after the reload of the spreadsheet, then everything has worked.
-
-<br><br><br><br>
-
-Here you can see how to consolidate the data of all financial institutions into a single file - [0Webscraper.io_Setup](0Webscraper.io_Setup.md).
-
-<br><br><br><br>
 
 
 
