@@ -70,7 +70,7 @@ The code is as follows for the 2 year interest rates:
 <td>3.25</td>
 ```
 <br><br>
-We now see that the line in which the interest rates are stored starts with **td**. In this case we are interested in the first interest rate *1st mortgage in % per annum*.
+When we analyse the code here, the marked letters are important, we will then incorporate them into our code. 
 <br><br>
 ![Alt Image Text](./Images/RP_Setup53.png "SetupXXX")
 
@@ -85,21 +85,23 @@ The structure of the code is as follows:
         "name": "xxxx",
         "url": "xxxx",
         "selectors": {
-            "2 Jahre": "th:-soup-contains('2 years') + xxxx",
-            "3 Jahre": "th:-soup-contains('3 years') + xxxx",
-            "4 Jahre": "th:-soup-contains('4 years') + xxxx",
-            "5 Jahre": "th:-soup-contains('5 years') + xxxx",
-            "6 Jahre": "th:-soup-contains('6 years') + xxxx",
-            "7 Jahre": "th:-soup-contains('7 years') + xxxx",
-            "8 Jahre": "th:-soup-contains('8 years') + xxxx",
-            "9 Jahre": "th:-soup-contains('9 years') + xxxx",
-            "10 Jahre": "th:-soup-contains('10 years') + xxxx"
+            "2 Jahre": "td:-soup-contains('2 years') + xxxx",
+            "3 Jahre": "td:-soup-contains('3 years') + xxxx",
+            "4 Jahre": "td:-soup-contains('4 years') + xxxx",
+            "5 Jahre": "td:-soup-contains('5 years') + xxxx",
+            "6 Jahre": "td:-soup-contains('6 years') + xxxx",
+            "7 Jahre": "td:-soup-contains('7 years') + xxxx",
+            "8 Jahre": "td:-soup-contains('8 years') + xxxx",
+            "9 Jahre": "td:-soup-contains('9 years') + xxxx",
+            "10 Jahre": "td:-soup-contains('10 years') + xxxx"
         }
     }
 ]
 ```
 <br><br>
-In the line of code where the interest rates are queried, the term is listed in the parenthesis. For instance, in this example it is ```('2 years')``` for the term of 2 years. It is important that this is exactly the same as the wording in the table. 
+In the line of code where the interest rates are queried, we have to check the following: *"2 Jahre": "**td**:-soup-contains('**2 years**') + xxxx"*<br><br>
+- The **td** has to match the letters which are in front of the year (*<**td**>2 years</td>*)
+- The term listed in the parenthesis - for example ```('2 Jahre')``` has to match the wording in the table *<td>**2 Jahre**</td>*. 
 <br><br>
 We now need to replace the *xxxx* accordingly. After that the code should now look like this:
 ```

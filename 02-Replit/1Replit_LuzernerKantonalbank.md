@@ -71,7 +71,7 @@ The code is as follows for the 2 year interest rates:
 			</td>
 ```
 <br><br>
-We now see that the line separating the term and the interest rate is **td**. In addition, the line in which the interest rates are stored starts with **p**. 
+When we analyse the code here, the marked letters are important, we will then incorporate them into our code. 
 <br><br>
 ![Alt Image Text](./Images/RP_Setup63.png "SetupXXX")
 
@@ -100,9 +100,9 @@ The structure of the code is as follows:
 ]
 ```
 <br><br>
-In the line of code where the interest rates are queried, we have to check the following: *"2 Jahre": "**th**:-soup-contains('**2 Jahre**') + xxxx"*
-The **th** has to match the letters which are in front of the year (*<**th**>2 Jahre</th>*)
-The term listed in the parenthesis - for example ```('2 years')``` has to match the wording in the table *<th>**2 Jahre**</th>*. 
+In the line of code where the interest rates are queried, we have to check the following: *"2 Jahre": "**th**:-soup-contains('**2 Jahre**') + xxxx"*<br><br>
+- The **th** has to match the letters which are in front of the year (*<**th**>2 Jahre</th>*)
+- The term listed in the parenthesis - for example ```('2 Jahre')``` has to match the wording in the table *<th>**2 Jahre**</th>*. 
 <br><br>
 We now need to replace the *xxxx* accordingly. After that the code should now look like this:
 ```
@@ -125,6 +125,7 @@ We now need to replace the *xxxx* accordingly. After that the code should now lo
 ]
 ```
 <br>
+
 In the line for the interest rate we have now inserted **td p**. 
 <br><br>
 Open now the financialinstituins.json file in your Repl and enter the code.
