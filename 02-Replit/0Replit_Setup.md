@@ -7,7 +7,7 @@ This document demonstrates how to set up Replit and Cronjob.de in general. In th
 <br><br>
 
 - [Luzerner Kantonalbank](1Replit_LuzernerKantonalbank.md)
-- [Credit Suisse](1Replit_CreditSuisse.md)
+- [Migros Bank](1Replit_MigrosBank.md)
 - [Generali Insurance](1Replit_Generali.md)
 
 <br><br>
