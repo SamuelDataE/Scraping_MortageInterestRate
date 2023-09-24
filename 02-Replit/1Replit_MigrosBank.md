@@ -63,11 +63,11 @@ We now analyse the code in this Word file. Scroll down the Word file to the part
 The code is as follows for the 2 year interest rates:
 
 *<tr class="Table--row"><br>
-              <td class="Table--bodyCell">2 Jahre</td><br>
+              <**td** class="Table--bodyCell">2 Jahre</td><br>
                 <**td** class="Table--bodyCell">2,590%</td><br>
                 <**td** class="Table--bodyCell">2,890%</td>*
 <br><br>
-We now see that the line in which the interest rates are stored starts with **td**. Since the first rate is a extra premium rate (2.590%), we are only interested in the second rate (2.890%). 
+When we analyse the code here, the marked letters are important, we will then incorporate them into our code. Since the first rate is a extra premium rate (2.590%), we are only interested in the second rate (2.890%). 
 <br><br>
 ![Alt Image Text](./Images/RP_Setup42.png "SetupXXX")
 
@@ -82,19 +82,23 @@ The structure of the code is as follows:
         "name": "xxxx",
         "url": "xxxx",
         "selectors": {
-            "2 Jahre": "th:-soup-contains('2 Jahre') + xxxx",
-            "3 Jahre": "th:-soup-contains('3 Jahre') + xxxx",
-            "4 Jahre": "th:-soup-contains('4 Jahre') + xxxx",
-            "5 Jahre": "th:-soup-contains('5 Jahre') + xxxx",
-            "6 Jahre": "th:-soup-contains('6 Jahre') + xxxx",
-            "7 Jahre": "th:-soup-contains('7 Jahre') + xxxx",
-            "8 Jahre": "th:-soup-contains('8 Jahre') + xxxx",
-            "9 Jahre": "th:-soup-contains('9 Jahre') + xxxx",
-            "10 Jahre": "th:-soup-contains('10 Jahre') + xxxx"
+            "2 Jahre": "td:-soup-contains('2 Jahre') + xxxx",
+            "3 Jahre": "td:-soup-contains('3 Jahre') + xxxx",
+            "4 Jahre": "td:-soup-contains('4 Jahre') + xxxx",
+            "5 Jahre": "td:-soup-contains('5 Jahre') + xxxx",
+            "6 Jahre": "td:-soup-contains('6 Jahre') + xxxx",
+            "7 Jahre": "td:-soup-contains('7 Jahre') + xxxx",
+            "8 Jahre": "td:-soup-contains('8 Jahre') + xxxx",
+            "9 Jahre": "td:-soup-contains('9 Jahre') + xxxx",
+            "10 Jahre": "td:-soup-contains('10 Jahre') + xxxx"
         }
     }
 ]
 ```
+<br><br>
+In the line of code where the interest rates are queried, we have to check the following: *"2 Jahre": "**td**:-soup-contains('**2 Jahre**') + xxxx"*<br><br>
+- The **td** has to match the letters which are in front of the year (first letters in line) ```<td class="Table--bodyCell">2 Jahre</td><br>```
+- The term listed in the parenthesis - for example ```('2 Jahre')``` has to match the wording in the table ```<**td** class="Table--bodyCell">2 Jahre</td><br>```.
 <br><br>
 We now need to replace the *xxxx* accordingly. After that the code should now look like this:
 ```
