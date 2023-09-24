@@ -2,7 +2,7 @@
 
 <br><br>
 
-This document demonstrates how to set up Replit and Cronjob.de. In the subsequent documents, it is explained how the code needs to be extended to add the financial institutions from where we fetch the interest rates data. It is shown how to download the interest rates from the following websites:
+This document demonstrates how to set up Replit and Cronjob.de in general. In the subsequent documents, it is explained how the code needs to be extended to add the financial institutions from where we fetch the interest rates data. It is shown how to download the interest rates from the following websites:
 
 <br><br>
 
@@ -53,7 +53,7 @@ Once you have created your Repl, the following screen appears in which you manag
 
 <br><br><br><br>
 
-Within Python, we use two predefined programs, which we can incorporate into our code. To install these, go to **Tools** and click on **Packages**.
+Within Python, we use predefined programs, which we can incorporate into our code. To install these, go to **Tools** and click on **Packages**.
 
 Install the following packages:
 
@@ -96,11 +96,11 @@ for term, interest_rate in data.items():
 <br><br>
 If there is a **#** at the beginning of a line, then it is a comment. A comment is never executed and serves only for your information what the code stands for.
 <br><br>
-Enter this in the script. We want to test whether we can download the data from the Luzerner Kantonalbank. 
+Enter the code in the script. We want to test whether we can download the data from the Luzerner Kantonalbank. 
 1. Copy the text into the script
-2. Execute the script
-3. You should now see the data in the console
-4. *Now delete the code in **main.py** again - we have done this step for testing purposes
+2. Execute the script - click **Run**
+3. You should now see the data in the *console*
+4. Now delete the code in **main.py** again - we have done this step only for testing purposes
 <br><br>
 ![Alt Image Text](./Images/RP_Setup5.png "SetupXXX")
 <br><br>
@@ -110,9 +110,7 @@ If this does not work, check again if you have installed all relevant packages. 
 
 In order to be able to download the interest rates of several financial institutions, we write the specifications of the website in a separate list. The code in **main.py** therefore always remains the same - regardless of the number of websites from which we extract the data. This makes the setup easier.
 
-On the left side next to **Files** there is a **+** sign. Click on this sign and create a new file with the name ```financialinstitutions.json```. It is important that you use exactly this name, because our code will look for this file afterwards.
-
-Now enter the following code in this file:
+Copy therefore the following code:
 
 ```
 [
@@ -148,6 +146,8 @@ Now enter the following code in this file:
     }
   ]
 ```
+<br><br>
+Create now a json-file. On the left side next to **Files** there is a **+** sign. Click on this sign and create a new file with the name ```financialinstitutions.json```. It is important that you use exactly this name, because our code will look for this file afterwards.
 <br><br>
 ![Alt Image Text](./Images/RP_Setup6.png "SetupXXX")
 <br><br>
@@ -196,7 +196,7 @@ You should now see a data record for LUKB and MigrosBank in the console.
 
 <br><br><br><br>
 
-The manual download of the data is the first part of the code, which we have in our script. However, we will now add other tasks to the script. In order to execute only one task at a time, however, we need to inactivate the rest of the code. This can be done by excluding the code with the characters ```'''```. As soon as the characters appear orange, these lines are no longer executed. Set the code inactive by placing ```'''``` before and after the code. 
+The manual download of the data is the first part of the code, which we have in our script. However, we will now add other tasks to the script. In order to execute only one task at a time, however, we need to inactivate the rest of the code. This can be done by excluding the code with the characters ```'''```. As soon as the characters appear orange, these lines are no longer executed. Set the code inactive by placing ```'''``` before and after the code. If something is in green, it means that this is a comment. This is purely informative and is never executed.
 <br><br>
 ![Alt Image Text](./Images/RP_Setup8.png "SetupXXX")
 
@@ -204,10 +204,10 @@ The manual download of the data is the first part of the code, which we have in 
 
 We have now downloaded the data with the previous code - but now we have done it manually. However, in order to be able to download the data automatically on a daily basis, we need to extend the code. 
 <br><br>
-Now copy this code and add it to the main.py file at the top (do not delete the inactive code):
+Now copy this code and add it to the **main.py** file at the top (do not delete the inactive code):
 <br><br>
 ```
-# automatic execution via CRONJOB.DE 
+# Code for the automatic triggering of the job via web (CRONJOB.DE)  
 # manual start via Web; https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/trigger_scrape
 
 import requests
@@ -277,13 +277,13 @@ When you have entered the code in **main.py** execute the script and click **Run
 <br><br>
 ![Alt Image Text](./Images/RP_Setup9.png "SetupXXX")
 <br><br>
-A webview will now open on the right-hand side. You will now see a link with your project und user name. Copy this link and write it into your code in the script (line 3 in the image below). Add ```Https://``` to the front of the code and add ```/trigger_scrape``` to the back. In this example the code is *https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/trigger_scrape*.
+A webview will now open on the right-hand side. You will now see a link with your project und user name. Copy this link and write it into your code in the script (line 3 in the image above). Add ```https://``` to the front of the code and add ```/trigger_scrape``` to the back. In this example the code is *https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/trigger_scrape*.
 <br><br>
 This is the code with which you execute the script. Whenever you enter this code in a webbrowser, your python code gets triggered. We will execute this in a later step.
 
 <br><br><br><br>
 
-In order for this code to be called via external web, the script must always be running. In other words, the cloud server must be online so that the script can download the data from Alpha Vantage at all time. To ensure that the script is always running and does not automatically go offline after some time, we must activate **Always On**. To do this, click on the blue Python symbol at the top right. In order to activate this, you must either buy "My Cicles" or make a paid subscription. It is recommended to make a **Hacker** subscription. With this subscription you also get more storage space in your database and the *Always On* functionality is included in this package. You can find the prices [here](https://replit.com/pricing).
+In order for this code to be called via external web, the script must always be running. In other words, the cloud server must be online so that the script can download the data from the webpages at all time. To ensure that the script is always running and does not automatically go offline after some time, we must activate **Always On**. To do this, click on the blue Python symbol at the top right. In order to activate this, you must either buy "My Cicles" or make a paid subscription. It is recommended to make a **Hacker** subscription. With this subscription you also get more storage space in your database and the *Always On* functionality is included in this package. You can find the prices [here](https://replit.com/pricing).
 <br><br>
 If you have bought the "My Cicles" or made the subscription, activate the **Always On** function.
 <br><br>
@@ -291,7 +291,7 @@ If you have bought the "My Cicles" or made the subscription, activate the **Alwa
 
 <br><br><br><br>
 
-Execute now your code again and click on **Run**. The code will now be activated till you *stop* it.
+Execute now your code again and click on **Run**. The code will now be activated untill you *stop* it.
 <br><br>
 ![Alt Image Text](./Images/RP_Setup10.png "SetupXXX")
 
@@ -308,21 +308,21 @@ When the link is loaded, the web page should display the following: *Data has be
 In summary, the following can be said:
 <br><br>
 Code: **https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/**    (acc. Replit webview)
-  * Checks if the script runs.
-  * *Can be triggered when script is executed in Replit (**Run**) or the link is entered on the web.*
+  * Checks if the code runs.
+  * *Can be triggered when code is executed in Replit (**Run**) or the link is entered on the web.*
   * Gives as response *Welcome to the Mortgage Interest Rates Scraper! Use /trigger_scrape to initiate the scraping process.*
 <br><br>  
 Code: **https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/trigger_scrape**
-  * Is executing the script and downloads the stock data.
+  * Is executing the code and downloads the stock data.
   * *Can only be executed via web.*
   * Gives as response *Data has been saved in the Replit database!*
 
 <br><br><br><br>
 
-Since we have now executed the code and entered *https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/trigger_scrape* on the web, the data has been downloaded. Go back to your repl - we are now checking if anything has been saved in the database.
+Since we have now executed the code and entered *https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/trigger_scrape* on the web, the data has been downloaded. Go back to your Repl - we are now checking if anything has been saved in the database.
 <br><br>
 1. Click on **Database** under **Tools** at the bottom left.
-2. A tab **Database** opens on the right-hand side next to Console - there you will see that there are **keys** in the database. This is the number of data records contained in the database.
+2. A tab **Database** opens on the right-hand side - there you will see that there are **keys** in the database. This is the number of data records contained in the database.
 <br><br>  
 ![Alt Image Text](./Images/RP_Setup12.png "SetupXXX")
 <br><br>
@@ -383,8 +383,9 @@ This code retrieves the data from the database and structures it into a table fo
 - Duraiton (term)
 - InterestRate
 - time of scraping
+
 <br><br>  
-In addition, all duplicates are deleted in advance.
+In addition, all duplicates are deleted.
 <br><br>  
 ![Alt Image Text](./Images/RP_Setup14.png "SetupXXX")
 <br><br> 
@@ -457,7 +458,7 @@ On the left side under **Files** the file **output.csv** has now been created. I
 <br><br>
 ![Alt Image Text](./Images/RP_Setup16.png "SetupXXX")
 <br><br>
-When the data is loaded into a csv, the current data in the database is always downloaded. When the database expands, the csv file is not automatically expanded. In this case you have to delete it manually (*right click on the file and **delete***) - then you can generate a new csv file with the new data by executing the respecitve code.
+When the data is loaded into a csv, the current data in the database is downloaded. When the database expands, the csv file is not automatically expanded. In this case you have to delete it manually (*right click on the file and **delete***) - then you can generate a new csv file with the new data by executing the respecitve code.
 
 <br><br><br><br>
 
@@ -482,7 +483,7 @@ print("All entries have been deleted from the Replit database!")
 <br><br>
 Before you run the code, make sure that all other codes are disabled. If this is the case, click **Run**.
 <br><br>
-![Alt Image Text](./Images/RP_Setup16.png "SetupXXX")
+![Alt Image Text](./Images/RP_Setup17.png "SetupXXX")
 <br><br>
 When you have executed the code:
 1. Click under **Tools** on **Database**.
@@ -492,7 +493,7 @@ When you have executed the code:
 
 Again, set this code to inactive by using the ''' characters.
 <br><br>
-![Alt Image Text](./Images/RP_Setup17.png "SetupXXX")
+![Alt Image Text](./Images/RP_Setup18.png "SetupXXX")
 
 <br><br><br><br>
 
@@ -503,6 +504,7 @@ We now have the codes for the following tasks in our **main.py** script:
 - Retrieve data from database
 - Create csv file
 - Clear database
+
 <br><br>
 In order for the code *Code for the automatic triggering of the job via web* to be executed automatically every day and thus download the data daily and save it in the database, we have to set up a cron job.
 <br><br>
@@ -510,7 +512,7 @@ A cron job is a scheduled task in Unix-like operating systems that runs at fixed
 
 <br><br><br><br>
 
-### CRONJOB.DE
+### 2. CRONJOB.DE
 <br><br>
 To ensure that the script now runs daily, we now call up the URL-link (https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/trigger_scrape - *your URL is different*) daily with the help of CRONJOB.DE. To do this, we have to register on CRONJOB.DE. The page is in German. You can also use another cronjob provider if you want to have a page in English. There are many providers in this area.
 <br><br>
@@ -533,8 +535,8 @@ Click on the button **Neuen CRONJOB anlegen**.
 <br><br><br><br>
 
 1. Name your CRONJOB - in this examble ```WebScraping_Replit```
-2. Enter your URL address - make sure that the URL starts with **https://** and ends with **/trigger_scrape**. See example in the figure below.
-3. Define the scheudle - in this examble every weekday
+2. Enter your URL address - make sure that the URL starts with **https://** and ends with **/trigger_scrape**. See example in the figure below
+3. Define the schedule - in this examble every weekday
 4. Safe CRONJOB. **CRONJOB speichern**
 <br><br>
 ![Alt Image Text](./Images/RP_Setup28.png "Setup28")
@@ -543,7 +545,7 @@ Click on the button **Neuen CRONJOB anlegen**.
 
 After setting up the cronjob, you will be prompted to run a verification. This is asked to ensure that you are authorised to create this cronjob for the relevant server (Replit). 
 <br>
-In this example, we must now create an html file in Replit with the name **cronjob_78641.html**. This file should contain the content **cronjob.de**. Before you click on the **Prüfung jetzt durchführen** button, you can check manually with the shown link (**https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/cronjob_78641.html**) whether the verification works. We do this at a later step when the Html file is created.  
+In this example, we must now create an html file in Replit with the name **cronjob_78641.html**. This file should contain the content **cronjob.de**. Before you click on the **Prüfung jetzt durchführen** button, you can check manually with the shown link (**https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/cronjob_78641.html**) whether the verification works. We do this at a later step when the html file is created.  
 <br><br>
 ![Alt Image Text](./Images/RP_Setup281.png "Setup281")
 
@@ -555,7 +557,7 @@ Go back to your Repl and open a html file. In this example it is called **cronjo
 
 <br><br><br><br>
 
-Now go back to the script (**main.py**) and go to the top where you see the **Code for the automatic triggering of the job via web**. Wihtin this code at the end you see a line with **@app.route('/cronjob_78641.html')**. Now change the number to match the title of your html file. 
+Now go back to the script (**main.py**) and go to the top where you see the **Code for the automatic triggering of the job via web**. Within this code you see a line with **@app.route('/cronjob_78641.html')**. Now change the number to match the title of your html file. 
 <br><br>
 ![Alt Image Text](./Images/RP_Setup30.png "Setup30")
 
@@ -598,14 +600,14 @@ Make sure that only the code needed for the automatic download of the data via c
 <br>
 
 Code: **https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/**    (acc. Replit webview)
-  * Checks if the script runs.
-  * *Can be triggered when script is executed in Replit (**Run**) or the link is entered on the web.*
+  * Checks if the code runs.
+  * *Can be triggered when code is executed in Replit (**Run**) or the link is entered on the web.*
   * Gives as response *Welcome to the Mortgage Interest Rates Scraper! Use /trigger_scrape to initiate the scraping process.*
 
 <br>
 
 Code: **https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/trigger_scrape**
-  * Is executing script and downloads data.
+  * Is executing code and downloads data.
   * *Can only be executed via the web.*
   * Gives as response *Data has been saved in the Replit database!*
 
@@ -617,6 +619,7 @@ Code: **https://WebScrapingMortgageInterestRates.samuelhaller.repl.co/cronjob_78
   * *Can only be executed via the web.*
   * Gives as response "cronjob.de"
 <br><br>
+
 *Please have in mind, that your URL link looks different since the code is depending on your project and user name (and verification number from CRONJOB.DE).*
 
 <br><br><br>

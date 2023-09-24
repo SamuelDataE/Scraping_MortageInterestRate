@@ -1,11 +1,12 @@
-## Credit Suisse
+## MigrosBank
 <br><br>
-Unfortunately, UBS doesn't offer their interest rates online on their website. Reference is made to the fact that these should be requested. Consequently, we've sought out the interest rates from Credit Suisse, as they provide them online. 
-
-<br><br><br><br>
-
-This documentation explains how you can retrieve the interest rates on the Credit Suisse website. In case you you don't have Webscraper.io installed yet - click [here](0Webscraper.io_Setup.md). 
+This documentation explains how you can retrieve the interest rates on the MigrosBank website. Before you start setting up MigrosBank, you must have created the Repl in Replit and a cronjob according to the [setup](0Replit_Setup.md) document. 
 <br><br>
+When you have done this, open the json file *financialinstitutions.json* in your Repl.
+
+
+
+
 If you have Websracper.io installed: Go to this [website](https://www.credit-suisse.com/ch/de/privatkunden/hypothek/services/hypothekarzinsen.html). 
 
 1. Scroll down where the interest rates are shown.
