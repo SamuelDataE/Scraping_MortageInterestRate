@@ -1,8 +1,38 @@
 ## MigrosBank
 <br><br>
-This documentation explains how you can retrieve the interest rates on the MigrosBank website. Before you start setting up MigrosBank, you must have created the Repl in Replit and a cronjob according to the [setup](0Replit_Setup.md) document. 
+This repository uses three websites to show how to download the interest rates. This documentation explains how you can download the interest rates from the MigrosBank website. 
 <br><br>
-When you have done this, open the json file *financialinstitutions.json* in your Repl.
+Before you start setting up MigrosBank, you must have created the repl in replit and a cronjob according to the setup document.
+<br><br>
+The setup includes the following two steps:
+1. Anlayse website
+2. creation the code in Replit
+
+<br><br><br><br>
+
+### Analyse website
+<br><br>
+In this documentation it is shown how to download the interest rates from MigrosBank.
+1. Go to their [website](https://www.migrosbank.ch/de/privatpersonen/hypotheken/festhypothek)
+2. Scroll down to the interest rate table
+3. Right click on the table and click on **inspect**
+<br><br>
+![Alt Image Text](./Images/RP_Setup40.png "SetupXXX")
+
+<br><br><br><br>
+
+You are now in the *Developer Tools* environment. In the *Elements* section you can now see how the website is structured, there you can also see, for example, which part of the code displays which interest rate figure. In our our case we will now focus on the 2 year term with the interest rate of **2.890%**.
+
+1. Select the line which marks the whole table.
+2. Right-click on it.
+3. Select **Copy** and **Copy outerHtml**.
+4. Open a new Word document.
+6. Enter the copies code.
+<br><br>
+![Alt Image Text](./Images/RP_Setup41.png "SetupXXX")
+
+<br><br><br><br>
+
 
 
 
