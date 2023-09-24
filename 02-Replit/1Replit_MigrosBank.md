@@ -12,8 +12,6 @@ This process can also be extended to other websites of financial institutions, w
 
 <br><br><br><br>
 
-### Analyse website
-<br><br>
 In this documentation it is shown how to download the interest rates from MigrosBank.
 1. Go to their [website](https://www.migrosbank.ch/de/privatpersonen/hypotheken/festhypothek)
 2. Scroll down to the interest rate table - analyse it
