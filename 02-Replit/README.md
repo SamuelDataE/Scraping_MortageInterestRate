@@ -3,8 +3,8 @@ In this example, we demonstrate how to download data from the Internet using Rep
 <br><br>
 
 Relevant files in this folder:
-1. [General-Information](1Replit_General-Information.md)
-2. [Setup](1Replit_Setup.md)
+1. [General-Information](0Replit_General-Information.md)
+2. [Setup](0Replit_Setup.md)
 
 
 Financial institutions
