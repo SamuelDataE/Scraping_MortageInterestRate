@@ -1,8 +1,8 @@
-## MigrosBank
+## Migros Bank
 <br><br>
-This repository uses three websites to show how to download the interest rates. This documentation explains how you can download the interest rates from the MigrosBank website. 
+This repository uses three websites to show how to download the interest rates. This documentation explains how you can download the interest rates from the Migros Bank website. 
 <br><br>
-Before you start setting up MigrosBank, you must have created the Repl in Replit and a cronjob according to the [setup](0Replit_Setup.md) document.
+Before you start setting up Migros Bank, you must have created the Repl in Replit and a cronjob according to the [setup](0Replit_Setup.md) document.
 <br><br>
 The setup includes the following two steps:
 1. Anlayse website
@@ -12,7 +12,7 @@ This process can also be extended to other websites of financial institutions, w
 
 <br><br><br><br>
 
-In this documentation it is shown how to download the interest rates from MigrosBank.
+In this documentation it is shown how to download the interest rates from Migros Bank.
 1. Go to their [website](https://www.migrosbank.ch/de/privatpersonen/hypotheken/festhypothek)
 2. Scroll down to the interest rate table - analyse it
 3. Click on the three dots in the upper right corner and go to **Settigs**
@@ -37,7 +37,7 @@ There are websites that are set up with JavaScipt, these are dynamic. We cannot 
 <br><br><br><br>
 
 
-Go now back to your MigrosBank webpage and **relaod** the page. Now you see that the interest rates are still shown. Thats a good sign since we now know, that we will be able to pull out the data with our approach.
+Go now back to your Migros Bank webpage and **relaod** the page. Now you see that the interest rates are still shown. Thats a good sign since we now know, that we will be able to pull out the data with our approach.
 <br><br>
 **Since we now know that the interest rates are also displayed without JavaScript, you can now enable JavaScript again under settings.** 
 <br><br>
