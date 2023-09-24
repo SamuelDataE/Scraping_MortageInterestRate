@@ -45,10 +45,11 @@ For a few websites, scraping with python (beautfiulsoup) did not work as they us
 <br><br>
 This repository describes how to download the interest from the following websites:
 <br><br>
-- [Luzerner Kantonalbank](1Webscraper.io_LuzernerKantonalbank.md)
-- [Credit Suisse](1Webscraper.io_CreditSuisse.md)
-- [Generali Insurance](1Webscraper.io_Generali.md)
-
+- [Luzerner Kantonalbank](1Replit_LuzernerKantonalbank.md)
+- [Migros Bank](1Replit_MigrosBank.md)
+- [Generali Insurance](1Replit_Generali.md)
+<br><br>
+This process can then easily be extended to other institutions from which you want to download the interest rates.
 
 <br><br><br><br>
 
