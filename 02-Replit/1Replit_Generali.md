@@ -101,7 +101,7 @@ The structure of the code is as follows:
 <br><br>
 In the line of code where the interest rates are queried, we have to check the following: *"2 Jahre": "**td**:-soup-contains('**2 years**') + xxxx"*<br><br>
 - The **td** has to match the letters which are in front of the year (*<**td**>2 years</td>*)
-- The term listed in the parenthesis - for example ```('2 Jahre')``` has to match the wording in the table *<td>**2 Jahre**</td>*. 
+- The term listed in the parenthesis - for example ```('2 Jahre')``` has to match the wording in the table ```<td>2 Jahre</td>```. 
 <br><br>
 We now need to replace the *xxxx* accordingly. After that the code should now look like this:
 ```
@@ -124,6 +124,7 @@ We now need to replace the *xxxx* accordingly. After that the code should now lo
   ]
 ```
 <br>
+
 In the line for the interest rate we have now inserted **td**, if we now want to download the 1st mortgage interest rate we have to insert **+ td** in the code. Then we get for the 2 years term the 2.75% we are looking for. In case we want to download the 2st mortgage rates, we need to download the second interest rate and we would do this with the code **+ td + td**. 
 <br><br>
 Open now the financialinstituins.json file in your Repl and enter the code.
