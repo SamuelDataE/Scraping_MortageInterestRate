@@ -2,11 +2,13 @@
 <br><br>
 This repository uses three websites to show how to download the interest rates. This documentation explains how you can download the interest rates from the MigrosBank website. 
 <br><br>
-Before you start setting up MigrosBank, you must have created the repl in replit and a cronjob according to the setup document.
+Before you start setting up MigrosBank, you must have created the Repl in Replit and a cronjob according to the [setup](0Replit_Setup.md) document.
 <br><br>
 The setup includes the following two steps:
 1. Anlayse website
 2. creation the code in Replit
+
+This process can also be extended to other websites of financial institutions, which are not shown here in this repository. The process is the same. 
 
 <br><br><br><br>
 
