@@ -142,7 +142,7 @@ To check if our code in the json file is correct, we now download the data manua
 <br><br>
 ![Alt Image Text](./Images/RP_Setup55.png "SetupXXX")
 <br><br>
-The result is now displayed in the console. These interest rates should now match the data on the website. In this case, it has now worked. So our entries in the *financialinstitution.json* file are correct.
+The result is now displayed in the console. These interest rates should now match the data on the website. In this case, it has now worked. So our entries in the *financialinstitution.json* file are correct. Here it worked anyway, although the table could not be displayed without JavaScript. It can therefore be assumed that the button that opens the table is running with JavaScript. The table itself, however, is not based on JavaScript - the data is therefore available. 
 
 <br><br><br><br>
 
