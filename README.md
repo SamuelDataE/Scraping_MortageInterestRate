@@ -12,6 +12,4 @@ In terms of complexity, the first case is easier than the second one, since less
 ### Enjoy trying it out!
 
 
-### ToDo
 
-- Liste mit Finanzinstituten (Zentralscheizwe Sicht) -> wo funktionierts?
