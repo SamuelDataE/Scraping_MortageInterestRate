@@ -63,6 +63,7 @@ You are now in the *Developer Tools* environment. In the *Elements* section you 
 We now analyse the code in this Word file. Scroll down the Word file to the part where the code shows the interest rates. We will analyse the 2 year term (it doesn't matter which term is analysed - the structure is the same for all terms). 
 <br><br>
 The code is as follows for the 2 year interest rates:
+
 *<tr class="Table--row"><br>
               <td class="Table--bodyCell">2 Jahre</td><br>
                 <**td** class="Table--bodyCell">2,590%</td><br>
@@ -97,7 +98,7 @@ The structure of the code is as follows:
 ]
 ```
 <br><br>
-We now need to replace the *xxxx* accordingly. The code should now look like this:
+We now need to replace the *xxxx* accordingly. After that the code should now look like this:
 ```
 [
   {
@@ -117,8 +118,8 @@ We now need to replace the *xxxx* accordingly. The code should now look like thi
     }
   ]
 ```
-<br><br>
-In the line for interest we have now inserted **td**, if we now want to download the premium interest rate we would have to insert **+ td** in the code. Then we would get the 2.590% for the term for 2 years. However, since we want to download the standard interest rate, we need to download the second interest rate and we do this with the code **+ td + td**. 
+<br>
+In the line for the interest rate we have now inserted **td**, if we now want to download the premium interest rate we would have to insert **+ td** in the code. Then we would get the 2.590% for the term for 2 years. However, since we want to download the standard interest rate, we need to download the second interest rate and we do this with the code **+ td + td**. 
 <br><br>
 Open now the financialinstituins.json file in your Repl and enter the code.
 <br><br>
